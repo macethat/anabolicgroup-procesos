@@ -1,0 +1,1 @@
+SELECT p.ID, p.post_title, p.post_status, MAX(CASE WHEN pm.meta_key='_elementor_data' THEN CHAR_LENGTH(pm.meta_value) END) AS data_len FROM wp_buDIJ_posts p LEFT JOIN wp_buDIJ_postmeta pm ON pm.post_id=p.ID AND pm.meta_key='_elementor_data' WHERE p.post_type='elementor-hf' GROUP BY p.ID;

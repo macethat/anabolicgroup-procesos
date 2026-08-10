@@ -1,0 +1,1 @@
+SELECT option_name, option_value FROM wp_buDIJ_options WHERE option_name LIKE '%elementor%hf%' OR option_name LIKE '%hf%elementor%' OR option_name LIKE '%hf_settings%' OR option_name LIKE '%ast_%' OR option_name LIKE '%header-footer%';

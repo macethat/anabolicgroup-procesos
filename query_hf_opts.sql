@@ -1,0 +1,1 @@
+SELECT option_name, LEFT(option_value, 100) AS opt_value FROM wp_buDIJ_options WHERE option_name LIKE '%header%' OR option_name LIKE '%footer%' OR option_name LIKE '%hfe%' OR option_name LIKE '%hf_%';

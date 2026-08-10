@@ -161,3 +161,35 @@
 **Notas:**
 - Las URLs WooCommerce son `/my-account/` y `/cart/` (no en español) — las URLs `/mi-cuenta/` y `/carrito/` dan 404 (comportamiento normal, no relacionado con el cambio).
 - El header/footer del tema (#masthead/#colophon) en páginas WooCommerce sin Elementor es normal (nutritix header-1).
+
+---
+
+### 2026-08-10 — ⚠️ INCIDENTE RECURRENTE: corrupción de JSON y resolución definitiva
+
+**Contexto:** El usuario reportó el sitio "dañado de nuevo". Diagnóstico completo determinó que el problema visible era el render mezclado de los dos números (viejo `6405` + nuevo `6099`) y no una pérdida estructural (JSON seguía válido, sitio funcional).
+
+**Hallazgos del diagnóstico:**
+1. La caché huérfana de SiteGround (`wp-content/cache/sgo-cache`) seguía sirviendo HTML con el número viejo → **eliminada** (no era la causa raíz).
+2. El render directo al origen (sin Cloudflare) seguía mezclando números → la fuente real era la **DB**: `_elementor_data` de Header 4 (3784) y Footer 1 (414) contenía el número viejo.
+3. **Causa raíz de la corrupción JSON recurrente:** incluso `update_post_meta()` sobre `_elementor_data` corrompe el JSON (Elementor guarda el data como string con escapes que WordPress re-procesa). Por eso tras reaplicar con `update_post_meta`, el JSON volvía a quedar inválido (8863/15938/41253 bytes).
+
+**Solución definitiva (aplicada):**
+1. Restauración de la DB desde el backup original `backups/db-before-phone-20260810.sql` (JSON válido, estado intacto).
+2. Cambio del número en `_elementor_data` y `post_content` mediante **SQL directo** (`UPDATE` con `REPLACE` sobre `wp_buDIJ_postmeta` / `wp_buDIJ_posts`), que NO pasa por WordPress ni corrompe nada.
+3. Actualización de la opción Click to Chat (`ht_ctc_chat_options`) también por SQL directo: `+50764059959` → `+50760990195`.
+4. Flush de cachés (WP, Elementor CSS, Nginx/hestia-cache) y eliminación de `sgo-cache`.
+
+**Verificación final (todo en vivo):**
+- JSON **VÁLIDO** en los 3 posts: Inicio 41543, Header 4 8894, Footer 1 16062 (longitudes intactas).
+- `_elementor_data` de 3784/414/13263: **solo número nuevo** (6099), sin restos de 6405.
+- Render: `/` y `/shop/` muestran solo `6099-0195` / `50760990195`.
+- Click to Chat: `+50760990195`.
+- Backup del estado final: `backups/db-final-phone-fixed-20260810.sql`.
+- Scripts de diagnóstico temporales eliminados del servidor.
+
+**LECCIÓN DEFINITIVA:**
+- ⚠️ **NUNCA usar `wp_update_post()`** sobre contenido Elementor.
+- ⚠️ **NUNCA usar `update_post_meta()` sobre `_elementor_data`** (también corrompe el JSON).
+- ✅ Para editar `_elementor_data`: **solo SQL directo** (`UPDATE` con `REPLACE` sobre la tabla `postmeta`). Luego validar JSON y verificar render en vivo.
+
+**Estado actual:** Sitio funcional, número nuevo `6099-0195` en todo el sitio, JSON válido, tarea COMPLETADA.

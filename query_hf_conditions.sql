@@ -1,0 +1,1 @@
+SELECT p.ID, p.post_title, pm.meta_key, pm.meta_value FROM wp_buDIJ_postmeta pm LEFT JOIN wp_buDIJ_posts p ON p.ID = pm.post_id WHERE p.post_type='elementor-hf' AND pm.meta_key='_elementor_conditions';
