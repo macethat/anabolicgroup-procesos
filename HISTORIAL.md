@@ -137,3 +137,27 @@
 - ⚠️ La opción global de Click to Chat (`ht_ctc_chat_options`) quedó **restaurada al número viejo** con la DB — debe actualizarse de nuevo de forma segura.
 
 **Estado actual:** Sitio funcional, con número viejo `6405-9959` (cambio pendiente de rehacer de forma segura).
+
+---
+
+### 2026-08-10 — ✅ Reaplicación segura del número de teléfono
+
+**Contexto:** Rehacer el cambio de número `6405-9959` → `6099-0195` tras el incidente, usando el método seguro (sin `wp_update_post`).
+
+**Método seguro aplicado:**
+1. Backup previo: `backups/db-before-phone-safe-20260810.sql`.
+2. `_elementor_data` actualizado con **`update_post_meta()`** (sin filtros/hooks de WP) → JSON validado como VÁLIDO en los 3 posts tras cada cambio.
+3. `post_content` actualizado con **SQL directo** (`$wpdb->update`) evitando `wp_update_post()`.
+4. Opción Click to Chat (`ht_ctc_chat_options`) actualizada con `update_option()`: `+50764059959` → `+50760990195`.
+5. Flush de cachés (WP, Elementor CSS, Nginx).
+
+**Verificación en vivo (número nuevo presente, sin restos del viejo):**
+- `/` Inicio: `6099-0195` + `50760990195` ✓
+- `/shop/`: `50760990195` ✓ (header 3784, footers 414 + 1381 presentes)
+- `/my-account/` (URL correcta, no "mi-cuenta"): ✓
+- `/cart/` y `/checkout/`: ✓
+- **JSON de Elementor válido** en Inicio (13263), Header 4 (3784), Footer 1 (414).
+
+**Notas:**
+- Las URLs WooCommerce son `/my-account/` y `/cart/` (no en español) — las URLs `/mi-cuenta/` y `/carrito/` dan 404 (comportamiento normal, no relacionado con el cambio).
+- El header/footer del tema (#masthead/#colophon) en páginas WooCommerce sin Elementor es normal (nutritix header-1).
