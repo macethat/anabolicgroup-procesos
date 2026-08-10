@@ -88,3 +88,27 @@
 **Pendiente:**
 - Solicitar revisión en Google Search Console (aviso de phishing).
 - Verificar estado exacto en Google Safe Browsing (requiere key API o Search Console).
+
+---
+
+### 2026-08-10 — Actualización del número de WhatsApp/WhatsApp en todo el sitio
+
+**Contexto:** El número de teléfono cambió de `6405-9959` a `6099-0195`. El usuario ya lo había actualizado en la página de Inicio; se requería replicarlo en el resto de páginas (Shop, etc.). El header/footer está integrado en cada página vía templates Elementor HFE.
+
+**Diagnóstico:**
+- Los templates `elementor-hf` activos que se renderizan en las páginas: **Header 4 (3784)**, **Footer 1 (414)**, **Footer bar (1381)**.
+- El número viejo `6405-9959` estaba en: Header 4 (data+content), Footer 1 (data+content), Inicio 13263 (data+content, restos) y la opción del plugin Click to Chat (`ht_ctc_chat_options`).
+- Los IDs de postmeta con `6405` que no existen en `posts` son datos huérfanos (no afectan).
+
+**Tareas completadas:**
+1. Backup de DB: `backups/db-before-phone-20260810.sql` (33MB).
+2. Instalado WP-CLI en el servidor (`/home/abgroup/web/anabolicgroup.com/wp-cli.phar`).
+3. Reemplazo del número en Elementor data + post_content de: Header 4 (3784), Footer 1 (414), Inicio (13263):
+   - `6405-9959` → `6099-0195`
+   - `64059959` → `60990195`
+   - `50764059959` → `50760990195`
+4. Actualizada la opción del plugin **Click to Chat for WhatsApp** (`ht_ctc_chat_options`): `+50764059959` → `+50760990195`.
+5. Flush de cachés: WP cache, Elementor CSS, rewrite rules, caché Nginx (hestia-cache purge).
+6. **Verificado en vivo** en 7 páginas (Inicio, Shop, Mi Cuenta, Carrito, Checkout, Lista de Deseos, Tienda): todas muestran el número nuevo, sin restos del viejo. La caché de Nginx/Cloudflare servía HTML viejo en Shop; se resolvió purgando.
+
+**Nota:** Quedan restos de `6405` solo en **revisiones** de Elementor (posts `inherit`, 15391-15399) — no se renderizan y no afectan el sitio.
