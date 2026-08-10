@@ -112,3 +112,28 @@
 6. **Verificado en vivo** en 7 páginas (Inicio, Shop, Mi Cuenta, Carrito, Checkout, Lista de Deseos, Tienda): todas muestran el número nuevo, sin restos del viejo. La caché de Nginx/Cloudflare servía HTML viejo en Shop; se resolvió purgando.
 
 **Nota:** Quedan restos de `6405` solo en **revisiones** de Elementor (posts `inherit`, 15391-15399) — no se renderizan y no afectan el sitio.
+
+---
+
+### 2026-08-10 — ⚠️ INCIDENTE: Corrupción de datos Elementor y restauración
+
+**Contexto:** Tras la actualización del número de teléfono, el usuario reportó que el sitio quedó desordenado: Inicio dañado, y en Shop se perdieron header y footer.
+
+**Causa raíz:** El script de actualización usó `wp_update_post()` (API de WordPress) para guardar `post_content` de los templates `elementor-hf` y páginas. Esto disparó filtros/hooks de WordPress que **corrompieron los JSON de `_elementor_data`** (JSON inválido) en:
+- Inicio (13263): 41543 → 41253 bytes
+- Header 4 (3784): 8894 → 8863
+- Footer 1 (414): 16062 → 15938
+
+**Acciones de recuperación:**
+1. Backup del estado corrupto: `backups/db-before-restore-20260810.sql` (33.5MB).
+2. **Restauración completa de la DB** desde `backups/db-before-phone-20260810.sql` (13:05, estado intacto previo a cambios).
+3. Verificado JSON válido de nuevo: Inicio 41543, Header 4 8894, Footer 1 16062.
+4. Flush de cachés (WP, Elementor CSS, Nginx).
+5. **Verificado el render en vivo:** Inicio (`elementor-13263`), Shop con Header 4 (3784), Footer 1 (414) y Footer bar (1381) presentes, títulos correctos. **Sitio restaurado sin daño.**
+
+**LECCIÓN APRENDIDA (crítico para futuras ediciones de Elementor):**
+- ⚠️ **NUNCA usar `wp_update_post()` para editar contenido de templates Elementor** (corrompe `_elementor_data`).
+- ✅ Para editar Elementor data, usar **`update_post_meta()` directo** (seguro) o **SQL directo**, y solo sobre `_elementor_data`.
+- ⚠️ La opción global de Click to Chat (`ht_ctc_chat_options`) quedó **restaurada al número viejo** con la DB — debe actualizarse de nuevo de forma segura.
+
+**Estado actual:** Sitio funcional, con número viejo `6405-9959` (cambio pendiente de rehacer de forma segura).
