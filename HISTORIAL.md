@@ -221,3 +221,22 @@
 **Pendiente:**
 - Crear los 25 productos faltantes (requiere fotos y confirmar datos).
 - Resolver los 3 mapeos dudosos.
+
+---
+
+### 2026-08-10 — Verificación de precios VMS y actualización BPC-157 5mg
+
+**Contexto:** El cliente pidió verificar los precios de 16 péptidos (GLOW, MOST-C, GHK-Cu, TESAMORELIN, IPAMORELIN, CJC1295, TB500, BPC-157, NAD, AOD9604, Tirzepatide 10/15/30/60, Retatrutide 10/60) contra el sitio. Solo lectura.
+
+**Resultado de la verificación (solo 5 existen en WC):**
+- `GHK-Cu 100mg` = 130$ ✓ (coincide)
+- `Tirzepatide 30mg` = 160$ ✓ (coincide)
+- `BPC-157 5mg` = **100$** ✗ (el cliente indicaba 120$)
+- `Retatrutide 30mg` = 200$ (no estaba en la lista del cliente pero existe)
+- Los otros 13 (GLOW, MOST-C, TESAMORELIN, IPAMORELIN, CJC1295, TB500, NAD, AOD9604, Tirzepatide 10/15/60, Retatrutide 10/60) **no existen** en WC → parte de los 25 pendientes por crear.
+
+**Acción realizada:**
+- `BPC-157 5mg` (ID 15244): precio actualizado de 100$ a **120$** (regular_price y price) vía SQL directo. Stock intacto (8).
+- Flush de cachés (WP + Nginx).
+
+**Pendiente:** crear los 13 péptidos faltantes con los precios indicados por el cliente (GLOW 160, MOST-C 160, TESAMORELIN 160, IPAMORELIN 130, CJC1295 150, TB500 160, NAD 140, AOD9604 150, Tirzepatide 10=120/15=130/60=220, Retatrutide 10=160/60=220).
