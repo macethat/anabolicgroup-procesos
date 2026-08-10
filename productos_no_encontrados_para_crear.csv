@@ -1,0 +1,26 @@
+﻿Marca,Categoria,Producto,Precio_USD,Estado,Stock_propuesto,Accion
+XTLABS,Orales,CLEMBUTEROL 0.40MCG - 60TAB,59.99,Agotado,0,CREAR
+XTLABS,Orales,ARIMIDEXT 1MG - 30TAB,59.99,Disponible,100,CREAR
+LANDERLAN,Inyectables,Deca - NPP Gold 10ml,64.99,Disponible,100,CREAR
+LANDERLAN,Inyectables,Boldenona 200mg Gold 10ml,64.99,Disponible,100,CREAR
+LANDERLAN,Orales,Clembutebol lander Gold comp,64.99,Disponible,100,CREAR
+LANDERLAN,Orales,Oxymetalona 50mg x 20 comp,34.99,Disponible,100,CREAR
+LANDERLAN,Orales,Dianabol 10mg x 100 comp,64.99,Agotado,0,CREAR
+LANDERLAN,Orales,Oxandrolona 10mg x 50 comp,74.99,Disponible,100,CREAR
+EMINENCE LABS,Orales,Líothyoxine 25mcg (T3) x 50 comp,49.99,Disponible,100,CREAR
+EMINENCE LABS,Orales,Carbergolina 0.5mg x 10 comp,49.99,Agotado,0,CREAR
+EMINENCE LABS,Inyectables,Stanozolol 50mg,59.99,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,GLOW 70 mg,160.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,MOST-C 40 mg,160.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,TESAMORELIN 10 mg,160.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,IPAMORELIN 10 mg,130.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,CJC1295 (Without DAC) 10 mg,150.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,BPC-157 10 mg,150.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,TB500 10 mg,160.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,NAD 500 mg,140.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,AOD9604 10 mg,150.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,Tirzepatide 10 mg,120.0,Agotado,0,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,Tirzepatide 15 mg,130.0,Agotado,0,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,Tirzepatide 60 mg,220.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,Retatrutide 10 mg,160.0,Disponible,100,CREAR
+VMS MOLECULAR SCIENCE,Péptidos,Retatrutide 60 mg,250.0,Agotado,0,CREAR

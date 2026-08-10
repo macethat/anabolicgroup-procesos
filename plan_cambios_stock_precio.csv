@@ -1,0 +1,69 @@
+﻿Marca,Categoria,Producto_archivo,Precio_archivo,Estado_archivo,Stock_nuevo,WC_ID,Producto_WC,Precio_WC,Stock_WC,Cambia_precio,Cambia_stock
+XTLABS,Inyectables,SUSTAPLEX 275MG,64.99,Disponible,100,14218,Sustaplex 275 mg: Volumen Constante + Fuerza,44.99,85,SI,SI
+XTLABS,Inyectables,TESTOPLEX-P,64.99,Disponible,100,14221,Testoplex-P 100 mg: Fuerza Rápida + Definición,44.99,125,SI,SI
+XTLABS,Inyectables,TESTOPLEX-C,64.99,Agotado,0,14224,Testoplex-C 300 mg: Masa + Fuerza Sostenida,44.99,0,SI,NO
+XTLABS,Inyectables,DECAPLEX 300MG,64.99,Agotado,0,14227,Decaplex 300 mg : Volumen Masivo + Articulaciones,44.99,,SI,SI
+XTLABS,Inyectables,NANDROPLEX,64.99,Agotado,0,14230,Nandroplex 100 mg: Masa Rápida + Articulaciones,44.99,40,SI,SI
+XTLABS,Inyectables,BOLDEPLEX,64.99,Agotado,0,14234,Boldeplex 200 mg: Volumen Magro + Resistencia,44.99,40,SI,SI
+XTLABS,Inyectables,STANOPLEX 10ML,64.99,Disponible,100,14236,Stanoplex 10 ml: Definición Dura + Fuerza,46.99,,SI,SI
+XTLABS,Inyectables,PRIMOPLEX,74.99,Agotado,0,14241,Primoplex 100 mg: Masa Limpia + Definición,47.99,14,SI,SI
+XTLABS,Inyectables,MASTEPLEX - P,64.99,Disponible,100,14244,MASTEPLEX - P,47.99,,SI,SI
+XTLABS,Inyectables,TREMBOPLEX ACETATO,74.99,Disponible,100,14247,TREMBOPLEX ACETATO,47.99,,SI,SI
+XTLABS,Inyectables,TREMBOPLEX ENANTATO,79.99,Disponible,100,14250,TREMBOPLEX ENANTATO,49.99,,SI,SI
+XTLABS,Inyectables Blend,TVR,74.99,Agotado,0,14253,TVR 350 mg Testo Enantato/Propionato: Volumen + Fuerza,45.99,8,SI,SI
+XTLABS,Inyectables Blend,T-XT 350,74.99,Agotado,0,14656,TXT 400 mg: Volumen + Fuerza,45.99,2,SI,SI
+XTLABS,Inyectables Blend,TITAN - 400,79.99,Agotado,0,14256,Titan 400 mg : Masa Dura + Fuerza,47.99,2,SI,SI
+XTLABS,Inyectables Blend,TRIPLE XXX,79.99,Disponible,100,14259,Triple XXX 200 mg Tritrenbolona: Masa Dura + Fuerza,49.99,42,SI,SI
+XTLABS,SARMS,OSTARINE (MK2866),64.99,Disponible,100,14262,Ostarine 10 mg: Masa Magra + Fuerza Segura,48.99,29,SI,SI
+XTLABS,SARMS,IBUTAMOREN (MK677),64.99,Disponible,100,14265,Ibutamoren 15 mg : Masa Magra + Recuperación,48.99,28,SI,SI
+XTLABS,SARMS,CARDARINE (GW-501516),64.99,Agotado,0,14268,Cardarine 10 mg : Resistencia + Quema Grasa,48.99,10,SI,SI
+XTLABS,SARMS,LIGANDROL (LGD-4033),64.99,Disponible,100,14271,Ligandrol 5 mg : Masa Magra + Fuerza Rápida,48.99,31,SI,SI
+XTLABS,Orales,METHANDROPLEX 20MG - 100TAB,59.99,Disponible,100,14274,Methandroplex 20 mg: Volumen Rápido + Fuerza,48.99,57,SI,SI
+XTLABS,Orales,PROVIX 25MG - 50TAB,59.99,Agotado,0,14277,PROVIX 25MG - 50TAB,48.99,,SI,SI
+XTLABS,Orales,STANOPLEX 10MG - 60TAB,59.99,Disponible,100,14280,Stanoplex 10 mg Estanozolol: Definición Dura + Fuerza,48.99,93,SI,SI
+XTLABS,Orales,OXANDROPLEX 10MG - 60TAB,59.99,Disponible,100,14283,Oxandroplex 10 mg Oxandrolona: Definición + Fuerza Magra,48.99,50,SI,SI
+XTLABS,Orales,CLEMBUTEROL ULTRA 0.60MCG,64.99,Disponible,100,14290,CLEMBUTEROL ULTRA 0.60MCG,51.99,,SI,SI
+XTLABS,Orales,CLOMIXT 50MG - 30TAB,59.99,Disponible,100,14297,CLOMIXT 50MG - 30TAB,48.99,,SI,SI
+XTLABS,Hormonas / Péptidos,HCG 10.000UI XTLABS,74.99,Disponible,100,14299,HCG 10.000 UI | Recuperación de Testosterona,64.99,1,SI,SI
+GENTROPIN,Hormona,GENTROPIN 210UI,350.0,Disponible,100,14309,Gentropin 210 UI: Masa Magra + Recuperación,350.0,40,NO,SI
+PFIZER,Hormona,GENOTROPIN 36UI,160.0,Agotado,0,14313,GENOTROPIN 36UI Pfizer,199.99,,SI,SI
+LANDERLAN,Inyectables,Stanozolol 50mg - 30ml,89.0,Agotado,0,13980,"STANOZOLAND DEPOT 50MG, Stanozolol 30ml",49.99,,SI,SI
+LANDERLAN,Inyectables,Stanozolol 50mg - 15ml,64.99,Disponible,100,13975,"STANOZOLAND DEPOT 50MG, Stanozolol 15ml",38.99,,SI,SI
+LANDERLAN,Inyectables,Decanoato de nandrolona Gold 10ml,64.99,Disponible,100,14100,DECALAND DEPOT 200mg / Decanoato de Nandrolona 200mg/ml,49.99,,SI,SI
+LANDERLAN,Inyectables,Drostanolona P Gold (Masteron) 10ml,74.99,Disponible,100,14095,Drostanolona Propionato 10ml: Definición Dura + Fuerza Seca,49.99,80,SI,SI
+LANDERLAN,Inyectables,Primoboland Enantato Gold 10ml,99.99,Disponible,100,14005,PRIMOBOLAND ENANTATO GOLD 10ml,69.99,,SI,SI
+LANDERLAN,Inyectables,Durateston plus Gold 10ml,74.99,Disponible,100,14092,Durateston Plus Gold 10ml: Volumen Sostenido + Fuerza,51.99,125,SI,SI
+LANDERLAN,Inyectables,Testo cypionato Gold 10ml,74.99,Disponible,100,13987,Testoland Depot - 200 mg - Cipionato - Ganacia de Músculo + Fuerza,51.99,100,SI,NO
+LANDERLAN,Inyectables,Testo Enantato Gold 10ml,74.99,Disponible,100,13990,Testenat Depot - 250 mg - Ganancia de Músculo + Fuerza Máxima,42.82,400,SI,SI
+LANDERLAN,Inyectables,Testo Propionato 100mg x 10ml,64.99,Disponible,100,14068,TESTOSTERONA PROPINATO 100mg,51.99,,SI,SI
+LANDERLAN,Inyectables,Trembolona Enantato Gold 10ml,74.99,Disponible,100,14077,TREMBOLONA ENANTADO GOLD,51.99,,SI,SI
+LANDERLAN,Inyectables,Trembolona Acetato Gold 10ml,84.99,Disponible,100,14074,TREMBOLONA ACETATO GOLD,56.99,,SI,SI
+LANDERLAN,Orales,Stanozoland oral 10mg x 100 comp,64.99,Disponible,100,14578,Stanozoland 10 mg: Definición Seca + Fuerza,47.99,18,SI,SI
+LANDERLAN,Orales,Oxandrolona 5mg x 100 comp,74.99,Disponible,100,14047,Oxandroland 5 mg - Oxandrolona: Corte Seco + Fuerza,64.99,160,SI,SI
+LANDERLAN,Orales,Metil Drostanolona 10mg x 50 comp,64.99,Agotado,0,14065,DROSTENOLAND METIL DROSTANOLONA 10mg,58.99,,SI,SI
+EMINENCE LABS,Orales,Stanozolol 50mg x 50 comp,49.99,Disponible,100,14315,Stanozolol 50mg x 50 comp,37.99,,SI,SI
+EMINENCE LABS,Orales,Methandrostenolona 10mg (Dianabol) 50 comp,49.99,Disponible,100,14318,Methandrostenolona 10mg (Dianabol) 50 comp,37.99,,SI,SI
+EMINENCE LABS,Orales,Klembuterol 0.40mcg 50 comp,49.99,Agotado,0,14321,Klembuterol 0.40mcg 50 comp,37.99,,SI,SI
+EMINENCE LABS,Orales,Klembuterol 0.60mcg 50 comp,49.99,Agotado,0,14326,Klembuterol 0.60mcg 50comp,44.99,,SI,SI
+EMINENCE LABS,Orales,Oxandrolona 10mg 50 comp,59.99,Disponible,100,14329,Oxandrolona 10mg 50 comp,44.99,,SI,SI
+EMINENCE LABS,Orales,Oxymetalona 50mg por 50 comp,49.99,Disponible,100,14331,Oxymetalona 50mg por 50 comp,44.99,,SI,SI
+EMINENCE LABS,Orales,Anastrazol 1mg x 50 comp,49.99,Disponible,100,14338,Anastrazol 1 mg x 50 comp,47.99,,SI,SI
+EMINENCE LABS,Orales,Clomifeno 50mg x 50 comp,49.99,Disponible,100,14340,Clomifeno 50mg 50 comp,46.99,,SI,SI
+EMINENCE LABS,Orales,Masterolona 25mg (Proviron) 50 comp,59.99,Agotado,0,14344,Masterolona 25mg (Proviron) 50 comp,48.99,,SI,SI
+EMINENCE LABS,Orales,Tamoxifeno 20mg,39.99,Disponible,100,14346,Tamoxifeno 20mg,39.99,,NO,SI
+EMINENCE LABS,Inyectables,Testosterona Propionato 100mg,59.99,Disponible,100,14348,Testosterona Propionato 100mg,44.99,,SI,SI
+EMINENCE LABS,Inyectables,Testosterona Sustanon Testo-mix,64.99,Disponible,100,14351,Testo-mix,51.99,200,SI,SI
+EMINENCE LABS,Inyectables,Testosterona Cypionato 250mg,64.99,Disponible,100,14355,Testosterona Cypionato 250mg,49.99,,SI,SI
+EMINENCE LABS,Inyectables,Testosterona Enantato 250mg,64.99,Disponible,100,14357,Testosterona Enantato 250mg,49.99,,SI,SI
+EMINENCE LABS,Inyectables,Trembolona Enantato 200mg,64.99,Agotado,0,14599,Trembolona Enantato 200 mg: Masa + Fuerza Nuclear,69.99,80,SI,SI
+EMINENCE LABS,Inyectables,Trembolona Acetato 100mg,74.99,Agotado,0,15193,Trembolona Acetato 100mg,57.93,99,SI,SI
+EMINENCE LABS,Inyectables,Metenolona Enantato 100mg (Primoboland),89.99,Agotado,0,14366,Metenolona Enantato 100mg (Primoboland),75.99,,SI,SI
+EMINENCE LABS,Inyectables,Boldenona Undecylenato 200mg,59.99,Agotado,0,14369,Boldenona Undecylenato 200mg,58.99,,SI,SI
+EMINENCE LABS,Inyectables,Nandrolona (Deca) 200mg,59.99,Disponible,100,14372,Nandrolona (Deca) 200mg,51.99,,SI,SI
+EMINENCE LABS,Inyectables,Nandrolona (NPP) 100mg,59.99,Agotado,0,14577,Nandrolona Fenil NPP 100 mg: Volumen Rápido + Articulaciones,49.99,160,SI,SI
+EMINENCE LABS,Inyectables,Drostanolona Propionato 100mg,79.99,Agotado,0,14376,Drostanolona Propionato 100mg,58.99,,SI,SI
+VMS MOLECULAR SCIENCE,Péptidos,GHK-CU 100 mg,130.0,Disponible,100,15236,GHK-Cu 100mg,130.0,9,NO,SI
+VMS MOLECULAR SCIENCE,Péptidos,IGF1-LR3,120.0,Disponible,100,15248,IGF-1 LR3 1mg,120.0,84,NO,SI
+VMS MOLECULAR SCIENCE,Péptidos,Semaglutide 5 mg,110.0,Disponible,100,15256,Semaglutide 5mg,110.0,60,NO,SI
+VMS MOLECULAR SCIENCE,Péptidos,Tirzepatide 30 mg,160.0,Disponible,100,15223,Tirzepatide 30mg,160.0,98,NO,SI
+VMS MOLECULAR SCIENCE,Péptidos,Retatrutide 30 mg,200.0,Disponible,100,15229,Retatrutide 30mg,200.0,49,NO,SI

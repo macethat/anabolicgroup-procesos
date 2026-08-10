@@ -193,3 +193,31 @@
 - ✅ Para editar `_elementor_data`: **solo SQL directo** (`UPDATE` con `REPLACE` sobre la tabla `postmeta`). Luego validar JSON y verificar render en vivo.
 
 **Estado actual:** Sitio funcional, número nuevo `6099-0195` en todo el sitio, JSON válido, tarea COMPLETADA.
+
+---
+
+### 2026-08-10 — Actualización de existencias y precios desde archivo maestro
+
+**Contexto:** El cliente subió un archivo (`Lista_Anabolicgroup_Maestra_Productos_por_Marca_Editable.numbers`, formato Apple Numbers) con las existencias actuales y precios de los productos. No tienen SKU ni código → comparación por nombre. La columna llamada "SKU" (mal nombrada) tiene 2 estados: `Disponible` y `Agotado`. Los productos sin variaciones (100% productos `simple`). Regla: `Disponible` → **100 unidades**, `Agotado` → **0 unidades**. Además el archivo es la lista de precios actualizada (hubo incrementos).
+
+**Proceso:**
+1. Extracción del `.numbers` (es un zip; datos en IWA) → 93 productos con Marca/Categoría/Producto/Precio/SKU.
+2. Export de WooCommerce vía WC CLI (166 posts tipo product, 79 publicados; 0 variaciones).
+3. Cruce por nombre normalizado + verificación manual de equivalencias (las tiendas tienen nombres largos con descripciones de marketing vs nombres cortos del archivo).
+4. Backup DB previo: `backups/db-before-stock-20260810.sql`.
+5. Aplicación vía `$wpdb` directo (sin `wp_update_post`): `_regular_price`, `_price`, `_manage_stock=yes`, `_stock` (100/0), `_stock_status` (instock/outofstock).
+6. Flush de cachés (WP + Nginx).
+
+**Resultados:**
+- **68 productos actualizados** (61 con cambio de precio, 66 con cambio de stock) — verificación post-cambio: 0 errores.
+- **25 productos NO existen en WC** → listados en `productos_no_encontrados_para_crear.csv` para crear luego (faltan fotos/datos). Incluyen marcas nuevas (EMINENCE LABS, VMS MOLECULAR SCIENCE péptidos, presentaciones LANDERLAN/XTLABS distintas).
+- **3 mapeos dudosos omitidos** (Deca-NPP Gold 10ml, Boldenona 200mg Gold 10ml, BPC-157 10mg) por posible dosaje/presentación distinta — pendientes de confirmar.
+
+**Archivos generados:**
+- `comparativa_existencias_preliminar.csv` (cruce completo archivo vs WC)
+- `plan_cambios_stock_precio.csv` (68 cambios aplicados con valores antes/después)
+- `productos_no_encontrados_para_crear.csv` (25 a crear: Marca/Producto/Precio/Estado/Stock propuesto)
+
+**Pendiente:**
+- Crear los 25 productos faltantes (requiere fotos y confirmar datos).
+- Resolver los 3 mapeos dudosos.
