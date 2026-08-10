@@ -1,0 +1,13 @@
+# Credenciales y archivos sensibles
+accesos.txt
+accesos_*.txt
+*credentials*
+*.pem
+*.key
+*.env
+.env.local
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
