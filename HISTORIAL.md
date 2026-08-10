@@ -62,4 +62,29 @@
 **Nota de seguridad:** Los secretos (contraseñas, tokens) no se guardan en el repo ni en el historial.
 
 **Pendiente:**
-- Agregar scope `read:org` al token para habilitar `gh auth login` persistente.
+- ~~Agregar scope `read:org` al token para habilitar `gh auth login` persistente~~ → **Completado** (gh CLI autenticado en keyring).
+
+---
+
+### 2026-08-10 — Security headers en el nuevo hosting (HestiaCP + Cloudflare)
+
+**Contexto:** El sitio fue migrado a panamahosting507.com (panel HestiaCP, Apache + Nginx, con Cloudflare delante). El `.htaccess` del servidor no tenía los security headers.
+
+**Tareas completadas:**
+1. Verificado acceso SSH y estado del `.htaccess` en servidor (solo bloque WordPress, sin headers).
+2. Backup del `.htaccess` del servidor: `.htaccess.bak-20260810`.
+3. Subido el `.htaccess` con security headers vía scp:
+   - `X-Frame-Options: SAMEORIGIN`
+   - `X-Content-Type-Options: nosniff`
+   - `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`
+   - `Content-Security-Policy: default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';`
+4. Verificado directo al origen (IP 159.195.16.126): **todos los headers se sirven correctamente** desde Apache.
+5. Detectado que **Cloudflare delante no pasaba los headers** por dominio público.
+6. Solicitado al hosting (vía soporte) agregar headers a nivel Cloudflare (Transform Rules → Modify Response Header).
+7. **Confirmado:** headers activos vía dominio público (se ven duplicados: origen + CF, normal).
+8. Verificado redirect HTTP→HTTPS: **301 OK** vía Cloudflare.
+9. **Diagnóstico de malware:** sin señales de compromiso — los archivos modificados son de actualizaciones normales de Elementor/Jetpack; sin scripts inyectados en uploads/themes; PHP en uploads son `index.php` vacíos de seguridad de WordPress.
+
+**Pendiente:**
+- Solicitar revisión en Google Search Console (aviso de phishing).
+- Verificar estado exacto en Google Safe Browsing (requiere key API o Search Console).
