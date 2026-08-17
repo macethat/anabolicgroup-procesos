@@ -276,3 +276,22 @@
 - Selector muestra las 3 presentaciones con precios y estado de stock correctos.
 
 **Archivos relacionados (local):** `make_variable.php`, `create_attribute.php`, `upload_imgs.php`. Scripts temporales eliminados del servidor.
+
+---
+
+### 2026-08-10 — Fix: selector de presentaciones del Retatrutide variable no aparecía
+
+**Síntoma:** En la página del producto variable no había forma de seleccionar las presentaciones; la tabla `variations` del front salía con `<tbody>` vacío (sin swatches ni `<select>`).
+
+**Causa raíz (2 capas):**
+1. **Transient `wc_attribute_taxonomies` obsoleto:** el atributo `pa_presentacion` se creó vía SQL directo en `woocommerce_attribute_taxonomies`, pero WooCommerce registra las taxonomías globales desde el transient `_transient_wc_attribute_taxonomies` (cacheado con solo 5 atributos) → `pa_presentacion` nunca se registraba como taxonomía en el front → el template variable no generaba la fila del selector.
+2. **Términos sin asociar al producto:** los términos 10mg/30mg/60mg existían en `terms`/`term_taxonomy` (count=0) pero **no estaban en `term_relationships`** del producto padre (15229) → aunque la taxonomía se registrara, el dropdown saldría vacío. WooCommerce muestra solo los términos relacionados al post.
+
+**Solución (SQL directo):**
+- `DELETE` del transient `wc_attribute_taxonomies` (+ timeout) → WooCommerce releyó la tabla y registró `pa_presentacion`.
+- `INSERT IGNORE` en `term_relationships` (object_id=15229 ↔ term_taxonomy_id 210/211/212) + actualización de `count` en `term_taxonomy`.
+- Flush de cachés (WP + Nginx).
+
+**Verificación (frontend):** selector con swatches del plugin woo-variation-swatches: botones `10mg / 30mg (preseleccionado) / 60mg`, select oculto de respaldo con las 3 opciones, botón "Limpiar". Los 3 precios/stock siguen correctos (160/100, 200/100, 250/0).
+
+**Lección:** al crear atributos/términos por SQL (sin pasar por `wc_create_attribute()`/`wp_set_object_terms()`), hay que (a) invalidar el transient `wc_attribute_taxonomies` y (b) asignar los términos al producto en `term_relationships`; de lo contrario el selector de variaciones queda vacío.
