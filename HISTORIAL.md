@@ -240,3 +240,16 @@
 - Flush de cachés (WP + Nginx).
 
 **Pendiente:** crear los 13 péptidos faltantes con los precios indicados por el cliente (GLOW 160, MOST-C 160, TESAMORELIN 160, IPAMORELIN 130, CJC1295 150, TB500 160, NAD 140, AOD9604 150, Tirzepatide 10=120/15=130/60=220, Retatrutide 10=160/60=220).
+
+---
+
+### 2026-08-10 — IGF-1 LR3 1 ml agotado
+
+**Contexto:** El cliente indicó que el producto en la URL `https://anabolicgroup.com/product/igf-1-lr3-1-ml/` debía quedar agotado.
+
+**Acción:**
+- Producto ID 14613 `IGF-1 LR3 1 ml: Hiperplasia + Recuperación`: `_stock` 409 → **0**, `_stock_status` instock → **outofstock** (vía SQL directo).
+- Nota: este producto es distinto del `IGF-1 LR3 1mg` (15248, 120$) del archivo VMS. El archivo maestro no tenía entrada para el de 1 ml.
+- Flush de cachés (WP + Nginx).
+
+**Verificación:** stock 0 / outofstock confirmado en DB.
