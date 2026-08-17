@@ -312,3 +312,28 @@
 **Verificación (frontend):** badge "In Stock" en `entry-summary-top`; variaciones con `is_in_stock: 10mg=true, 30mg=true, 60mg=false`; precios 160/200/250 correctos.
 
 **Nota:** el alt/título de la imagen del 30mg (attachment 15233) conserva "Retatrutide 30mg" intencionalmente (es su SEO de imagen).
+
+---
+
+### 2026-08-10 — Tirzepatide simple → producto VARIABLE (10mg / 15mg / 30mg / 60mg)
+
+**Contexto:** Convertir el producto simple `Tirzepatide 30mg` (ID 15223, 160$) en producto variable con 4 presentaciones según el archivo maestro. Imágenes en `C:\suplementos\anabolicos\fotos\` (PNG: `Tirzepatide 15mg.png`, `Tirzepatide 60mg.png`). **No existía imagen de 10mg** → variación creada sin foto (se subirá después).
+
+**Proceso:**
+1. Backup DB previo: `backups/db-before-tirzepatide-var-20260810.sql`.
+2. Precios/stock del archivo maestro: **10mg=120$/0 (agotado), 15mg=130$/0 (agotado), 30mg=160$/100, 60mg=220$/100**.
+3. Imágenes PNG→JPG (Pillow) y subidas con SEO: **15mg=att 15406, 60mg=att 15407**. Imagen del 30mg = thumbnail existente 15235.
+4. Reutilización del atributo global `pa_presentacion` (id=6) de Retatrutide; creado el término nuevo **15mg** (term_id 213) vía script.
+5. Script `make_variable.php` adaptado: padre 15223 → `variable`, atributo + default 30mg, creación de variaciones:
+   - **10mg=15408** (120$, outofstock, sin imagen), **15mg=15409** (130$, outofstock, img 15406), **30mg=15410** (160$, instock, img 15235), **60mg=15411** (220$, instock, img 15407).
+   - Términos asociados al padre en `term_relationships` + counts actualizados (idempotente: count 10mg/30mg/60mg pasó a 2 por pertenecer también a Retatrutide).
+6. Fix transient `wc_attribute_taxonomies` (igual que Retatrutide).
+7. Título/excerpt/contenido limpiados vía SQL directo (sin "30mg"): `Tirzepatide 30mg` → **`Tirzepatide`** (slug/URL intactos), ficha con "Concentración: según presentación".
+8. **Fix del stock del padre:** el `$product->save()` del script revirtió `_stock_status` a `outofstock` → SQL directo final para `instock`.
+9. Flush de cachés (WP + Nginx).
+
+**Verificación (frontend `https://anabolicgroup.com/product/tirzepatide-30mg/`):** título `<title>`/`<h1>` = "Tirzepatide"; badge "In Stock"; selector con swatches **10/15/30/60mg** (30mg default); `is_in_stock`: 10mg=false, 15mg=false, 30mg=true, 60mg=true; precios 120/130/160/220.
+
+**Pendiente:** subir imagen de la presentación 10mg y asignar su `_thumbnail_id` a la variación 15408.
+
+**Lección nueva:** NO llamar `$product->save()` después de fijar el stock del padre en instock (WC lo revierte); el fix c debe ir después o evitarse `save()`. Documentado en `PROCEDIMIENTO_PRODUCTO_VARIABLE.md`.

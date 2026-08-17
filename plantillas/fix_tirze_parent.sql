@@ -1,0 +1,1 @@
+UPDATE wp_buDIJ_postmeta SET meta_value='instock' WHERE post_id=15223 AND meta_key='_stock_status';

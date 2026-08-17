@@ -101,6 +101,14 @@ wp elementor flush-css --path=public_html   (si se tocó contenido Elementor)
 
 ---
 
+## ⚠️ Lecciones adicionales (Tirzepatide 2026-08-10)
+- **NO usar `$product->save()` al final del script** después de poner el `_stock_status` del padre en instock: WC recalcula y lo revierte a `outofstock`. El fix c (SQL directo, PASO 5c) debe aplicarse SIEMPRE DESPUÉS de cualquier `save()` del producto, o simplemente NO llamar a `save()` si el atributo/default ya quedó bien.
+- **Variaciones sin imagen:** se pueden crear con `_thumbnail_id` ausente (img=0); el front las muestra sin foto y se puede subir la imagen después con `media_handle_sideload` + asignar `_thumbnail_id` a la variación (no al padre).
+- **Término extra (ej: 15mg):** el script `make_variable` ya crea términos faltantes con `wp_insert_term`; basta listarlos en `$term_names`. El transient se invalida después igualmente.
+- Títulos/descripciones sin dosis: siempre limpiar `post_title`, `post_excerpt` y `post_content` (vía SQL directo) del producto padre al convertirlo en variable, como en Retatrutide.
+
+---
+
 ## Checklist rápido por sintoma
 | Síntoma | Causa probable | Fix |
 |---|---|---|
