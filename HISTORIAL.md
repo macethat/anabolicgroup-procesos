@@ -295,3 +295,20 @@
 **Verificación (frontend):** selector con swatches del plugin woo-variation-swatches: botones `10mg / 30mg (preseleccionado) / 60mg`, select oculto de respaldo con las 3 opciones, botón "Limpiar". Los 3 precios/stock siguen correctos (160/100, 200/100, 250/0).
 
 **Lección:** al crear atributos/términos por SQL (sin pasar por `wc_create_attribute()`/`wp_set_object_terms()`), hay que (a) invalidar el transient `wc_attribute_taxonomies` y (b) asignar los términos al producto en `term_relationships`; de lo contrario el selector de variaciones queda vacío.
+
+---
+
+### 2026-08-10 — Fix: badge "Out of Stock" en Retatrutide variable (stock del padre)
+
+**Síntoma:** tras arreglar el selector, el front mostraba "Out of Stock" junto al título aunque 2 de 3 variaciones estaban disponibles.
+
+**Causa:** el producto padre (15229) conservaba `_stock_status=outofstock` (reliquia de cuando fue producto simple). El theme Nutritix muestra el badge de disponibilidad leyendo el stock del **padre**, no el de las variaciones.
+
+**Solución (SQL directo):**
+- `_stock_status` del padre 15229 → `instock` (el stock real lo manejan las variaciones).
+- Excerpt actualizado: quitado "30mg" de `Retatrutide 30mg es el pináculo...` (el H2/descripción ya se habían corregido antes).
+- Flush de cachés (WP + Nginx).
+
+**Verificación (frontend):** badge "In Stock" en `entry-summary-top`; variaciones con `is_in_stock: 10mg=true, 30mg=true, 60mg=false`; precios 160/200/250 correctos.
+
+**Nota:** el alt/título de la imagen del 30mg (attachment 15233) conserva "Retatrutide 30mg" intencionalmente (es su SEO de imagen).
