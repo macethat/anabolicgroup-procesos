@@ -253,3 +253,26 @@
 - Flush de cachés (WP + Nginx).
 
 **Verificación:** stock 0 / outofstock confirmado en DB.
+
+---
+
+### 2026-08-10 — Retatrutide simple → producto VARIABLE (10mg / 30mg / 60mg)
+
+**Contexto:** El cliente indicó que el producto `Retatrutide 30mg` (antes simple) debía pasar a ser un producto variable con 3 presentaciones. Imágenes nuevas en `C:\suplementos\anabolicos\fotos\` (PNG: `Retatrutide 60mg.png`, `Retratrutide 10mg.png`).
+
+**Proceso:**
+1. Backup DB previo: `backups/db-before-retatrutide-var-20260810.sql`.
+2. Precios/stock confirmados por el cliente: **10mg=160$/100 · 30mg=200$/100 · 60mg=250$/0** (60mg agotado; rectificó de 220 a 250).
+3. Atributo creado vía SQL directo en `woocommerce_attribute_taxonomies` (WC CLI no tiene subcomando para atributos): **`pa_presentacion`** (id=6) con términos **10mg=210, 30mg=211, 60mg=212** (con `register_taxonomy` previo en el script).
+4. Imágenes: PNG convertidas a JPG 1000px (~78KB) y subidas con alt/caption SEO: **10mg=att 15401, 60mg=att 15402** (30mg ya tenía 15233).
+5. Script `make_variable.php` (`$wpdb`): producto 15229 → tipo `variable`, atributo `pa_presentacion` visible/variación, default 30mg, borrado de metas precio/stock del padre, creación de 3 variaciones.
+6. Descripción reescrita (vía SQL directo) sin mencionar "30mg" en H2/primer párrafo; ficha técnica con "Concentración: según presentación".
+7. Renombrado el producto: título `Retatrutide 30mg` → **`Retatrutide`** (vía SQL directo; slug/URL intactos).
+8. Flush de cachés (WP + Nginx).
+
+**Resultado (verificado en frontend `https://anabolicgroup.com/product/retatrutide-30mg/`):**
+- Producto padre 15229: `product-type-variable`, `variations_form`, H1 `<title>` = "Retatrutide".
+- Variaciones: **10mg** (15403, 160$, instock, img 15401) · **30mg** (15404, 200$, instock, img 15233) · **60mg** (15405, 250$, outofstock, img 15402).
+- Selector muestra las 3 presentaciones con precios y estado de stock correctos.
+
+**Archivos relacionados (local):** `make_variable.php`, `create_attribute.php`, `upload_imgs.php`. Scripts temporales eliminados del servidor.
