@@ -337,3 +337,30 @@
 **Pendiente:** subir imagen de la presentación 10mg y asignar su `_thumbnail_id` a la variación 15408.
 
 **Lección nueva:** NO llamar `$product->save()` después de fijar el stock del padre en instock (WC lo revierte); el fix c debe ir después o evitarse `save()`. Documentado en `PROCEDIMIENTO_PRODUCTO_VARIABLE.md`.
+
+---
+
+### 2026-08-10 — Creación de productos VMS (AOD9604, GLOW, CJC1295, IPAMORELIN, TB500, TESAMORELIN)
+
+**Contexto:** El cliente fue creando de la lista de péptidos VMS pendientes. Verificar primero si existía en WC; si no → crear como **producto simple** con descripción SEO completa e imagen (PNG→JPG).
+
+**Proceso (repetido por producto):**
+1. Backup DB previo `backups/db-before-<producto>-20260810.sql`.
+2. Verificación previa en WC (`wc product list --search=<nombre>`): ninguno existía como variación ni como otro producto igual.
+3. Imagen PNG→JPG (Pillow 1000px), subida con `media_handle_sideload` + SEO alt/caption/descripción.
+4. `wp_insert_post` (post_type product, publish, slug propio) + `wp_set_object_terms` (cats **205 Péptidos + 206 Inyectables**, brand **208 VMS**, type simple).
+5. Metas: `_regular_price`, `_price`, `_manage_stock=yes`, `_stock=100`, `_stock_status=instock`, `_thumbnail_id`, `_visibility=visible`.
+6. Descripción SEO: `<h2>` con keyword + título de beneficio, párrafo intro, `<ul>` de beneficios, tabla Ficha Técnica (Concentración/Formato/Clase/Marca/Pureza/Almacenamiento), sección usos en investigación, disclaimer estándar.
+7. Flush de cachés (WP + Nginx); verificación HTTP 200 del front.
+
+**Productos creados (todos VMS, categoría Péptidos/Inyectables, stock 100, instock):**
+- **AOD9604 10mg** — 150$ — ID 15413 — img 15412 — https://anabolicgroup.com/product/aod9604-10mg/ (creado antes, sin correr en lote)
+- **GLOW 70mg** — 160$ — ID 15415 — img 15414 — https://anabolicgroup.com/product/glow-70mg/
+- **CJC1295 (Without DAC) 10mg** — 150$ — ID 15417 — img 15416 — https://anabolicgroup.com/product/cjc1295-without-dac-10mg/
+- **IPAMORELIN 10mg** — 130$ — ID 15419 — img 15418 — https://anabolicgroup.com/product/ipamorelin-10mg/
+- **TB500 10mg** — 160$ — ID 15421 — img 15420 — https://anabolicgroup.com/product/tb500-10mg/
+- **TESAMORELIN 10mg** — 160$ — ID 15423 — img 15422 — https://anabolicgroup.com/product/tesamorelin-10mg/
+
+**Verificación:** `wc product get` por ID mostró nombre/slug/precio/stock/categorías/brand correctos; HTTP 200 en los 4 nuevos.
+
+**Lista de los 9 concentrados:** ahora cubiertos GLOW, MOST-C (pendiente), GHK-Cu (ya existía), TESAMORELIN, IPAMORELIN, CJC1295, TB500, BPC-157 5mg (ya existía), NAD (pendiente).
