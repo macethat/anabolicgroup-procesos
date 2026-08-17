@@ -364,3 +364,21 @@
 **Verificación:** `wc product get` por ID mostró nombre/slug/precio/stock/categorías/brand correctos; HTTP 200 en los 4 nuevos.
 
 **Lista de los 9 concentrados:** ahora cubiertos GLOW, MOST-C (pendiente), GHK-Cu (ya existía), TESAMORELIN, IPAMORELIN, CJC1295, TB500, BPC-157 5mg (ya existía), NAD (pendiente).
+
+---
+
+### 2026-08-10 — Creación de producto NAD+ 500mg (VMS simple)
+
+**Contexto:** Continuación de la lista de péptidos VMS. El cliente subió la imagen `nad+ 500mg.png`.
+
+**Proceso:**
+1. Verificación previa: no existía NAD 500mg en WC (búsqueda por título `%NAD%` solo matcheó "CHORIONIC GONADOTROPHIN" por fragmento; `wc product list --search=NAD` devolvía coincidencias parciales irrelevantes).
+2. Backup DB: `backups/db-before-nad-20260810.sql`.
+3. Imagen PNG→JPG (Pillow) y subida con SEO: **NAD+ 500mg = att 15424**.
+4. `wp_insert_post` (simple, publish, slug `nad-500mg`) + cats Péptidos/Inyectables (205/206) + brand VMS (208).
+5. Precio **140$** (archivo maestro), stock 100, instock; descripción SEO completa (energía celular, reparación ADN, sirtuinas, ficha técnica, disclaimer).
+6. Flush de cachés (WP + Nginx).
+
+**Resultado:** **NAD+ 500mg** — ID 15425 — img 15424 — https://anabolicgroup.com/product/nad-500mg/ — HTTP 200.
+
+**De la lista de 9 concentrados queda pendiente:** **MOST-C 40mg** (160$, disponible).
