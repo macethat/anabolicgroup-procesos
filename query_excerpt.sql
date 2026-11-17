@@ -1,0 +1,1 @@
+SELECT post_excerpt FROM wp_buDIJ_posts WHERE ID=15229;

@@ -1,0 +1,43 @@
+REVISION DE CAMBIOS DE PRECIO  -  cat-prod-actualizado.xlsx vs WooCommerce actual
+Comparados: 97 | CON CAMBIO: 31 | iguales: 63 | sin precio: 3 | sin match: 0
+
+=== PRODUCTOS CON CAMBIO DE PRECIO (por marca) ===
+  # MARCA      PRODUCTO                                       ID       WC    NUEVO      DIF      tipo
+  1 EMINENCE   Anstroprime 1 mg                            14483    47.99    54.99    +7.00    simple
+  2 EMINENCE   Boldeprime 200 mg                           14668    58.99    74.99   +16.00    simple
+  3 EMINENCE   Cloprime 50 mg                              14487    49.99    54.99    +5.00    simple
+  4 EMINENCE   Cypoprime 250 mg                            14489    49.99    74.99   +25.00    simple
+  5 EMINENCE   Enaprime 250 mg                             14495    49.99    74.99   +25.00    simple
+  6 EMINENCE   KLENPRIME 0.40 MG                           14501    35.99    54.99   +19.00    simple
+  7 EMINENCE   Klembuterol 0.60mcg 50comp                  14326    49.99    64.99   +15.00    simple
+  8 EMINENCE   LIOPRIME 25 MCG                             14508    36.99    64.99   +28.00    simple
+  9 EMINENCE   Masterolona 25mg (Proviron) 50 comp         14344    59.99    68.99    +9.00    simple
+ 10 EMINENCE   Methandrostenolona 10mg (Dianabol) 50 comp  14318    49.99    59.99   +10.00    simple
+ 11 EMINENCE   OXANPRIME 10 MG                             14512    45.99    64.99   +19.00    simple
+ 12 EMINENCE   OXYMEPRIME 50 MG                            14513    45.99    54.99    +9.00    simple
+ 13 EMINENCE   Proprime 100 mg Propionato                  14515    44.99    64.99   +20.00    simple
+ 14 EMINENCE   Stanozolol 50mg x 50 comp                   14315    49.99    59.99   +10.00    simple
+ 15 EMINENCE   Tamoprime 20 mg                             14547    39.99    49.99   +10.00    simple
+ 16 EMINENCE   Testomix 250 mg                             14548    51.99    78.99   +27.00    simple
+ 17 LANDERLAN  Androlic 25 mg - Oximetolona                14053    38.99    54.99   +16.00    simple
+ 18 LANDERLAN  BOLDENONA UNDECILENATO                      14083    49.99    69.99   +20.00    simple
+ 19 LANDERLAN  Decaland 200 mg                             14557    49.99    74.99   +25.00    simple
+ 20 LANDERLAN  Drostanolona Propionato 10ml                14095    74.99    78.99    +4.00    simple
+ 21 LANDERLAN  HCG 5000 ui                                 15199    45.34    74.99   +29.65    simple
+ 22 LANDERLAN  Nandrolona Fenil NPP 100 mg                 14577    59.99    74.99   +15.00    simple
+ 23 LANDERLAN  Oxitoland 50 mg - Oxandrolona               14001    38.99    64.99   +26.00    simple
+ 24 LANDERLAN  Trembolona Acetato 100mg                    15193    74.99    81.99    +7.00    simple
+ 25 XTLABS     BOLDAPLEX 200 MG                            14600    29.99    75.99   +46.00    simple
+ 26 XTLABS     IGF-1 LR3 1 ml                              14613    30.00   120.00   +90.00    simple
+ 27 XTLABS     Methandroplex 20 mg                         14274    59.99    64.99    +5.00    simple
+ 28 XTLABS     Oxandroplex 10 mg Oxandrolona               14283    59.99    64.99    +5.00    simple
+ 29 XTLABS     Oxiplex 50 mg                               14632    48.99    58.99   +10.00    simple
+ 30 XTLABS     Razor 200 mg                                14447    45.99    74.99   +29.00    simple
+ 31 XTLABS     TURINAPLEX 10 MG                            14653    35.99    64.99   +29.00    simple
+
+=== SIN PRECIO (revisar) ===
+    EMINENCE   CHORIONIC GONADOTROPHIN                    ID= 14995 up=64.99 wc=None
+    LANDERLAN  TESTOLAND DEPOT 200 MG                     ID= 14962 up=74.99 wc=None
+    XTLABS     CLEMBUTREX 0.40 MG                         ID= 14601 up=None wc=None
+
+=== SIN MATCH EN WOOCOMMERCE ===

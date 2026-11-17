@@ -1,0 +1,1 @@
+SELECT meta_key, meta_value FROM wp_buDIJ_postmeta WHERE post_id=15229 AND meta_key IN ('_product_attributes','_default_attributes');

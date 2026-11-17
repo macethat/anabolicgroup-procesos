@@ -1,0 +1,1 @@
+SELECT ID, post_title, LEFT(post_content, 12000) AS css FROM wp_buDIJ_posts WHERE ID IN (8141, 14170);

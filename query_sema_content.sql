@@ -1,0 +1,1 @@
+SELECT post_content FROM wp_buDIJ_posts WHERE ID=15256;

@@ -1,0 +1,1 @@
+UPDATE wp_buDIJ_posts SET post_title='Retatrutide' WHERE ID=15229;

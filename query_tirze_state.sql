@@ -1,0 +1,2 @@
+SELECT tt.term_taxonomy_id, tt.term_id, t.name, t.slug, tt.taxonomy, tt.count FROM wp_buDIJ_term_taxonomy tt JOIN wp_buDIJ_terms t ON t.term_id=tt.term_id WHERE tt.taxonomy='pa_presentacion' ORDER BY tt.term_id;
+SELECT pm.post_id, pm.meta_value FROM wp_buDIJ_postmeta pm WHERE pm.post_id=15223 AND pm.meta_key IN ('_thumbnail_id','_stock_status','_stock','_manage_stock');

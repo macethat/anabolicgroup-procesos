@@ -1,0 +1,1 @@
+SELECT pm.meta_key, pm.meta_value FROM wp_buDIJ_postmeta pm WHERE pm.post_id=15256 AND pm.meta_key IN ('_regular_price','_price','_sale_price','_manage_stock','_stock','_stock_status','_visibility','_thumbnail_id','_sku','_virtual','_downloadable','_external_url','_button_text','_purchase_note','_sold_individually','_backorders','_featured','_product_version');

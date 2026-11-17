@@ -1,0 +1,39 @@
+REPORTE: productos_todos_por_marca (XLSX) vs TIENDA vs MAESTRO Numbers
+
+1) XLSX vs TIENDA PUBLICADA (87 productos): 0 diferencias de precio.
+   -> El archivo XLSX que pusiste coincide EXACTAMENTE con los precios publicados en la tienda.
+
+2) MAESTRO Numbers vs TIENDA PUBLICADA (matches con ratio>=0.85):
+
+MARCA     MAESTRO (referencia)                          M$ TIENDA (publicado)                          T$     ID
+EMINENCE  Drostanolona Propionato 100mg              79.99 Drostanolona Propionato 10ml: Definici   74.99  14095 <-- DIF
+EMINENCE  Testosterona Propionato 100mg              59.99 Testosterona Propionato 100 mg: Corte    30.23  14580 <-- DIF
+EMINENCE  Trembolona Acetato 100mg                   74.99 Trembolona Acetato 100 mg: Fuerza Brut   65.99  14364 <-- DIF
+EMINENCE  Trembolona Enantato 200mg                  64.99 Trembolona Enantato 200 mg: Masa + Fue   64.99  14599
+GENOTROPIN GENTROPIN 210UI                            350.0 Gentropin 210 UI: Masa Magra + Recuper   350.0  14309
+LANDERLAN Boldenona 200mg Gold 10ml                  64.99 Boldenona 250 mg: Volumen Magro + Resi   58.99  14556 <-- DIF
+LANDERLAN Durateston plus Gold 10ml                  74.99 Durateston Plus Gold 10ml: Volumen Sos   74.99  14092
+LANDERLAN Trembolona Acetato Gold 10ml               84.99 Trembolona Acetato 100 mg: Fuerza Brut   65.99  14364 <-- DIF
+LANDERLAN Trembolona Enantato Gold 10ml              74.99 Trembolona Enantato 200 mg: Masa + Fue   64.99  14599 <-- DIF
+VMS       AOD9604 10 mg                              150.0 AOD9604 10mg                             150.0  15413
+VMS       CJC1295 (Without DAC) 10 mg                150.0 CJC1295 (Without DAC) 10mg               150.0  15417
+VMS       GHK-CU 100 mg                              130.0 GHK-Cu 100mg                             130.0  15236
+VMS       GLOW 70 mg                                 160.0 GLOW 70mg                                160.0  15415
+VMS       IPAMORELIN 10 mg                           130.0 IPAMORELIN 10mg                          130.0  15419
+VMS       NAD 500 mg                                 140.0 NAD+ 500mg                               140.0  15425
+VMS       Retatrutide 10 mg                          160.0 Retatrutide                               None  15229 <-- DIF
+VMS       Retatrutide 30 mg                          200.0 Retatrutide                               None  15229 <-- DIF
+VMS       Retatrutide 60 mg                          250.0 Retatrutide                               None  15229 <-- DIF
+VMS       Semaglutide 5 mg                           110.0 Semaglutide 5mg                          120.0  15256 <-- DIF
+VMS       TB500 10 mg                                160.0 TB500 10mg                               160.0  15421
+VMS       TESAMORELIN 10 mg                          160.0 TESAMORELIN 10mg                         160.0  15423
+VMS       Tirzepatide 10 mg                          120.0 Tirzepatide                               None  15223 <-- DIF
+VMS       Tirzepatide 15 mg                          130.0 Tirzepatide                               None  15223 <-- DIF
+VMS       Tirzepatide 30 mg                          160.0 Tirzepatide                               None  15223 <-- DIF
+VMS       Tirzepatide 60 mg                          220.0 Tirzepatide                               None  15223 <-- DIF
+XTLABS    DECAPLEX 300MG                             64.99 Decaplex 300 mg : Volumen Masivo + Art   64.99  14227
+XTLABS    STANOPLEX 10ML                             64.99 Stanoplex 10 ml: Definición Dura + Fue   64.99  14236
+XTLABS    SUSTAPLEX 275MG                            64.99 Sustaplex 275 mg: Volumen Constante +    64.99  14218
+XTLABS    TITAN - 400                                79.99 Titan 400 mg : Masa Dura + Fuerza        79.99  14256
+
+Total matches alta confianza: 29 | con precio distinto: 14

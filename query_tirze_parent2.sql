@@ -1,0 +1,1 @@
+SELECT pm.meta_key, pm.meta_value FROM wp_buDIJ_postmeta pm WHERE pm.post_id=15223 AND pm.meta_key IN ('_stock_status','_stock','_manage_stock','_price','_regular_price');

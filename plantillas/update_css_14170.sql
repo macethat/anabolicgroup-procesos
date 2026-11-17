@@ -1,0 +1,26 @@
+UPDATE wp_buDIJ_posts SET post_content = '/* Fix: tablas de descripciones (ficha tecnica) - envolver palabras sin cortarlas */
+.woocommerce-Tabs-panel table,
+.entry-content table {
+    width: 100%;
+    table-layout: auto;
+}
+
+.woocommerce-Tabs-panel table td,
+.woocommerce-Tabs-panel table th,
+.entry-content table td,
+.entry-content table th {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    vertical-align: top;
+    padding: 8px 12px;
+}
+
+/* columna de etiquetas: ancho minimo para que cabezas largas bajen completas */
+.woocommerce-Tabs-panel table td:first-child,
+.woocommerce-Tabs-panel table th:first-child,
+.entry-content table td:first-child,
+.entry-content table th:first-child {
+    width: 32%;
+    min-width: 170px;
+}' WHERE ID = 14170;

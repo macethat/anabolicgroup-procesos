@@ -1,0 +1,2 @@
+SELECT attribute_id, attribute_name, attribute_label FROM wp_buDIJ_woocommerce_attribute_taxonomies ORDER BY attribute_id;
+SELECT term_id, name, slug FROM wp_buDIJ_terms WHERE term_id IN (210,211,212);

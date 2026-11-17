@@ -1,0 +1,1 @@
+SELECT ID, post_title, post_status, post_name FROM wp_buDIJ_posts WHERE ID=15415;

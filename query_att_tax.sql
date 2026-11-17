@@ -1,0 +1,2 @@
+SELECT attribute_id, attribute_name, attribute_label, attribute_type, attribute_public FROM wp_buDIJ_woocommerce_attribute_taxonomies;
+SELECT option_name, option_value FROM wp_buDIJ_options WHERE option_name LIKE '%attribute_taxonomies%' OR option_name LIKE 'wc_attribute%';

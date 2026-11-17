@@ -1,0 +1,1 @@
+SELECT ID, post_title, post_excerpt, LEFT(post_content, 4000) AS contenido FROM wp_buDIJ_posts WHERE ID=14491;

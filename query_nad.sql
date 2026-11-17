@@ -1,0 +1,1 @@
+SELECT ID, post_title FROM wp_buDIJ_posts WHERE post_type='product' AND (post_title LIKE '%NAD%' OR post_title LIKE '%Nad%' OR post_title LIKE '%nicotinamida%');
