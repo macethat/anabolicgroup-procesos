@@ -16,6 +16,9 @@
 - **Stack:** WordPress 7.0.3 Â· WooCommerce Â· Theme Nutritix (+child) Â· Elementor Pro Â· Rank Math SEO Â· paguelofacil + yappy
 - **Carpeta local del proyecto:** `C:\anabolicgroup`
 - **Repositorio de procesos (GitHub):** `macethat/anabolicgroup-procesos` (https://github.com/macethat/anabolicgroup-procesos)
+- **Repositorio nuevo sitio (GitHub):** `macethat/anabolicos-new-site` (https://github.com/macethat/anabolicos-new-site)
+- **Regla:** todos los repositorios de GitHub se crean SIEMPRE privados.
+- **Subdominio de trabajo:** `test.anabolicgroup.com` (Hestia, sin WordPress)
 - **Ruta del sitio en servidor:** `/home/abgroup/web/anabolicgroup.com/public_html/`
 
 ---
