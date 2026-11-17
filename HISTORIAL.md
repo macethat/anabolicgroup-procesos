@@ -579,3 +579,19 @@
 
 **Nota de seguridad:** los scripts locales de Hestia se sanitizaron (sin contrasena ni token) antes de commitear. `accesos.txt` sigue en `.gitignore`.
 
+### 2026-11-17 - Analisis de viabilidad: sitio catalogo Python + MySQL en test.anabolicgroup.com
+
+**Objetivo:** tienda-catalogo (sin pasarela de pago) con boton de contacto por WhatsApp, construida en Python + MySQL, replicando un sitio modelo con colores y variaciones de diseno minimas.
+
+**Hallazgos del entorno:**
+- Python 3.12.3 + `venv` OK; **sin pip** (se bootstrapea con `get-pip.py`; salida a internet OK, pypi 200).
+- MySQL/MariaDB local (`bind-address = 127.0.0.1`, sin acceso remoto). Creacion de BD desde el panel Hestia (mysql, localhost, utf8mb4, ilimitadas) -> **lo hacemos nosotros**.
+- Apache con `AllowOverride All`; modulos `proxy`, `proxy_fcgi`, `rewrite`, `fcgid`; **`proxy_http` NO habilitado**.
+- nginx del subdominio **no editable** por el usuario (root).
+- `systemd --user` con **`linger=yes`** (los servicios de usuario persisten).
+- Backups: los hacemos nosotros (`mysqldump` + `tar` + cron).
+
+**Plan acordado:** construir todo lo demas (BD, app Python, plantillas, carga de datos) y dejar el **reverse proxy como ultimo paso** a cargo del admin del hosting (1 linea: `proxy_pass` a `127.0.0.1:8000` o habilitar `proxy_http`). Mientras tanto, pruebas por tunel SSH (`localhost:8000`). Alternativas sin hosting: `proxy_fcgi` + FastCGI, o Python generando sitio estatico.
+
+**Pendiente de insumos:** lista de productos, URL del sitio modelo, colores/logo y numero de WhatsApp.
+
