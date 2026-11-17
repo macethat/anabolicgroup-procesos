@@ -595,3 +595,14 @@
 
 **Pendiente de insumos:** lista de productos, URL del sitio modelo, colores/logo y numero de WhatsApp.
 
+### 2026-11-17 - Fase 1 completada: entorno Python + MySQL + esqueleto (test.anabolicgroup.com)
+
+- **Base de datos:** creada desde el panel Hestia -> **`abgroup_catalogo`** (usuario `abgroup_catalogo@localhost`, utf8mb4). Esquema cargado: `brands`, `categories`, `products`, `presentations`, `settings`.
+- **Python:** `venv` en `/home/abgroup/catalogo/.venv` (bootstrap de pip 26.3 con `get-pip.py`), instalados Flask 3.1.3, Gunicorn, PyMySQL y python-dotenv.
+- **Codigo:** en `/home/abgroup/catalogo` (fuera del docroot; el directorio del subdominio es de solo lectura). Versionado en `site/` del repo.
+- **.env:** credenciales reales con `chmod 600` (no versionado; `.env.example` sí).
+- **Servicio:** `systemd --user` **`catalogo.service`** habilitado y activo (`linger=yes` ya activo). Gunicorn escuchando en `127.0.0.1:8000`.
+- **Verificado:** `/health` -> `{"db":1,"status":"ok"}`; `/` renderiza "Catalogo — Anabolic Group"; 0 productos (pendiente de lista).
+- **Preview sin proxy:** tunel SSH `ssh -L 8000:127.0.0.1:8000 -p 1230 abgroup@bolic.panamahosting507.com -N` y abrir `http://localhost:8000`.
+- **Pendiente:** reverse proxy del hosting para publicar; lista de productos, URL del modelo y branding (colores/logo/WhatsApp).
+

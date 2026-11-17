@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Catálogo — Anabolic Group{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Catálogo</h1>
+  <p>Entorno de prueba en construcción. Productos cargados: <strong>{{ total }}</strong>.</p>
+</section>
+
+{% if brands %}
+<section class="panel">
+  <h2>Marcas</h2>
+  <ul class="brand-list">
+    {% for b in brands %}<li>{{ b.name }}</li>{% endfor %}
+  </ul>
+</section>
+{% else %}
+<section class="panel">
+  <p>Aún no hay marcas cargadas.</p>
+</section>
+{% endif %}
+{% endblock %}
