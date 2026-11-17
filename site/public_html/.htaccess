@@ -1,0 +1,10 @@
+# Proxy hacia la app Python (index.php -> 127.0.0.1:8000)
+# Apache tiene AllowOverride All; mod_rewrite habilitado.
+RewriteEngine On
+
+# Si el archivo/path existe (estaticos), servirlo directamente
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Todo lo demás -> index.php (proxy PHP)
+RewriteRule ^ index.php [L,QSA]

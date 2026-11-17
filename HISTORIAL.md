@@ -606,3 +606,14 @@
 - **Preview sin proxy:** tunel SSH `ssh -L 8000:127.0.0.1:8000 -p 1230 abgroup@bolic.panamahosting507.com -N` y abrir `http://localhost:8000`.
 - **Pendiente:** reverse proxy del hosting para publicar; lista de productos, URL del modelo y branding (colores/logo/WhatsApp).
 
+### 2026-11-17 - Publicacion de test.anabolicgroup.com SIN admin del hosting (proxy PHP)
+
+- El admin del hosting indico que se podia resolver por SSH. Se confirmo que `proxy_http` de Apache NO esta habilitado (el `.htaccess` con `[P]` da 500) y el vhost nginx no es editable por el usuario.
+- **Solucion implementada (sin root):** reverse proxy en **PHP**:
+  - `public_html/.htaccess`: `mod_rewrite` -> todo lo que no sea archivo existente va a `index.php`.
+  - `public_html/index.php`: proxy con cURL a `http://127.0.0.1:8000` (reenvia metodo, headers, body, y responde `Location`, `Set-Cookie`, `Content-Type`).
+  - `public_html/static/style.css`: copia servida directo por nginx.
+- **Verificado (publico):** `https://test.anabolicgroup.com` -> **HTTP 200**, SSL Cloudflare valido (`verify=0`), titulo "Catalogo — Anabolic Group"; `/health` -> `{"db":1,"status":"ok"}`; `/static/style.css` -> 200 `text/css`.
+- **Versionado:** `site/public_html/index.php` y `site/public_html/.htaccess`.
+- **Nota:** si el hosting habilita `proxy_http` o un proxy nginx, se puede reemplazar el proxy PHP por el nativo (mejor rendimiento). El proxy PHP es funcional para el catalogo.
+
