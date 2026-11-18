@@ -854,3 +854,7 @@ Renombrado a **Decaprime-P 100 mg** (slug decaprime-p-100-mg), codigo EMI-VOL-01
 La web oficial de Eminence esta caida (error de PHP/MySQL, "Requirements Not Met"), asi que no se pudo consultar su catalogo. La caja del producto en WooCommerce confirma que es de Eminence: "Chorionic Gonadotrophin For Injection BP - Hormoprime 5000 IU - 5000 IU x 1 Vial".
 
 Renombrado a **Hormoprime 5000 UI** en la lista (fila 13) y en el catalogo (slug hormoprime-5000-ui). Codigo EMI-REC-012, $64.99, sigue oculto porque la lista marca "No" (aunque WooCommerce tiene stock 100). Se quito de pendientes en el informe.
+
+### 2026-11-18 - Metenolona Acetato 25 mg: confirmado
+
+La caja del producto dice "Metenolona Acetato 25 mg - 30 comprimidos - Via Oral - Landerlan". Se resuelve la duda de la dosis; sin cambios de datos. Se quito del apartado de dudas del informe.

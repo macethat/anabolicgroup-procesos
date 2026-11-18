@@ -146,7 +146,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 | Producto | Duda | Estado |
 |---|---|---|
 | Testosterona Propionato 100 mg / “TESTOSTERONA PROPINATO 100mg” | Mismo compuesto, dosis y precio ($64.99), pero el empaque difiere: caja negra “Gold Premium Series” vs caja blanca clásica. ¿Cambio de empaque o dos presentaciones? | Ambos siguen en el catálogo |
-| Metenolona Acetato 25 mg | La ficha oficial de Landerlan no declara los 25 mg (su bula está copiada del inyectable); el dato solo aparece en un distribuidor | Sin cambios |
 
 ---
 
