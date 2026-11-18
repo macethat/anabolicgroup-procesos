@@ -155,7 +155,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 | Producto | Motivo |
 |---|---|
 | **Androlic 25 mg** | La ficha de Landerlan lo describe como **mesterolona** 25 mg (20 comp), no oximetolona. Confirmar con la caja física antes de cambiar el compuesto. |
-| **HCG 5000 UI** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 
 ---
 

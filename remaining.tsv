@@ -1,0 +1,9 @@
+﻿code	name	marca	price	is_published	image
+EMI-REC-012	Hormoprime 5000 UI	EMINENCE	64.99	0	/static/img/chorionic-gonadotrophin.webp
+LAN-REC-018	HCG 5000 UI	LANDERLAN	74.99	0	NULL
+XTL-REC-008	HCG 10.000 UI	XTLABS	74.99	1	/static/img/hcg-10-000-ui.webp
+x
+--- stanoplex ---
+code	name	image
+XTL-DEF-021	Stanoplex 10 mg Estanozolol	NULL
+XTL-DEF-022	Stanoplex 10 ml	/static/img/stanoplex-10-ml.webp
