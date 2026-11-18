@@ -728,3 +728,11 @@ Los dos CSV se reestructuraron en bloques: fila `MARCA: <NOMBRE>` al inicio de c
 Aplicado: 40 productos y 7 etiquetas de presentacion. Restan 2 nombres 100% en mayusculas por ser solo siglas (`HCG 5000 UI`, `HCG 10.000 UI`). Los slugs no cambian, asi que los enlaces siguen validos.
 
 `export_csv.py`: los productos no publicados muestran `No publicado` en la columna de enlace en lugar de quedar vacio. `assign_codes.py`: excepciones `EXACT` actualizadas a los nombres normalizados (codigos sin cambios, 96 codificados).
+
+### 2026-11-18 - Excel con imagenes y enlaces de WooCommerce
+
+Un CSV no puede mostrar imagenes, asi que se agrego `site/scripts/export_xlsx.py`: genera `exports/catalogo-fichas.xlsx` con las miniaturas incrustadas (110x138 px, JPEG), bloques por marca, enlaces clicables y una segunda hoja `Inventario` sin imagenes.
+
+Se agregaron las columnas `wc_id` y `wc_url` a `products` y se rellenaron para los 96 productos (`wc_links.csv`, `scripts/backfill_wc.py`). En el CSV de fichas hay una cuarta columna con el enlace de WooCommerce **solo para los no disponibles**: URL publica si el producto esta publicado en WC (18 casos) o enlace de edicion de wp-admin si esta en borrador (18 casos).
+
+Dependencias nuevas en el venv del servidor: pillow 13.0.0 y openpyxl 3.1.5. Herramienta local `tools/close_csv_windows.ps1` para liberar los CSV antes de regenerarlos.

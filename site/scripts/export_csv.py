@@ -28,7 +28,7 @@ def money(v):
 db = connect()
 with db.cursor() as cur:
     cur.execute("""
-        SELECT p.id, p.code, p.name, p.slug, p.price, p.stock_status, p.is_published,
+        SELECT p.id, p.code, p.name, p.slug, p.price, p.stock_status, p.is_published, p.wc_url,
                b.name AS marca, c.name AS cat
         FROM products p
         JOIN brands b ON b.id = p.brand_id
@@ -69,12 +69,13 @@ def write_csv(path, header, row_for):
     return n, len(blocks)
 
 
-# --- CSV 1: nombre, categoria, enlace ---
+# --- CSV 1: nombre, categoria, enlace, enlace WooCommerce (solo no disponibles) ---
 def rows_fichas(p):
     url = BASE_URL + p["slug"] + "/" if p["is_published"] else "No publicado"
-    yield [p["name"], p["cat"] or "", url]
+    wc = "" if p["is_published"] else (p["wc_url"] or "")
+    yield [p["name"], p["cat"] or "", url, wc]
     for v in by_product.get(p["id"], []):
-        yield [v["label"], "", url]
+        yield [v["label"], "", url, wc]
 
 
 # --- CSV 2: codigo, nombre, categoria, stock, precio ---
@@ -87,7 +88,8 @@ def rows_inventario(p):
 
 
 f1 = os.path.join(OUT_DIR, "catalogo-fichas.csv")
-n1, b1 = write_csv(f1, ["Nombre del producto", "Categoría", "Enlace de la ficha"], rows_fichas)
+n1, b1 = write_csv(f1, ["Nombre del producto", "Categoría", "Enlace de la ficha",
+                        "Enlace ficha WooCommerce (solo no disponibles)"], rows_fichas)
 f2 = os.path.join(OUT_DIR, "catalogo-inventario.csv")
 n2, b2 = write_csv(f2, ["Código", "Nombre del producto", "Categoría", "Status de stock", "Precio"],
                    rows_inventario)
