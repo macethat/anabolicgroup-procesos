@@ -770,3 +770,9 @@ Se establecio que `cat-prod-actualizado.xlsx` es la base de la informacion. Se d
 - `Clenbutrex Ultra 0.60 mg` (XTL-QUI-005)
 
 Las cajas de WooCommerce indican 40/60 mcg y 0.04 mg, por lo que la lista tiene un error de factor 10 en esas filas; queda pendiente corregirlo **en la lista** y reaplicar. Siguen eliminados los dos duplicados autorizados. Exportaciones regeneradas con los nombres de la lista.
+
+### 2026-11-18 - Auditoria de catalogo contra fuentes oficiales
+
+Revision de los 94 productos contra eminencelabs.com, xt-labs.in y landerlan.com.br (VMS sin catalogo oficial). Resultado completo en `AUDITORIA-MARCAS.md`.
+
+Hallazgos: 4 dosis con error de factor 10 (Klenprime 40/60 mcg, Clenbutrex 40/60 mcg); 8 nombres comerciales distintos (Anastroprime, Proviprime, Metaprime, Arimidext, Oxyplex, Trenboplex, IGF-1 LR3 1 mg); Gentropin y Hutrope no son XT Labs (Genli/Hubio); Androlic 25 mg es mesterolona, no oximetolona; 3 duplicados en XTLABS y 5 en LANDERLAN. Sin cambios aplicados: la lista sigue siendo la base y las correcciones deben hacerse alli primero.
