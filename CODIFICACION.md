@@ -111,10 +111,10 @@ a mano.
 | `EMI-VOL-005` | Enaprime 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-008` | Oxymeprime 50 mg | VOL · Volumen / masa magra | Orales | Público |
 | `EMI-VOL-009` | Proprime 100 mg Propionato | VOL · Volumen / masa magra | Inyectables | Público |
-| `EMI-VOL-011` | Testomix 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
+| `EMI-VOL-011` | Testo-Mix 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-016` | Metaprime 10 mg | VOL · Volumen / masa magra | Orales | Oculto |
 | `EMI-VOL-017` | Decaprime 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `EMI-VOL-018` | Decaprime-P 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
+| `EMI-VOL-018` | DecaPrime-P 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
 
 ### LANDERLAN
 

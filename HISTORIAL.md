@@ -844,3 +844,7 @@ El usuario confirmo que el producto es de 10 mg con 60 unidades y que la imagen 
 La caja del producto (Eminence Labs) dice **DecaPrime-P**, Nandrolona Fenilpropionato 100 mg/ml, 10 ampollas de 1 ml. No es un producto ajeno al catalogo: lo que fallaba era el nombre ("Decaprime NPP 100 mg") y que la web oficial de Eminence estuvo caida (500) durante la auditoria, por eso no se encontro.
 
 Renombrado a **Decaprime-P 100 mg** (slug decaprime-p-100-mg), codigo EMI-VOL-018 sin cambios, $59.99, publicado. Se quito de pendientes y se agrego a la tabla de nombres comerciales del informe.
+
+### 2026-11-18 - Testo-Mix 250 mg (nombre oficial)
+
+"Testomix 250 mg" pasó a **Testo-Mix 250 mg** en la lista (fila 12) y en el catálogo (slug testo-mix-250-mg). Código EMI-VOL-011 sin cambios, $78.99, publicado. También se dejó como DecaPrime-P 100 mg el producto de Eminence. Regenerados CSV/Excel (87 miniaturas) y el informe Word.
