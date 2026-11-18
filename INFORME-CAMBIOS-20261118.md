@@ -2,6 +2,7 @@
 
 **Fecha:** 18 de noviembre de 2026
 **Base:** `cat-prod-actualizado.xlsx` (lista de precios) + WooCommerce (fotos, descripciones, stock)
+**Objeto:** verificar la correspondencia de datos —nombre, compuesto, dosis, presentación y precio— entre la lista, el catálogo y la web de cada marca.
 **Catálogo resultante:** 87 productos · 60 publicados · 27 no publicados
 **Sitio:** https://test.anabolicgroup.com
 
@@ -87,7 +88,28 @@ Se comparó la fotografía de cada par para confirmar que era el mismo producto.
 - `exports/catalogo-fichas.xlsx`: igual que el CSV de fichas pero **con las fotos incrustadas** (86 miniaturas), más una hoja de inventario.
 - Todos agrupados en bloques por marca, con encabezado y separación.
 
-### 1.9 Ajustes técnicos del sitio
+### 1.9 Péptidos VMS verificados
+
+Los 14 péptidos de la marca propia se contrastaron con la web actual (anabolicgroup.com). **Nombre, presentación, precio y stock coinciden en los 14.**
+
+| Producto | Presentación | Precio web | Precio catálogo | Estado |
+|---|---|---|---|---|
+| AOD9604 | 10 mg | 150.00 | 150.00 | Coincide |
+| BPC-157 | 5 mg | 120.00 | 120.00 | Coincide |
+| CJC1295 (Without DAC) | 10 mg | 150.00 | 150.00 | Coincide |
+| GHK-Cu | 100 mg | 130.00 | 130.00 | Coincide |
+| GLOW | 70 mg | 160.00 | 160.00 | Coincide |
+| IGF-1 LR3 | 1 mg | 120.00 | 120.00 | Coincide |
+| Ipamorelin | 10 mg | 130.00 | 130.00 | Coincide |
+| MOTS-C | 40 mg | 160.00 | 160.00 | Coincide |
+| NAD+ | 500 mg | 140.00 | 140.00 | Coincide |
+| Retatrutide | 10 / 30 / 60 mg | 160 / 200 / 250 | 160 / 200 / 250 | Coincide |
+| Semaglutide | 5 mg | 120.00 | 120.00 | Coincide |
+| TB500 | 10 mg | 160.00 | 160.00 | Coincide |
+| Tesamorelin | 10 mg | 160.00 | 160.00 | Coincide |
+| Tirzepatide | 10 / 15 / 30 / 60 mg | 120 / 130 / 160 / 220 | 120 / 130 / 160 / 220 | Coincide |
+
+### 1.10 Ajustes técnicos del sitio
 
 - Presentaciones con precio y stock por variante.
 - Filtro por categoría y por marca, y buscador por nombre.
@@ -120,8 +142,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 | **Chorionic Gonadotrophin** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 | **Decaprime NPP 100 mg** | Eminence solo publica Decaprime 200 (decanoato); no hay NPP en su catálogo. |
 | **Stanozolol 50 mg** (oral e inyectable) | Excluido desde el inicio de la migración, a la espera de tu decisión. |
-| **Péptidos VMS** (14 productos) | Marca propia: hay que verificarlos contra el catálogo de anabolicgroup.com, no contra un fabricante externo. |
-| **Fotos de mejor calidad** | Pendiente reemplazar las imágenes actuales por material propio. |
 
 ---
 

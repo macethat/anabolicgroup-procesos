@@ -1,0 +1,15 @@
+﻿code	name	slug	price	stock_status	is_published	pres
+VMS-MET-001	AOD9604 10 mg	aod9604-10mg	150.00	instock	1	NULL
+VMS-REP-002	BPC-157 5 mg	bpc-157-5mg	120.00	instock	1	NULL
+VMS-GH-003	CJC1295 (Without DAC) 10 mg	cjc1295-without-dac-10mg	150.00	instock	1	NULL
+VMS-DER-004	GHK-Cu 100 mg	ghk-cu-100mg	130.00	instock	1	NULL
+VMS-DER-005	GLOW 70 mg	glow-70mg	160.00	instock	1	NULL
+VMS-GH-006	IGF-1 LR3 1 mg	igf-1-lr3-1mg	120.00	instock	1	NULL
+VMS-GH-007	Ipamorelin 10 mg	ipamorelin-10mg	130.00	instock	1	NULL
+VMS-MET-008	MOTS-C 40 mg	mots-c-40mg	160.00	instock	1	NULL
+VMS-MET-009	NAD+ 500 mg	nad-500mg	140.00	instock	1	NULL
+VMS-MET-013	Retatrutide	retatrutide	160.00	instock	1	10 mg 160.00 | 30 mg 200.00 | 60 mg 250.00
+VMS-MET-010	Semaglutide 5 mg	semaglutide-5mg	120.00	instock	1	NULL
+VMS-REP-011	TB500 10 mg	tb500-10mg	160.00	instock	1	NULL
+VMS-GH-012	Tesamorelin 10 mg	tesamorelin-10mg	160.00	instock	1	NULL
+VMS-MET-014	Tirzepatide	tirzepatide	120.00	instock	1	10 mg 120.00 | 15 mg 130.00 | 30 mg 160.00 | 60 mg 220.00
