@@ -658,8 +658,8 @@
 - **Verificado por DOM:** nav render **134x80**, footer **107x64**.
 
 
-### 2026-11-17 - Tipografia display: Italiana (final)
+### 2026-11-17 - Tipografia display: Archivo (sans plana, algo condensada)
 
-- Se probaron Bodoni Moda, **Cormorant Garamond** (resultaba ancha) e **Instrument Serif** (es la del sitio modelo, se descarto).
-- Se eligio **Italiana**: serif display estrecha, alta en contraste y elegante, distinta a la del modelo. Peso 400, hero 96px, letter-spacing 0.
-- **Verificado:** `font-family: Italiana`, weight 400, fuente cargada; captura revisada (look fino y compacto).
+- Se descartaron las serif de alto contraste: **Italiana** (parecia "letra de web de cosmeticos"), **Cormorant Garamond** (ancha) e **Instrument Serif** (es la del modelo).
+- Se eligio **Archivo**: sans geometrica/plana con eje de ancho variable. Peso **700**, ancho **85%**; hero 88px; nombres de tarjeta 600.
+- **Verificado por DOM:** `font-family: Archivo`, weight 700, `font-stretch: 85%`, fuente cargada.
