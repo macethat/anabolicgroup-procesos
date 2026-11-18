@@ -811,3 +811,12 @@ Los 14 peptidos VMS se verificaron contra la web actual (anabolicgroup.com): nom
 Los 14 peptidos VMS y 5 productos de Eminence tenian el extracto con etiquetas HTML y textos de hasta 443 caracteres, que se mostraban como codigo en la tarjeta y desbordaban la ficha. Se reemplazaron por una linea de funcion (estilo "Funcion + beneficio") igual que el resto de las marcas.
 
 Ademas se agrego el filtro `tagline` en `app.py` (quita HTML, entidades y recorta a 80/160 caracteres) usado en la tarjeta y en la ficha, y `.card .tag` con line-clamp de 2 lineas como respaldo. Verificado: 14 tarjetas VMS en una sola linea, sin HTML.
+
+### 2026-11-18 - Correccion de marca: Gentropin y Hutrope
+
+Confirmado por el usuario: Gentropin 210 UI es de Genli Pharma y Hutrope 100 IU de Hubio Pharm (no de XT Labs). Actualizado en la lista y en el catalogo.
+
+- Marcas nuevas: GENLI PHARMA (prefijo GNL) y HUBIO PHARM (prefijo HUB), con sort_order 10 y 11.
+- Codigos: Gentropin XTL-GH-007 -> GNL-GH-001; Hutrope XTL-GH-009 -> HUB-GH-001 (los anteriores quedan retirados).
+- `assign_codes.py` ahora solo asigna codigos a productos sin codigo: nunca reasigna ni rellena huecos. `next_code.py` reconoce las marcas nuevas.
+- Regenerados CSV/Excel (6 bloques de marca), `CODIFICACION.md`, el informe md/docx y el anexo.

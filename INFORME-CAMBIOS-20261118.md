@@ -109,7 +109,16 @@ Los 14 péptidos de la marca propia se contrastaron con la web actual (anabolicg
 | Tesamorelin | 10 mg | 160.00 | 160.00 | Coincide |
 | Tirzepatide | 10 / 15 / 30 / 60 mg | 120 / 130 / 160 / 220 | 120 / 130 / 160 / 220 | Coincide |
 
-### 1.10 Ajustes técnicos del sitio
+### 1.10 Corrección de marca
+
+| Producto | Antes | Ahora | Código |
+|---|---|---|---|
+| Gentropin 210 UI | XTLABS | **GENLI PHARMA** | `GNL-GH-001` |
+| Hutrope 100 IU | XTLABS | **HUBIO PHARM** | `HUB-GH-001` |
+
+Ambos siguen publicados y con su precio ($350.00 y $215.00). No pertenecen a XT Labs: son de Genli Pharma y Hubio Pharm respectivamente. Se crearon las dos marcas con su propio prefijo de código.
+
+### 1.11 Ajustes técnicos del sitio
 
 - Presentaciones con precio y stock por variante.
 - Filtro por categoría y por marca, y buscador por nombre.
@@ -135,8 +144,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 
 | Producto | Motivo |
 |---|---|
-| **Gentropin 210 UI** | No es de XT Labs: es de **Genli Pharma** (7 viales × 30 UI). Hay que decidir si se cambia de marca o se retira. |
-| **Hutrope 100 IU** | No es de XT Labs: es de **Hubio Pharm** (2 viales × 50 UI). Mismo caso. |
 | **Androlic 25 mg** | La ficha de Landerlan lo describe como **mesterolona** 25 mg (20 comp), no oximetolona. Confirmar con la caja física antes de cambiar el compuesto. |
 | **HCG 5000 UI** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 | **Chorionic Gonadotrophin** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
@@ -151,8 +158,10 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 |---|---|
 | EMINENCE | 20 |
 | LANDERLAN | 19 |
-| XTLABS | 34 |
+| XTLABS | 32 |
 | VMS | 14 |
+| GENLI PHARMA | 1 |
+| HUBIO PHARM | 1 |
 | **Total** | **87** |
 
 | Categoría | Productos |

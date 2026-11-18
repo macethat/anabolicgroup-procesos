@@ -4,7 +4,8 @@ from dotenv import dotenv_values
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-PREFIX = {"EMINENCE": "EMI", "LANDERLAN": "LAN", "XTLABS": "XTL", "VMS": "VMS"}
+PREFIX = {"EMINENCE": "EMI", "LANDERLAN": "LAN", "XTLABS": "XTL", "VMS": "VMS",
+          "GENLI PHARMA": "GNL", "HUBIO PHARM": "HUB"}
 FUNCS = {
     "ANT": "Anti-estrogeno / control de E2",
     "QUI": "Quema / perdida de grasa",

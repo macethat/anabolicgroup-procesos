@@ -1,0 +1,10 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+name	varchar(100)	NO	UNI	NULL	
+slug	varchar(120)	NO	UNI	NULL	
+sort_order	int(11)	YES		0	
+id	name	slug	sort_order
+1	EMINENCE	eminence	0
+2	LANDERLAN	landerlan	0
+4	VMS	vms	0
+3	XTLABS	xtlabs	0

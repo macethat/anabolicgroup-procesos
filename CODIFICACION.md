@@ -23,6 +23,8 @@ Ejemplos: `EMI-ANT-001`, `LAN-VOL-012`, `XTL-DEF-017`, `VMS-GH-003`.
 | LANDERLAN | `LAN` |
 | XTLABS | `XTL` |
 | VMS | `VMS` |
+| GENLI PHARMA | `GNL` |
+| HUBIO PHARM | `HUB` |
 
 ## 2. Funciones
 
@@ -167,8 +169,6 @@ a mano.
 | `XTL-DEF-022` | Stanoplex 10 ml | DEF · Definición / dureza | Inyectables | Público |
 | `XTL-DEF-032` | Provix 25 mg - 50 tab | DEF · Definición / dureza | Orales | Oculto |
 | `XTL-DEF-033` | Trenboplex Acetato 100 mg | DEF · Definición / dureza | Inyectables | Oculto |
-| `XTL-GH-007` | Gentropin 210 UI | GH · Hormona de crecimiento | Inyectables | Público |
-| `XTL-GH-009` | Hutrope 100 IU | GH · Hormona de crecimiento | Inyectables | Público |
 | `XTL-GH-010` | Ibutamoren 15 mg | GH · Hormona de crecimiento | Orales | Público |
 | `XTL-GH-011` | IGF-1 LR3 1 mg | GH · Hormona de crecimiento | Inyectables | Oculto |
 | `XTL-QUI-003` | Cardarine 10 mg | QUI · Quema / pérdida de grasa | Orales | Oculto |
@@ -193,3 +193,15 @@ a mano.
 | `XTL-VOL-036` | Testoplex-C 300 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-037` | Testoplex-E 300 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `XTL-VOL-038` | Titan 400 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
+
+### GENLI PHARMA
+
+| Código | Producto | Función | Categoría | Web |
+|---|---|---|---|---|
+| `GNL-GH-001` | Gentropin 210 UI | GH · Hormona de crecimiento | Inyectables | Público |
+
+### HUBIO PHARM
+
+| Código | Producto | Función | Categoría | Web |
+|---|---|---|---|---|
+| `HUB-GH-001` | Hutrope 100 IU | GH · Hormona de crecimiento | Inyectables | Público |

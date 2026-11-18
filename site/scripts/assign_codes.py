@@ -13,7 +13,8 @@ def norm(s):
     s = unicodedata.normalize("NFKD", str(s or "")).encode("ascii", "ignore").decode().lower()
     return re.sub(r"\s+", " ", s)
 
-PREFIX = {"EMINENCE": "EMI", "LANDERLAN": "LAN", "XTLABS": "XTL", "VMS": "VMS"}
+PREFIX = {"EMINENCE": "EMI", "LANDERLAN": "LAN", "XTLABS": "XTL", "VMS": "VMS",
+          "GENLI PHARMA": "GNL", "HUBIO PHARM": "HUB"}
 
 # Excepciones por nombre exacto de la ficha. Mandan sobre cualquier regla.
 EXACT = {
@@ -75,22 +76,32 @@ with db.cursor() as cur:
     if cur.fetchone()["n"] == 0:
         cur.execute("ALTER TABLE products ADD COLUMN code VARCHAR(20) NULL UNIQUE")
         print("columna code agregada")
-    cur.execute("""SELECT p.id, p.name, p.excerpt, p.seo_title, b.name AS brand
+    cur.execute("""SELECT p.id, p.name, p.excerpt, p.seo_title, p.code, b.name AS brand
                    FROM products p JOIN brands b ON b.id=p.brand_id ORDER BY b.name, p.id""")
     products = cur.fetchall()
+    # ultimo numero usado por marca (los codigos existentes nunca se reasignan)
+    cur.execute("""SELECT b.name AS brand, MAX(CAST(SUBSTRING_INDEX(p.code,'-',-1) AS UNSIGNED)) AS mx
+                   FROM products p JOIN brands b ON b.id=p.brand_id
+                   WHERE p.code IS NOT NULL GROUP BY b.name""")
+    counters = {r["brand"]: int(r["mx"] or 0) for r in cur.fetchall()}
 
-counters = defaultdict(int)
 rows = []
+nuevos = 0
 for p in products:
-    prefix = PREFIX.get(p["brand"], "GEN")
+    if p["code"]:
+        fn = p["code"].split("-")[1]
+        rows.append((p["brand"], p["code"], p["name"], fn))
+        continue
+    prefix = PREFIX.get(p["brand"], "GNR")
     fn = func_for(p)
-    counters[p["brand"]] += 1
+    counters[p["brand"]] = counters.get(p["brand"], 0) + 1
     code = f"{prefix}-{fn}-{counters[p['brand']]:03d}"
     with db.cursor() as cur:
         cur.execute("UPDATE products SET code=%s WHERE id=%s", (code, p["id"]))
     rows.append((p["brand"], code, p["name"], fn))
+    nuevos += 1
 
-print(f"Codificados: {len(rows)}")
+print(f"Productos: {len(rows)} | codigos nuevos: {nuevos}")
 cur_brand = None
 for brand, code, name, fn in rows:
     if brand != cur_brand:
