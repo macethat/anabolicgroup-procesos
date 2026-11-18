@@ -654,6 +654,6 @@
 ### 2026-11-17 - Logo del nav mas grande (alta resolucion)
 
 - Se reemplazo el logo por la version en **alta resolucion** (2481x1481, 23 KB) y se **versiono la URL** (`?v=<asset_ver>`) porque Cloudflare servia el logo viejo en cache.
-- **Altura del logo:** nav 58px -> **100px** (nav ~125px de alto); footer 44px -> 60px; movil 42px -> 58px. Objetivo: que se lea "ANABOLIC GROUP".
-- **Verificado por DOM:** natural 2481x1481, render 168x100, nav 125px.
+- **Altura del logo:** se probo 100px (quedaba grande) y se dejo en **80px** (nav ~105px); footer 50px; movil 50px. Objetivo: que se lea "ANABOLIC GROUP".
+- **Verificado por DOM:** natural 2481x1481, render **134x80**.
 
