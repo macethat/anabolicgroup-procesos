@@ -114,7 +114,7 @@ a mano.
 | `EMI-VOL-011` | Testomix 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-016` | Metaprime 10 mg | VOL · Volumen / masa magra | Orales | Oculto |
 | `EMI-VOL-017` | Decaprime 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `EMI-VOL-018` | Decaprime NPP 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
+| `EMI-VOL-018` | Decaprime-P 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
 
 ### LANDERLAN
 

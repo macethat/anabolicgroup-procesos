@@ -838,3 +838,9 @@ Catalogo: 89 productos, 60 publicados (EMINENCE 22). Regenerados CSV/Excel (88 m
 ### 2026-11-18 - Stanoplex 10 mg: confirmado 10 mg / 60 tabletas
 
 El usuario confirmo que el producto es de 10 mg con 60 unidades y que la imagen actual (caja de 5 mg, 100 tabletas) es incorrecta. Se quito la foto del producto para no mostrar una dosis equivocada; queda sin imagen hasta recibir la correcta. Datos, precio ($59.99) y publicacion sin cambios. Se quito la duda del informe y se regeneraron CSV/Excel (87 miniaturas).
+
+### 2026-11-18 - Decaprime-P 100 mg: nombre correcto
+
+La caja del producto (Eminence Labs) dice **DecaPrime-P**, Nandrolona Fenilpropionato 100 mg/ml, 10 ampollas de 1 ml. No es un producto ajeno al catalogo: lo que fallaba era el nombre ("Decaprime NPP 100 mg") y que la web oficial de Eminence estuvo caida (500) durante la auditoria, por eso no se encontro.
+
+Renombrado a **Decaprime-P 100 mg** (slug decaprime-p-100-mg), codigo EMI-VOL-018 sin cambios, $59.99, publicado. Se quito de pendientes y se agrego a la tabla de nombres comerciales del informe.
