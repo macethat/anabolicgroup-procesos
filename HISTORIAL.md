@@ -716,3 +716,7 @@ El proxy PHP no reenviaba `Host`, asi que Flask generaba `https://127.0.0.1:8000
 - `exports/catalogo-inventario.csv`: Codigo, Nombre, Categoria, Status de stock, Precio.
 
 Productos con presentaciones: fila del producto principal (con codigo/enlace) y debajo una fila por presentacion (sin codigo ni categoria, con su stock y precio). Totales: 103 filas (96 productos + 7 presentaciones); 67 con enlace, 36 sin enlace; 96 con codigo.
+
+### 2026-11-18 - CSV por bloques de marca
+
+Los dos CSV se reestructuraron en bloques: fila `MARCA: <NOMBRE>` al inicio de cada bloque y fila vacia de separacion entre marcas. Orden de bloques igual al del sitio: EMINENCE, LANDERLAN, VMS, XTLABS. Columnas sin cambios; las presentaciones siguen bajo su producto principal.

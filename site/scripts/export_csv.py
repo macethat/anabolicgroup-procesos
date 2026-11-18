@@ -28,8 +28,8 @@ def money(v):
 db = connect()
 with db.cursor() as cur:
     cur.execute("""
-        SELECT p.id, p.code, p.name, p.slug, p.price, p.stock_status, p.presentation, p.is_published,
-               c.name AS cat, b.sort_order AS bs
+        SELECT p.id, p.code, p.name, p.slug, p.price, p.stock_status, p.is_published,
+               b.name AS marca, c.name AS cat
         FROM products p
         JOIN brands b ON b.id = p.brand_id
         LEFT JOIN categories c ON c.id = p.category_id
@@ -45,34 +45,52 @@ by_product = {}
 for r in pres:
     by_product.setdefault(r["product_id"], []).append(r)
 
+# Agrupa por marca conservando el orden de la consulta
+blocks = []
+for p in products:
+    if not blocks or blocks[-1][0] != p["marca"]:
+        blocks.append((p["marca"], []))
+    blocks[-1][1].append(p)
+
+
+def write_csv(path, header, row_for):
+    n = 0
+    with open(path, "w", encoding="utf-8-sig", newline="") as fh:
+        w = csv.writer(fh, quoting=csv.QUOTE_MINIMAL, lineterminator="\r\n")
+        w.writerow(header)
+        for i, (marca, items) in enumerate(blocks):
+            if i:
+                w.writerow([""] * len(header))       # separación entre bloques
+            w.writerow([f"MARCA: {marca}"] + [""] * (len(header) - 1))
+            for p in items:
+                for row in row_for(p):
+                    w.writerow(row)
+                    n += 1
+    return n, len(blocks)
+
+
 # --- CSV 1: nombre, categoria, enlace ---
-f1 = os.path.join(OUT_DIR, "catalogo-fichas.csv")
-n1 = 0
-with open(f1, "w", encoding="utf-8-sig", newline="") as fh:
-    w = csv.writer(fh, quoting=csv.QUOTE_MINIMAL, lineterminator="\r\n")
-    w.writerow(["Nombre del producto", "Categoría", "Enlace de la ficha"])
-    for p in products:
-        url = BASE_URL + p["slug"] + "/" if p["is_published"] else ""
-        w.writerow([p["name"], p["cat"] or "", url])
-        n1 += 1
-        for v in by_product.get(p["id"], []):
-            w.writerow([v["label"], "", url])
-            n1 += 1
+def rows_fichas(p):
+    url = BASE_URL + p["slug"] + "/" if p["is_published"] else ""
+    yield [p["name"], p["cat"] or "", url]
+    for v in by_product.get(p["id"], []):
+        yield [v["label"], "", url]
+
 
 # --- CSV 2: codigo, nombre, categoria, stock, precio ---
-f2 = os.path.join(OUT_DIR, "catalogo-inventario.csv")
-n2 = 0
-with open(f2, "w", encoding="utf-8-sig", newline="") as fh:
-    w = csv.writer(fh, quoting=csv.QUOTE_MINIMAL, lineterminator="\r\n")
-    w.writerow(["Código", "Nombre del producto", "Categoría", "Status de stock", "Precio"])
-    for p in products:
-        w.writerow([p["code"], p["name"], p["cat"] or "",
-                    STOCK.get(p["stock_status"], p["stock_status"]), money(p["price"])])
-        n2 += 1
-        for v in by_product.get(p["id"], []):
-            w.writerow(["", v["label"], "",
-                        STOCK.get(v["stock_status"], v["stock_status"]), money(v["price"])])
-            n2 += 1
+def rows_inventario(p):
+    yield [p["code"], p["name"], p["cat"] or "",
+           STOCK.get(p["stock_status"], p["stock_status"]), money(p["price"])]
+    for v in by_product.get(p["id"], []):
+        yield ["", v["label"], "",
+               STOCK.get(v["stock_status"], v["stock_status"]), money(v["price"])]
 
-print(f"{f1}: {n1} filas")
-print(f"{f2}: {n2} filas")
+
+f1 = os.path.join(OUT_DIR, "catalogo-fichas.csv")
+n1, b1 = write_csv(f1, ["Nombre del producto", "Categoría", "Enlace de la ficha"], rows_fichas)
+f2 = os.path.join(OUT_DIR, "catalogo-inventario.csv")
+n2, b2 = write_csv(f2, ["Código", "Nombre del producto", "Categoría", "Status de stock", "Precio"],
+                   rows_inventario)
+
+print(f"{f1}: {n1} filas de producto en {b1} bloques")
+print(f"{f2}: {n2} filas de producto en {b2} bloques")
