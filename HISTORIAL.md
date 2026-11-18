@@ -858,3 +858,9 @@ Renombrado a **Hormoprime 5000 UI** en la lista (fila 13) y en el catalogo (slug
 ### 2026-11-18 - Metenolona Acetato 25 mg: confirmado
 
 La caja del producto dice "Metenolona Acetato 25 mg - 30 comprimidos - Via Oral - Landerlan". Se resuelve la duda de la dosis; sin cambios de datos. Se quito del apartado de dudas del informe.
+
+### 2026-11-18 - HCG 5000 UI Landerlan: datos oficiales
+
+Consultada la ficha oficial (landerlan.com.br): "HCG humano 5.000ui Landerlan gold", gonadotropina corionica humana USP 5000 UI (vial liofilizado) + ampolla de 1 ml de cloruro de sodio 0.9%, via IM/SC.
+
+Aplicado en LAN-REC-018: descripcion completa y tagline "Recuperacion hormonal + Fertilidad"; precio 74.99 y oculto (la lista dice "No"). La imagen no se pudo descargar: el servidor de Landerlan corta la descarga a 32 KB y desde el hosting responde 522; queda pendiente de recibirla.
