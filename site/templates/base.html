@@ -3,21 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}Anabolic Group{% endblock %}</title>
+<title>{% block title %}{{ site_name }} — Catálogo{% endblock %}</title>
+<meta name="description" content="{% block description %}Catálogo de compuestos y péptidos de Anabolic Group. Consulta disponibilidad y precios por WhatsApp.{% endblock %}">
+<meta property="og:title" content="{% block ogtitle %}{{ site_name }}{% endblock %}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/static/img/logo.png">
+<link rel="icon" href="/static/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="/">Anabolic Group</a>
-    <span class="badge">test</span>
+<div id="prog"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="wordmark" href="/" aria-label="{{ site_name }}"><img src="/static/img/logo.png" alt="{{ site_name }}" width="300" height="179"></a>
+    <div class="nav-links">
+      <a href="/#catalogo">Catálogo</a>
+      <a href="/#marcas">Marcas</a>
+      <a class="nav-wa" href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
-</header>
-<main class="container">
-  {% block content %}{% endblock %}
+</nav>
+
+<main>
+{% block content %}{% endblock %}
 </main>
-<footer class="site-footer">
-  <div class="container">© Anabolic Group · entorno de prueba</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <img class="foot-logo" src="/static/img/logo.png" alt="{{ site_name }}" width="300" height="179">
+    <span>Anabolic Group · Panamá · Uso referencial</span>
+    <span class="foot-links">
+      <a href="/privacidad">Privacidad</a>
+      <a href="/terminos">Términos</a>
+      <span>© {{ year }}</span>
+    </span>
+  </div>
 </footer>
+
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="p-plate">
+    <img id="d-img" src="" alt="">
+    <button class="p-close" id="d-close" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="p-body">
+    <span class="label" id="d-brand"></span>
+    <h3 id="d-name"></h3>
+    <div class="p-sub" id="d-tag"></div>
+    <dl class="p-dl">
+      <dt>Categoría</dt><dd id="d-cat"></dd>
+      <dt>Marca</dt><dd id="d-br"></dd>
+      <dt>Disponibilidad</dt><dd id="d-stock"></dd>
+    </dl>
+    <p class="p-desc" id="d-desc"></p>
+    <div class="p-price" id="d-price"></div>
+    <a class="btn-wa" id="d-wa" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    <a class="link-more" id="d-page" href="#">Ver ficha completa →</a>
+  </div>
+</aside>
+
+<script>window.WA_NUMBER = "{{ whatsapp }}";</script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

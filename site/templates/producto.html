@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ p.name }} — {{ p.brand }} | {{ site_name }}{% endblock %}
+{% block description %}{{ p.excerpt or (p.name ~ ' de ' ~ p.brand ~ ' en Anabolic Group. Consulta disponibilidad y precio por WhatsApp.') }}{% endblock %}
+
+{% block content %}
+<section class="product">
+  <div class="wrap product-grid">
+    <div class="product-media">
+      {% if p.image %}<img src="{{ p.image }}" alt="{{ p.name }} {{ p.brand }}" width="720" height="900">{% endif %}
+    </div>
+    <div class="product-info">
+      <span class="label">{{ p.brand }}</span>
+      <h1>{{ p.name }}</h1>
+      {% if p.excerpt %}<p class="tagline">{{ p.excerpt }}</p>{% endif %}
+      <div class="price-big">
+        {% if p.price %}${{ '%.2f'|format(p.price) }} <span>USD</span>{% else %}Consultar{% endif %}
+      </div>
+      <dl class="specs">
+        <dt>Marca</dt><dd>{{ p.brand }}</dd>
+        <dt>Categoría</dt><dd>{{ p.category or '—' }}</dd>
+        <dt>Disponibilidad</dt><dd>{{ 'Disponible' if p.stock_status == 'instock' else 'Agotado' }}</dd>
+      </dl>
+      <p class="aviso"><b>Consulta a tu médico antes de consumir este tipo de productos.</b> La información es referencial; requiere asesoría y supervisión de un profesional de la salud.</p>
+      <a class="btn-wa" href="{{ wa_link('Hola, me interesa ' ~ p.name ~ ' (' ~ p.brand ~ '). ¿Está disponible?') }}" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <p class="disclaimer">Producto de uso referencial. No automedicarse. Su uso está supeditado a la completa responsabilidad del comprador.</p>
+      <a class="back" href="/#catalogo">← Volver al catálogo</a>
+    </div>
+  </div>
+</section>
+
+{% if related %}
+<section class="wrap related">
+  <span class="label">Relacionados</span>
+  <h2>También te puede interesar</h2>
+  <div class="shelf">
+    {% for r in related %}
+    <a class="card" href="/producto/{{ r.slug }}/">
+      <span class="plate">
+        {% if r.image %}<img src="{{ r.image }}" alt="{{ r.name }} {{ r.brand }}" loading="lazy" width="520" height="650">{% endif %}
+        <span class="bar"></span>
+      </span>
+      <span class="meta">
+        <span class="brand">{{ r.brand }}</span>
+        <span class="nm">{{ r.name }}</span>
+        <span class="row">
+          <span class="price">{% if r.price %}${{ '%.2f'|format(r.price) }}{% else %}Consultar{% endif %}</span>
+          <span class="open">Ver ficha</span>
+        </span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<script type="application/ld+json">{{ jsonld|tojson }}</script>
+{% endblock %}

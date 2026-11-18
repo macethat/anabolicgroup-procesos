@@ -617,3 +617,21 @@
 - **Versionado:** `site/public_html/index.php` y `site/public_html/.htaccess`.
 - **Nota:** si el hosting habilita `proxy_http` o un proxy nginx, se puede reemplazar el proxy PHP por el nativo (mejor rendimiento). El proxy PHP es funcional para el catalogo.
 
+### 2026-11-17 - Prototipo visual del nuevo sitio (test.anabolicgroup.com)
+
+**Branding (extraido del sitio actual):** logo blanco (`logotipo-en-valor-blanco`), WhatsApp **50760990195**, acento **rojo #E20613**, base oscura. Tipografias elegidas: **Bodoni Moda** (display), **Manrope** (texto), **JetBrains Mono** (etiquetas).
+
+**Datos:** se cargaron **40 productos reales** (publicados con imagen) del catalogo actual en MySQL: EMINENCE 12, XTLABS 13, LANDERLAN 8, VMS 7. Imagenes copiadas al docroot (`public_html/static/img`).
+
+**App (Python/Flask, server-side para SEO):**
+- Rutas: `/`, `/marca/<slug>/`, `/producto/<slug>/`, `/api/producto/<slug>`, `/contacto` (redirige a WhatsApp), `/health`.
+- Fichas con `JSON-LD Product`, meta title/description y Open Graph.
+- UI: hero, filtros por marca, grid de tarjetas, **drawer lateral** (quick view via API), banda de contacto y boton **WhatsApp** en nav, ficha y drawer.
+- Filtros por marca (decision del cliente). Categoria derivada (Orales/Inyectables/Peptidos) para futuro.
+
+**Verificado (publico):** home 200 con 40 tarjetas y 5 chips; ficha 200 con JSON-LD; API JSON; CSS/logo/imagenes 200. Captura visual revisada: diseno oscuro + rojo, imagenes cargando correctamente.
+
+**Versionado:** `site/` (app, templates, static, scripts, logo) + `site/public_html/` (proxy PHP). Commit pendiente de push.
+
+**Pendiente:** lista definitiva de productos/categorias, ajustes de paleta y detalles, paginas legales (privacidad/terminos/descargo), sitemap/robots y panel o scripts de administracion.
+

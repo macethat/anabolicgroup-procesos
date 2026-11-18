@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — {{ site_name }}{% endblock %}
+{% block content %}
+<section class="product">
+  <div class="wrap" style="max-width:760px">
+    <span class="label">Legal</span>
+    <h1 style="font-size:clamp(32px,4.4vw,50px);margin:12px 0 20px">{{ title }}</h1>
+    <p style="color:var(--ink);font-size:16px;line-height:1.75">{{ body }}</p>
+    <p class="aviso" style="margin-top:26px"><b>Consulta a tu médico antes de consumir este tipo de productos.</b> La información es referencial y requiere asesoría profesional.</p>
+    <a class="back" href="/">← Volver al catálogo</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,21 +1,81 @@
 {% extends "base.html" %}
-{% block title %}Catálogo — Anabolic Group{% endblock %}
+{% block title %}{{ site_name }} — Catálogo de compuestos y péptidos{% endblock %}
+{% block description %}Catálogo de Anabolic Group: compuestos y péptidos de grado profesional. Precios en USD y consulta directa por WhatsApp.{% endblock %}
+
 {% block content %}
-<section class="hero">
-  <h1>Catálogo</h1>
-  <p>Entorno de prueba en construcción. Productos cargados: <strong>{{ total }}</strong>.</p>
+{% if hero %}
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="label rise d1">Catálogo · Panamá</span>
+      <h1 class="rise d2">Compuestos de <em>grado</em><br>profesional</h1>
+      <p class="lead rise d3">Selección de compuestos y péptidos de laboratorio. Precios en USD, disponibilidad sujeta a stock y asesoría por WhatsApp.</p>
+      <div class="stats rise d4">
+        <div><b>{{ products|length }}</b>Productos</div>
+        <div><b>{{ brands|length }}</b>Marcas</div>
+        <div><b>USD</b>Precios</div>
+      </div>
+      <div class="hero-cta rise d5">
+        <a href="#catalogo" class="cta">Ver catálogo</a>
+        <a href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener" class="cta quiet">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
+{% endif %}
+
+<section id="catalogo">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <span class="label">Catálogo</span>
+        <h2>{{ products|length }} productos<br>disponibles</h2>
+      </div>
+      <p class="side">Filtra por marca. Toca cualquier producto para ver su ficha y consultar por WhatsApp.</p>
+    </div>
+
+    <div class="filters" id="marcas" role="group" aria-label="Filtrar por marca">
+      <a class="chip {% if not active_brand %}on{% endif %}" href="/#catalogo">Todas</a>
+      {% for b in brands %}
+      <a class="chip {% if active_brand == b.slug %}on{% endif %}" href="/marca/{{ b.slug }}/">{{ b.name }} <span>{{ b.n }}</span></a>
+      {% endfor %}
+    </div>
+
+    <div class="shelf" id="shelf">
+      {% for p in products %}
+      <a class="card" href="/producto/{{ p.slug }}/" data-slug="{{ p.slug }}">
+        <span class="plate">
+          {% if p.image %}<img src="{{ p.image }}" alt="{{ p.name }} {{ p.brand }}" loading="lazy" width="520" height="650">{% endif %}
+          <span class="bar"></span>
+          {% if p.stock_status != 'instock' %}<span class="sold">Agotado</span>{% endif %}
+        </span>
+        <span class="meta">
+          <span class="brand">{{ p.brand }}</span>
+          <span class="nm">{{ p.name }}</span>
+          {% if p.excerpt %}<span class="tag">{{ p.excerpt }}</span>{% endif %}
+          <span class="row">
+            <span class="price">{% if p.price %}${{ '%.2f'|format(p.price) }}{% else %}Consultar{% endif %}</span>
+            <span class="open">Ver ficha</span>
+          </span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
-{% if brands %}
-<section class="panel">
-  <h2>Marcas</h2>
-  <ul class="brand-list">
-    {% for b in brands %}<li>{{ b.name }}</li>{% endfor %}
-  </ul>
+<section class="close-band" id="contacto">
+  <div class="wrap close-grid">
+    <div>
+      <span class="label">Contacto</span>
+      <h2>¿Buscas algo<br>en concreto?</h2>
+      <p class="muted">Escríbenos por WhatsApp y te confirmamos disponibilidad, presentaciones y precios.</p>
+    </div>
+    <div class="contact-side">
+      <a class="btn-wa" href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <a class="contact-row" href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener"><span>WhatsApp</span><b>+{{ whatsapp }}</b></a>
+    </div>
+  </div>
 </section>
-{% else %}
-<section class="panel">
-  <p>Aún no hay marcas cargadas.</p>
-</section>
-{% endif %}
 {% endblock %}
