@@ -740,3 +740,11 @@ Dependencias nuevas en el venv del servidor: pillow 13.0.0 y openpyxl 3.1.5. Her
 ### 2026-11-18 - Imagenes faltantes
 
 Clembutrex 0.40 mg y Trembolona Acetato 100 mg tenian la foto en la biblioteca de WooCommerce pero sin asignar al producto. Se copiaron a `static/img/` y se actualizo `products.image`. Queda solo HCG 5000 UI sin imagen (no existe en WooCommerce). El Excel pasa a 95 miniaturas.
+
+### 2026-11-18 - Correccion de dosis y eliminacion de duplicado (Clenbutrex)
+
+El archivo de precios traia `Clenbutrex HCL 0.40 mg`, pero la caja dice 0.04 mg (40 mcg). Se corrigio a **Clenbutrex HCL 0.04 mg**, slug `clenbutrex-hcl-0-04-mg`.
+
+Se elimino el duplicado oculto `Clembutrex 0.40 mg` (XTL-QUI-029, sin precio y agotado). El codigo XTL-QUI-029 queda retirado y no se reutiliza. No se toco WooCommerce: el borrador 14601 sigue alli.
+
+Catalogo: 95 productos, 60 publicados. Regenerados los dos CSV, el Excel (94 miniaturas; solo HCG 5000 UI sigue sin foto) y el anexo de `CODIFICACION.md`.
