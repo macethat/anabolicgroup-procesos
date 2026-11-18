@@ -3,6 +3,7 @@ from urllib.parse import quote
 import pymysql
 from flask import Flask, render_template, jsonify, abort, redirect, request, Response
 from dotenv import load_dotenv
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 load_dotenv()
 
@@ -37,6 +38,8 @@ WHERE p.is_published = 1
 
 def create_app():
     app = Flask(__name__)
+    # Respeta X-Forwarded-* del proxy PHP para generar URLs absolutas correctas.
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=0)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-only")
     try:
         ASSET_VER = str(int(os.path.getmtime(os.path.join(app.root_path, "static", "style.css"))))
@@ -149,7 +152,7 @@ def create_app():
                 "price": (f'{p["price"]:.2f}' if p["price"] is not None else ""),
                 "availability": ("https://schema.org/InStock" if p["stock_status"] == "instock"
                                  else "https://schema.org/OutOfStock"),
-                "url": request.url,
+                "url": request.base_url,
             },
         }
         return render_template("producto.html", p=p, related=related,

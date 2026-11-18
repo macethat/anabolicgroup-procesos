@@ -26,6 +26,13 @@ foreach (req_headers() as $k => $v) {
     if (in_array($lk, ['host','content-length','connection','accept-encoding'])) continue;
     $headers[] = "$k: $v";
 }
+// Datos del proxy para que Flask genere URLs absolutas correctas (JSON-LD, canonical).
+$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
+    || (($_SERVER['SERVER_PORT'] ?? '') == '443');
+$headers[] = 'X-Forwarded-Proto: ' . ($https ? 'https' : 'http');
+$headers[] = 'X-Forwarded-Host: ' . ($_SERVER['HTTP_HOST'] ?? 'test.anabolicgroup.com');
+$headers[] = 'X-Forwarded-For: ' . ($_SERVER['REMOTE_ADDR'] ?? '127.0.0.1');
 
 $resp_headers = [];
 $ch = curl_init($backend . $uri);

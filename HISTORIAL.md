@@ -703,3 +703,7 @@
 **Resultado:** 96 productos codificados, secuencias 1..N por marca (EMINENCE 20, LANDERLAN 23, XTLABS 39, VMS 14), 0 duplicados, 0 sin codigo. Funciones: VOL 43, DEF 18, QUI 8, GH 8, MET 7, REC 6, ANT 2, REP 2, DER 2.
 
 **Correcciones de clasificacion:** OXANPRIME -> DEF; Methandrostenolona (Dianabol) -> VOL; Metenolona Acetato/Enantato -> VOL. El codigo es interno: no se muestra en la web ni se toca WooCommerce.
+
+### 2026-11-18 - Proxy: URLs absolutas correctas (canonical / JSON-LD)
+
+El proxy PHP no reenviaba `Host`, asi que Flask generaba `https://127.0.0.1:8000/...` en JSON-LD e imagenes. Se agregaron `X-Forwarded-Proto`, `X-Forwarded-Host` y `X-Forwarded-For` en `public_html/index.php`; `ProxyFix` en `app.py`; `rel=canonical` y `og:url` en `base.html`; `url` del JSON-LD sin query string (`request.base_url`).

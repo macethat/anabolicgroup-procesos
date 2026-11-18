@@ -8,7 +8,9 @@
 <meta name="description" content="{% block description %}Catálogo de compuestos y péptidos de Anabolic Group. Consulta disponibilidad y precios por WhatsApp.{% endblock %}">
 <meta property="og:title" content="{% block ogtitle %}{{ site_name }}{% endblock %}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/static/img/logo.png">
+<meta property="og:url" content="{{ request.base_url }}">
+<meta property="og:image" content="{{ request.url_root.rstrip('/') }}/static/img/logo.png">
+<link rel="canonical" href="{{ request.base_url }}">
 <link rel="icon" href="/static/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
