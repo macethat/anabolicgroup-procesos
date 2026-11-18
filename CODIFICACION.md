@@ -31,7 +31,7 @@ La utilidad es la **función** del compuesto, no la vía de administración.
 | Código | Función | Productos |
 |---|---|---|
 | `ANT` | Anti-estrógeno / control de E2 | 2 |
-| `QUI` | Quema / pérdida de grasa | 7 |
+| `QUI` | Quema / pérdida de grasa | 6 |
 | `FER` | Fertilidad | 0 |
 | `ART` | Articulaciones | 0 |
 | `DEF` | Definición / dureza | 18 |
@@ -72,7 +72,7 @@ La utilidad es la **función** del compuesto, no la vía de administración.
 
 ## 4. Asignación retroactiva
 
-Los 95 productos existentes se codificaron en una sola pasada, ordenados por **ID de creación**
+Los 94 productos existentes se codificaron en una sola pasada, ordenados por **ID de creación**
 en la base (orden de alta original), marca por marca. El resultado son secuencias continuas
 `001..N` por marca (EMINENCE 1-20, LANDERLAN 1-23, XTLABS 1-39, VMS 1-14), sin huecos ni
 duplicados.
@@ -86,7 +86,7 @@ declaradas en `site/scripts/assign_codes.py` (diccionario `EXACT`). Los producto
 las mismas reglas; si el compuesto no aparece, el script devuelve `GEN` y hay que clasificarlo
 a mano.
 
-## Anexo — Catálogo codificado (95 productos)
+## Anexo — Catálogo codificado (94 productos)
 ### EMINENCE
 
 | Código | Producto | Función | Categoría | Web |
@@ -97,8 +97,8 @@ a mano.
 | `EMI-DEF-019` | Drostoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `EMI-DEF-020` | Trenoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `EMI-MET-014` | Lioprime 25 mcg | MET · Metabólico | Orales | Oculto |
-| `EMI-QUI-006` | Klenprime 0.40 mg | QUI · Quema / pérdida de grasa | Orales | Público |
-| `EMI-QUI-013` | Klembuterol 0.60 mcg 50 comp | QUI · Quema / pérdida de grasa | Orales | Oculto |
+| `EMI-QUI-006` | Klenprime 40 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
+| `EMI-QUI-013` | Klenprime 60 mcg | QUI · Quema / pérdida de grasa | Orales | Oculto |
 | `EMI-REC-003` | Cloprime 50 mg | REC · Recuperación / PCT | Orales | Público |
 | `EMI-REC-010` | Tamoprime 20 mg | REC · Recuperación / PCT | Orales | Público |
 | `EMI-REC-012` | Chorionic Gonadotrophin | REC · Recuperación / PCT | Inyectables | Oculto |
@@ -179,8 +179,7 @@ a mano.
 | `XTL-GH-011` | IGF-1 LR3 1 ml | GH · Hormona de crecimiento | Inyectables | Oculto |
 | `XTL-QUI-003` | Cardarine 10 mg | QUI · Quema / pérdida de grasa | Orales | Oculto |
 | `XTL-QUI-004` | Clenbutrex HCL 0.04 mg | QUI · Quema / pérdida de grasa | Orales | Público |
-| `XTL-QUI-005` | Clenbutrex Ultra 0.60 mg | QUI · Quema / pérdida de grasa | Orales | Público |
-| `XTL-QUI-028` | Clembuterol Ultra 0.60 mcg | QUI · Quema / pérdida de grasa | Orales | Oculto |
+| `XTL-QUI-005` | Clenbutrex Ultra 60 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
 | `XTL-REC-008` | HCG 10.000 UI | REC · Recuperación / PCT | Inyectables | Público |
 | `XTL-REC-030` | Clomixt 50 mg - 30 tab | REC · Recuperación / PCT | Orales | Oculto |
 | `XTL-VOL-002` | Boldeplex 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |

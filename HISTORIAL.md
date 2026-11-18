@@ -748,3 +748,14 @@ El archivo de precios traia `Clenbutrex HCL 0.40 mg`, pero la caja dice 0.04 mg 
 Se elimino el duplicado oculto `Clembutrex 0.40 mg` (XTL-QUI-029, sin precio y agotado). El codigo XTL-QUI-029 queda retirado y no se reutiliza. No se toco WooCommerce: el borrador 14601 sigue alli.
 
 Catalogo: 95 productos, 60 publicados. Regenerados los dos CSV, el Excel (94 miniaturas; solo HCG 5000 UI sigue sin foto) y el anexo de `CODIFICACION.md`.
+
+### 2026-11-18 - Correccion de dosis: Clenbutrex Ultra y KlenPrime
+
+Revisadas las cajas en la biblioteca de WooCommerce:
+
+- `Clenbutrex Ultra 0.60 mg` -> **Clenbutrex Ultra 60 mcg** (caja: Clenbuterol HCL 60mcg, 50 tab). Slug `clenbutrex-ultra-60-mcg`.
+- Duplicado eliminado: `Clembuterol Ultra 0.60 mcg` (XTL-QUI-028, mismo precio y misma caja). Respaldo del registro en `backup_deleted_products.sql`.
+- `Klenprime 0.40 mg` -> **Klenprime 40 mcg** (caja: KlenPrime 40, Clenbuterol HCL E.P. 40 mcg, 50 tab). Slug `klenprime-40-mcg`.
+- `Klembuterol 0.60 mcg 50 comp` -> **Klenprime 60 mcg** (caja: KlenPrime 60, 60 mcg). Era la misma linea KlenPrime en otra dosis, no un duplicado; queda oculto.
+
+Catalogo: 94 productos, 60 publicados. Regenerados CSV, Excel (93 miniaturas) y anexo de CODIFICACION.md.
