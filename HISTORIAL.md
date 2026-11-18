@@ -707,3 +707,12 @@
 ### 2026-11-18 - Proxy: URLs absolutas correctas (canonical / JSON-LD)
 
 El proxy PHP no reenviaba `Host`, asi que Flask generaba `https://127.0.0.1:8000/...` en JSON-LD e imagenes. Se agregaron `X-Forwarded-Proto`, `X-Forwarded-Host` y `X-Forwarded-For` en `public_html/index.php`; `ProxyFix` en `app.py`; `rel=canonical` y `og:url` en `base.html`; `url` del JSON-LD sin query string (`request.base_url`).
+
+### 2026-11-18 - Exportacion CSV del catalogo
+
+`site/scripts/export_csv.py` genera dos archivos desde la base:
+
+- `exports/catalogo-fichas.csv`: Nombre, Categoria, Enlace de la ficha (los 36 ocultos van sin enlace).
+- `exports/catalogo-inventario.csv`: Codigo, Nombre, Categoria, Status de stock, Precio.
+
+Productos con presentaciones: fila del producto principal (con codigo/enlace) y debajo una fila por presentacion (sin codigo ni categoria, con su stock y precio). Totales: 103 filas (96 productos + 7 presentaciones); 67 con enlace, 36 sin enlace; 96 con codigo.
