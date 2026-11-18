@@ -669,3 +669,8 @@
 
 - El acento **"grado"** del hero se puso en **Kaushan Script** (brush, rojo), manteniendo **Barlow Condensed 600** para el resto del titular. Tamano 1.12em, sin cursiva sintetica.
 - **Verificado:** `font-family: "Kaushan Script"`, fuente cargada (82.88px); captura revisada: contraste bold-condensada + script roja.
+
+### 2026-11-17 - Vuelta a la tipografia del modelo: Instrument Serif
+
+- A pedido del cliente se restauro **Instrument Serif** (la del sitio modelo) para los titulos, con "grado" en rojo **italica**. Se retiraron Barlow Condensed y Kaushan Script.
+- **Verificado:** `font-family: "Instrument Serif"`, weight 400, hero 94px; captura revisada (look elegante, como el modelo).
