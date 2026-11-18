@@ -693,3 +693,13 @@
 **UI:** ficha con descripcion (HTML de WC); presentaciones con precio; filtro por categoria + marca; buscador `/buscar` (q + cat + marca; si q vacio lista todos de la categoria/marca).
 
 **Verificado:** home 60 productos; /buscar?cat=peptidos=14; /buscar?marca=vms=14; /buscar?q=deca=2; /categoria/orales=21; Retatrutide muestra 10/30/60 con precios; HCG 5000 (no publicado) 404.
+
+### 2026-11-18 - Codificacion interna de productos
+
+**Esquema:** `MARCA-FUNC-SECUENCIA` (ej. `EMI-DEF-017`). Prefijos: EMINENCE=`EMI`, LANDERLAN=`LAN`, XTLABS=`XTL`, VMS=`VMS`. Funcion = utilidad del compuesto (ANT, QUI, FER, ART, DEF, VOL, REC, FUE, MET, REP, GH, DER, GEN). Secuencia por marca (no por funcion), 3 digitos, sin huecos ni reutilizacion.
+
+**Implementacion:** columna `products.code VARCHAR(20) UNIQUE`; `site/scripts/assign_codes.py` (mapeo manual por compuesto + reglas de respaldo + excepciones `EXACT`); `site/scripts/next_code.py` (siguiente codigo libre); `CODIFICACION.md` (reglas + anexo con los 96 codigos).
+
+**Resultado:** 96 productos codificados, secuencias 1..N por marca (EMINENCE 20, LANDERLAN 23, XTLABS 39, VMS 14), 0 duplicados, 0 sin codigo. Funciones: VOL 43, DEF 18, QUI 8, GH 8, MET 7, REC 6, ANT 2, REP 2, DER 2.
+
+**Correcciones de clasificacion:** OXANPRIME -> DEF; Methandrostenolona (Dianabol) -> VOL; Metenolona Acetato/Enantato -> VOL. El codigo es interno: no se muestra en la web ni se toca WooCommerce.

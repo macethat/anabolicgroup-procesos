@@ -1,0 +1,98 @@
+﻿Row,Marca,Producto (archivo),Precio archivo,Publicado archivo,ID WC,Nombre WC,Estado WC,Stock WC,Categoria WC,Imagen,Accion
+0,EMINENCE,Anstroprime 1 mg,54.99,Sí,14483,Anstroprime 1 mg: Control E2 + Definición Seca,publish,instock,Orales,SI,IMPORTAR
+1,EMINENCE,Boldeprime 200 mg,74.99,Sí,14668,Boldeprime 200 mg: Volumen Magro + Resistencia,publish,instock,Inyectables,SI,IMPORTAR
+2,EMINENCE,Cloprime 50 mg,54.99,Sí,14487,Cloprime 50 mg: Recuperación Testo + Fertilidad,publish,instock,Orales,SI,IMPORTAR
+3,EMINENCE,Cypoprime 250 mg,74.99,Sí,14489,Cypoprime 250 mg: Volumen + Fuerza Base,publish,instock,Inyectables,SI,IMPORTAR
+4,EMINENCE,Enaprime 250 mg,74.99,Sí,14495,Enaprime 250 mg: Volumen Sostenido + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+5,EMINENCE,KLENPRIME 0.40 MG,54.99,Sí,14501,KLENPRIME 0.40 MG,publish,instock,Orales,SI,IMPORTAR
+6,EMINENCE,OXANPRIME 10 MG,64.99,Sí,14512,OXANPRIME 10 MG,publish,instock,Orales,SI,IMPORTAR
+7,EMINENCE,OXYMEPRIME 50 MG,54.99,Sí,14513,OXYMEPRIME 50 MG,publish,instock,Orales,SI,IMPORTAR
+8,EMINENCE,Proprime 100 mg Propionato,64.99,Sí,14515,Proprime 100 mg Propionato: Fuerza Rápida + Definición,publish,instock,Inyectables,SI,IMPORTAR
+9,EMINENCE,Tamoprime 20 mg,49.99,Sí,14547,Tamoprime 20 mg: Recuperacion de Testosterona,publish,instock,Orales,SI,IMPORTAR
+10,EMINENCE,Testomix 250 mg,78.99,Sí,14548,Testomix 250 mg: Volumen Sostenido + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+11,EMINENCE,CHORIONIC GONADOTROPHIN,64.99,No,14995,Hormoprime HCG 5000 UI,publish,instock,Inyectables,SI,IMPORTAR
+12,EMINENCE,Klembuterol 0.60mcg 50comp,64.99,No,14502,KlenPrime 60 mcg (Clenbuterol),publish,instock,Orales,SI,IMPORTAR
+13,EMINENCE,LIOPRIME 25 MCG,64.99,No,14508,LioPrime 25 mcg (T3 / Liotironina),publish,instock,Orales,SI,IMPORTAR
+14,EMINENCE,Masterolona 25mg (Proviron) 50 comp,68.99,No,14344,Masterolona 25mg (Proviron) 50 comp,draft,outofstock,,SI,IMPORTAR
+15,EMINENCE,Methandrostenolona 10mg (Dianabol) 50 comp,59.99,No,14511,MetaPrime 10 mg (Dianabol),publish,instock,Orales,SI,IMPORTAR
+16,EMINENCE,Stanozolol 50mg x 50 comp,59.99,No,14546,Stanoprime 50 mg: Definición Dura + Vascular,publish,outofstock,Inyectables,SI,IMPORTAR
+17,LANDERLAN,Androlic 25 mg - Oximetolona,54.99,Sí,14053,Androlic 25 mg - Oximetolona: Volumen Extremo + Fuerza,publish,instock,Orales,SI,IMPORTAR
+18,LANDERLAN,Boldenona 250 mg,64.99,Sí,14556,Boldenona 250 mg: Volumen Magro + Resistencia,publish,instock,Inyectables,SI,IMPORTAR
+19,LANDERLAN,Clenbuterol 0.04 mg,64.99,Sí,14286,Clenbuterol 0.04 mg: Quema Grasa Rápida + Definición,publish,instock,Orales,SI,IMPORTAR
+20,LANDERLAN,Decaland 200 mg,74.99,Sí,14557,Decaland 200 mg: Volumen Masivo + Articulaciones,publish,instock,Inyectables,SI,IMPORTAR
+21,LANDERLAN,Drostanolona Propionato 10ml,78.99,Sí,14095,Drostanolona Propionato 10ml: Definición Dura + Fuerza Seca,publish,instock,Inyectables,SI,IMPORTAR
+22,LANDERLAN,Durateston Plus Gold 10ml,74.99,Sí,14092,Durateston Plus Gold 10ml: Volumen Sostenido + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+24,LANDERLAN,Metenolona Acetato 25 mg,64.99,Sí,14071,Metenolona Acetato 25 mg: Definición Limpia + Masa Magra,publish,instock,Orales,SI,IMPORTAR
+25,LANDERLAN,Metenolona Enantato 100 mg,99.99,Sí,14773,Metenolona Enantato 100 mg: Masa Limpia,publish,instock,Inyectables,SI,IMPORTAR
+26,LANDERLAN,Nandrolona Fenil NPP 100 mg,74.99,Sí,14577,Nandrolona Fenil NPP 100 mg: Volumen Rápido + Articulaciones,publish,outofstock,Inyectables,SI,IMPORTAR
+27,LANDERLAN,OXANDROLAND 10mg,74.99,Sí,14050,OXANDROLAND 10mg,publish,instock,Orales,SI,IMPORTAR
+28,LANDERLAN,Oxandroland 5 mg - Oxandrolona,74.99,Sí,14047,Oxandroland 5 mg - Oxandrolona: Corte Seco + Fuerza,publish,instock,Orales,SI,IMPORTAR
+30,LANDERLAN,Testenat Depot - 250 mg,74.99,Sí,13990,Testenat Depot - 250 mg - Ganancia de Músculo + Fuerza Máxima,publish,instock,Inyectables,SI,IMPORTAR
+31,LANDERLAN,Testoland Depot - 200 mg - Cipionato,74.99,Sí,13987,Testoland Depot - 200 mg - Cipionato - Ganacia de Músculo + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+32,LANDERLAN,Testosterona Propionato 100 mg,64.99,Sí,14580,Testosterona Propionato 100 mg: Corte Rápido + Definición,publish,instock,Inyectables,SI,IMPORTAR
+33,LANDERLAN,Trembolona Enantato 200 mg,74.99,Sí,14599,Trembolona Enantato 200 mg: Masa + Fuerza Nuclear,publish,outofstock,Inyectables,SI,IMPORTAR
+34,LANDERLAN,BOLDENONA UNDECILENATO,69.99,No,14083,BOLDENONA UNDECILENATO,draft,outofstock,,SI,IMPORTAR
+35,LANDERLAN,DROSTENOLAND METIL DROSTANOLONA 10mg,64.99,No,14065,DROSTENOLAND METIL DROSTANOLONA 10mg,draft,outofstock,,SI,IMPORTAR
+36,LANDERLAN,HCG 5000 ui,74.99,No,15199,HCG 5000 ui,draft,instock,,SI,IMPORTAR
+37,LANDERLAN,PRIMOBOLAND ENANTATO GOLD 10ml,99.99,No,14005,PRIMOBOLAND ENANTATO GOLD 10ml,draft,instock,,SI,IMPORTAR
+38,LANDERLAN,TESTOLAND DEPOT 200 MG,74.99,No,14962,TESTOLAND DEPOT 200 MG,draft,instock,Inyectables,SI,IMPORTAR
+39,LANDERLAN,TESTOSTERONA PROPINATO 100mg,64.99,No,14068,TESTOSTERONA PROPINATO 100mg,draft,instock,,SI,IMPORTAR
+40,LANDERLAN,Trembolona Acetato 100mg,81.99,No,15193,Trembolona Acetato 100mg,draft,outofstock,,SI,IMPORTAR
+41,LANDERLAN,TREMBOLONA ENANTADO GOLD,74.99,No,14077,TREMBOLONA ENANTADO GOLD,draft,instock,,SI,IMPORTAR
+43,XTLABS,Arimidex 1 mg Anastrozol,59.99,Sí,14293,Arimidex 1 mg Anastrozol: Control Estrógenos + Seco,publish,instock,Orales,SI,IMPORTAR
+44,XTLABS,Boldeplex 200 mg,64.99,Sí,14234,Boldeplex 200 mg: Volumen Magro + Resistencia,publish,outofstock,Inyectables,SI,IMPORTAR
+45,XTLABS,Cardarine 10 mg,64.99,Sí,14268,Cardarine 10 mg : Resistencia + Quema Grasa,publish,outofstock,Orales,SI,IMPORTAR
+46,XTLABS,Clenbutrex HCL 0.40 mg,59.99,Sí,14602,Clenbutrex HCL 0.40 mg: Quema Grasa + Definición,publish,instock,Orales,SI,IMPORTAR
+47,XTLABS,Clenbutrex Ultra 0.60 mg,64.99,Sí,14603,Clenbutrex Ultra 0.60 mg: Quema Grasa + Definición,publish,instock,Orales,SI,IMPORTAR
+48,XTLABS,Decaplex 300 mg,64.99,Sí,14227,Decaplex 300 mg : Volumen Masivo + Articulaciones,publish,outofstock,Inyectables,SI,IMPORTAR
+49,XTLABS,Gentropin 210 UI,350,Sí,14309,Gentropin 210 UI: Masa Magra + Recuperación,publish,instock,Inyectables,SI,IMPORTAR
+50,XTLABS,HCG 10.000 UI,74.99,Sí,14299,HCG 10.000 UI | Recuperación de Testosterona,publish,instock,Inyectables,SI,IMPORTAR
+51,XTLABS,Hutrope 100 IU,215,Sí,14612,Hutrope 100 IU: Masa Magra + Quema Grasa,publish,instock,Inyectables,SI,IMPORTAR
+52,XTLABS,Ibutamoren 15 mg,64.99,Sí,14265,Ibutamoren 15 mg : Masa Magra + Recuperación,publish,instock,Orales,SI,IMPORTAR
+53,XTLABS,IGF-1 LR3 1 ml,120,Sí,14613,IGF-1 LR3 1 ml: Hiperplasia + Recuperación,publish,outofstock,Inyectables,SI,IMPORTAR
+54,XTLABS,Ligandrol 5 mg,64.99,Sí,14271,Ligandrol 5 mg : Masa Magra + Fuerza Rápida,publish,instock,Orales,SI,IMPORTAR
+55,XTLABS,Mastaplex 100 mg,64.99,Sí,14614,Mastaplex 100 mg: Dureza + Definición,publish,instock,Inyectables,SI,IMPORTAR
+56,XTLABS,Methandroplex 20 mg,64.99,Sí,14274,Methandroplex 20 mg: Volumen Rápido + Fuerza,publish,instock,Orales,SI,IMPORTAR
+57,XTLABS,Nandroplex 100 mg,64.99,Sí,14230,Nandroplex 100 mg: Masa Rápida + Articulaciones,publish,outofstock,Inyectables,SI,IMPORTAR
+58,XTLABS,Ostarine 10 mg,64.99,Sí,14262,Ostarine 10 mg: Masa Magra + Fuerza Segura,publish,instock,Orales,SI,IMPORTAR
+59,XTLABS,Oxandroplex 10 mg Oxandrolona,64.99,Sí,14283,Oxandroplex 10 mg Oxandrolona: Definición + Fuerza Magra,publish,instock,Orales,SI,IMPORTAR
+60,XTLABS,Oxiplex 50 mg,58.99,Sí,14632,Oxiplex 50 mg: Volumen Explosivo + Fuerza,publish,instock,Orales,SI,IMPORTAR
+61,XTLABS,Primoplex 100 mg,74.99,Sí,14241,Primoplex 100 mg: Masa Limpia + Definición,publish,outofstock,Inyectables,SI,IMPORTAR
+62,XTLABS,Razor 200 mg,74.99,Sí,14447,Razor 200 mg: Corte Extremo + Dureza,publish,instock,Inyectables,SI,IMPORTAR
+63,XTLABS,Stanoplex 10 mg Estanozolol,59.99,Sí,14280,Stanoplex 10 mg Estanozolol: Definición Dura + Fuerza,publish,instock,Orales,SI,IMPORTAR
+64,XTLABS,Stanoplex 10 ml,64.99,Sí,14236,Stanoplex 10 ml: Definición Dura + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+65,XTLABS,Sustaplex 275 mg,64.99,Sí,14218,Sustaplex 275 mg: Volumen Constante + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+66,XTLABS,Triple XXX 200 mg Tritrenbolona,79.99,Sí,14259,Triple XXX 200 mg Tritrenbolona: Masa Dura + Fuerza,publish,instock,Inyectables,SI,IMPORTAR
+67,XTLABS,TVR 350 mg Testo Enantato/Propionato,74.99,Sí,14253,TVR 350 mg Testo Enantato/Propionato: Volumen + Fuerza,publish,outofstock,Inyectables,SI,IMPORTAR
+68,XTLABS,TXT 400 mg,74.99,Sí,14656,TXT 400 mg: Volumen + Fuerza,publish,outofstock,Inyectables,SI,IMPORTAR
+69,XTLABS,BOLDAPLEX 200 MG,75.99,No,14600,BOLDAPLEX 200 MG,draft,outofstock,Inyectables,SI,IMPORTAR
+70,XTLABS,CLEMBUTEROL ULTRA 0.60MCG,64.99,No,14290,CLEMBUTEROL ULTRA 0.60MCG,draft,instock,,SI,IMPORTAR
+71,XTLABS,CLEMBUTREX 0.40 MG,—,No,14601,CLEMBUTREX 0.40 MG,draft,outofstock,Orales,SI,IMPORTAR
+72,XTLABS,CLOMIXT 50MG - 30TAB,59.99,No,14297,CLOMIXT 50MG - 30TAB,draft,instock,,SI,IMPORTAR
+73,XTLABS,MASTEPLEX - P,64.99,No,14244,MASTEPLEX - P,draft,instock,,SI,IMPORTAR
+74,XTLABS,PROVIX 25MG - 50TAB,59.99,No,14277,PROVIX 25MG - 50TAB,draft,outofstock,,SI,IMPORTAR
+75,XTLABS,TREMBOPLEX ACETATO,74.99,No,14247,TREMBOPLEX ACETATO,draft,instock,,SI,IMPORTAR
+76,XTLABS,TREMBOPLEX ENANTATO,79.99,No,14250,TREMBOPLEX ENANTATO,draft,instock,,SI,IMPORTAR
+77,XTLABS,TURINAPLEX 10 MG,64.99,No,14653,TURINAPLEX 10 MG,draft,outofstock,Orales,SI,IMPORTAR
+78,VMS,AOD9604 10mg,150,Sí,15413,AOD9604 10mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+79,VMS,BPC-157 5mg,120,Sí,15244,BPC-157 5mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+80,VMS,CJC1295 (Without DAC) 10mg,150,Sí,15417,CJC1295 (Without DAC) 10mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+81,VMS,GHK-Cu 100mg,130,Sí,15236,GHK-Cu 100mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+82,VMS,GLOW 70mg,160,Sí,15415,GLOW 70mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+83,VMS,IGF-1 LR3 1mg,120,Sí,15248,IGF-1 LR3 1mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+84,VMS,IPAMORELIN 10mg,130,Sí,15419,IPAMORELIN 10mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+85,VMS,MOTS-C 40mg,160,Sí,15430,MOTS-C 40mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+86,VMS,NAD+ 500mg,140,Sí,15425,NAD+ 500mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+87,VMS,Retatrutide 10mg,160,Sí,15229,Retatrutide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+88,VMS,Retatrutide 30mg,200,Sí,15229,Retatrutide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+89,VMS,Retatrutide 60mg,250,Sí,15229,Retatrutide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+90,VMS,Semaglutide 5mg,120,Sí,15256,Semaglutide 5mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+91,VMS,TB500 10mg,160,Sí,15421,TB500 10mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+92,VMS,TESAMORELIN 10mg,160,Sí,15423,TESAMORELIN 10mg,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+93,VMS,Tirzepatide 10mg,120,Sí,15223,Tirzepatide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+94,VMS,Tirzepatide 15mg,130,Sí,15223,Tirzepatide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+95,VMS,Tirzepatide 30mg,160,Sí,15223,Tirzepatide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+96,VMS,Tirzepatide 60mg,220,Sí,15223,Tirzepatide,publish,instock,"Péptidos, Inyectables",SI,IMPORTAR
+23,LANDERLAN,Metandrostenolona 10 mg,64.99,Sí,,,,,,,ELIMINAR (fuera de stock LANDERLAN)
+29,LANDERLAN,Oxitoland 50 mg - Oxandrolona,64.99,Sí,,,,,,,ELIMINAR (fuera de stock LANDERLAN)
+42,LANDERLAN,Trembolona Enantato 100mg,42.82,No,,,,,,,REPETIDO (solo se sube uno)
