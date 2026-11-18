@@ -3,7 +3,7 @@
 **Fecha:** 18 de noviembre de 2026
 **Base:** `cat-prod-actualizado.xlsx` (lista de precios) + WooCommerce (fotos, descripciones, stock)
 **Objeto:** verificar la correspondencia de datos —nombre, compuesto, dosis, presentación y precio— entre la lista, el catálogo y la web de cada marca.
-**Catálogo resultante:** 88 productos · 60 publicados · 28 no publicados
+**Catálogo resultante:** 89 productos · 60 publicados · 29 no publicados
 **Sitio:** https://test.anabolicgroup.com
 
 ---
@@ -118,17 +118,14 @@ Los 14 péptidos de la marca propia se contrastaron con la web actual (anabolicg
 
 Ambos siguen publicados y con su precio ($350.00 y $215.00). No pertenecen a XT Labs: son de Genli Pharma y Hubio Pharm respectivamente. Se crearon las dos marcas con su propio prefijo de código.
 
-### 1.12 Stanozolol 50 mg incorporado
+### 1.12 Stanozolol 50 mg y Stanoprime oral
 
-`Stanozolol 50mg x 50 comp` de Eminence era en realidad el **Stanoprime 50 mg inyectable** (50 mg/ml, 10 ampollas de 1 ml). Se corrigió la lista y se agregó al catálogo:
+La fila `Stanozolol 50mg x 50 comp` de Eminence era en realidad el **Stanoprime 50 mg inyectable**, y además se incorporó el **Stanoprime 10 mg oral** que estaba en WooCommerce como borrador.
 
-| Campo | Valor |
-|---|---|
-| Nombre | Stanoprime 50 mg |
-| Marca / categoría | EMINENCE · Inyectables |
-| Precio | $54.99 |
-| Código | `EMI-DEF-021` |
-| Publicación | Oculto (stock 0 en la web) |
+| Producto | Marca · categoría | Precio | Código | Publicación |
+|---|---|---|---|---|
+| Stanoprime 50 mg (50 mg/ml, 10 ampollas) | EMINENCE · Inyectables | $54.99 | `EMI-DEF-021` | Oculto (stock 0) |
+| Stanoprime 10 mg (oral, 50 tabletas) | EMINENCE · Orales | $36.99 | `EMI-DEF-022` | Oculto (sin stock) |
 
 ### 1.13 Ajustes técnicos del sitio
 
@@ -167,18 +164,18 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 
 | Marca | Productos |
 |---|---|
-| EMINENCE | 21 |
+| EMINENCE | 22 |
 | LANDERLAN | 19 |
 | XTLABS | 32 |
 | VMS | 14 |
 | GENLI PHARMA | 1 |
 | HUBIO PHARM | 1 |
-| **Total** | **88** |
+| **Total** | **89** |
 
 | Categoría | Productos |
 |---|---|
 | Inyectables | 44 |
-| Orales | 30 |
+| Orales | 31 |
 | Péptidos | 14 |
 
 Respaldos de la lista: `upgrade-data/backups/`.

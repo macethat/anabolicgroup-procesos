@@ -828,3 +828,9 @@ Confirmado por el usuario: la fila "Stanozolol 50mg x 50 comp" de Eminence corre
 - Lista: fila 18 -> `Stanoprime 50 mg`, descripcion "Definicion Dura + Vascular", Individual, No, 54.99.
 - Catalogo: producto nuevo EMI-DEF-021, marca EMINENCE, categoria Inyectables, $54.99, oculto (stock 0), con foto y descripcion de WooCommerce.
 - Catalogo: 88 productos, 60 publicados. CSV/Excel regenerados (87 miniaturas) y anexo de CODIFICACION actualizado.
+
+### 2026-11-18 - Stanoprime 10 mg oral incorporado
+
+El Stanoprime oral existia en WooCommerce como borrador (STANOPRIME 10 MG, $36.99, sin stock, 50 tabletas). No estaba en la lista de precios. Se agrego la fila a la lista (fila 19) y el producto al catalogo como EMI-DEF-022, marca EMINENCE, categoria Orales, oculto hasta que tenga stock, con foto y descripcion de WooCommerce.
+
+Catalogo: 89 productos, 60 publicados (EMINENCE 22). Regenerados CSV/Excel (88 miniaturas), CODIFICACION y el informe Word.
