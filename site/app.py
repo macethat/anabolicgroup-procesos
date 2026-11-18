@@ -1,4 +1,6 @@
 import os
+import re
+import html
 from urllib.parse import quote
 import pymysql
 from flask import Flask, render_template, jsonify, abort, redirect, request, Response
@@ -25,6 +27,16 @@ def get_db():
 def wa_link(msg):
     return "https://wa.me/%s?text=%s" % (WA_NUMBER, quote(msg))
 
+
+def tagline(value, limit=90):
+    """Texto plano de una linea: quita HTML, entidades y recorta."""
+    txt = re.sub(r"<[^>]+>", " ", str(value or ""))
+    txt = html.unescape(txt)
+    txt = re.sub(r"\s+", " ", txt).strip()
+    if limit and len(txt) > limit:
+        txt = txt[:limit].rsplit(" ", 1)[0].rstrip(",;:.-") + "…"
+    return txt
+
 PRODUCT_SQL = """
 SELECT p.id, p.name, p.slug, p.excerpt, p.description, p.presentation,
        p.price, p.currency, p.stock_status, p.image,
@@ -41,6 +53,7 @@ def create_app():
     # Respeta X-Forwarded-* del proxy PHP para generar URLs absolutas correctas.
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=0)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-only")
+    app.add_template_filter(tagline)
     try:
         ASSET_VER = str(int(os.path.getmtime(os.path.join(app.root_path, "static", "style.css"))))
     except Exception:

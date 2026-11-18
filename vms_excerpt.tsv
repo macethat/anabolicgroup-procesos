@@ -1,0 +1,22 @@
+﻿name	excerpt	largo
+AOD9604 10 mg	<b>AOD9604 10mg</b> p├®ptido de la marca <b>VMS Molecular Science</b> para la oxidaci├│n de grasa y la aceleraci├│n del metabolismo, sin afectar los niveles de glucosa.	165
+BPC-157 5 mg	<b data-path-to-node="4" data-index-in-node="0">BPC-157 (Body Protection Compound)</b> es un pentadec├ípeptido altamente eficaz, reconocido por sus extraordinarias propiedades regenerativas. Su acci├│n se centra en acelerar la curaci├│n, reparaci├│n y reconstrucci	397
+CJC1295 (Without DAC) 10 mg	<b>CJC1295 (Without DAC) 10mg</b> p├®ptido de la marca <b>VMS Molecular Science</b> que estimula la liberaci├│n end├│gena de la hormona del crecimiento.	149
+GHK-Cu 100 mg	<b data-path-to-node="4" data-index-in-node="0">GHK-Cu (Copper Peptide)</b> es un potente complejo de p├®ptidos de cobre ampliamente reconocido en la ciencia antienvejecimiento por su extraordinaria capacidad para reprogramar y regenerar las c├®lulas de la piel 	385
+GLOW 70 mg	<b>GLOW 70mg</b> complejo de p├®ptidos <b>VMS Molecular Science</b> para la recuperaci├│n, la salud de la piel y el bienestar general.	132
+IGF-1 LR3 1 mg	<b data-path-to-node="4" data-index-in-node="0">IGF-1 LR3 (Insulin-like Growth Factor-1 Long Arg3)</b> es un an├ílogo altamente modificado del factor de crecimiento insul├¡nico tipo 1. Gracias a su estructura de cadena extendida, ofrece una vida media significat	443
+Ipamorelin 10 mg	<b>IPAMORELIN 10mg</b> p├®ptido de la marca <b>VMS Molecular Science</b> que estimula la liberaci├│n de la hormona del crecimiento de forma selectiva y segura.	157
+MOTS-C 40 mg	<b>MOTS-C 40mg</b> p├®ptido mitocondrial de la marca <b>VMS Molecular Science</b> para la salud metab├│lica, la oxidaci├│n de grasas y la longevidad celular.	154
+NAD+ 500 mg	<b>NAD+ 500mg</b> coenzima de la marca <b>VMS Molecular Science</b> para la producci├│n de energ├¡a celular, la reparaci├│n del ADN y la vitalidad general.	152
+Retatrutide	<b data-path-to-node="4" data-index-in-node="0">Retatrutide</b> es el pin├ículo de la evoluci├│n en p├®ptidos metab├│licos. Dise├▒ado como un potente <b data-path-to-node="4" data-index-in-node="98">triple agonista</b> (GIP, GLP-1 y Glucag├│n), este compuesto va un 	381
+Semaglutide 5 mg	<b data-path-to-node="4" data-index-in-node="0">Semaglutide 5mg</b> es un potente y reconocido agonista del receptor de GLP-1 (p├®ptido similar al glucag├│n-1), dise├▒ado para ofrecer un control metab├│lico superior y optimizar la gesti├│n del peso corporal. Su ava	372
+TB500 10 mg	<b>TB500 10mg</b> p├®ptido de la marca <b>VMS Molecular Science</b> orientado a la recuperaci├│n y a la reparaci├│n de tejidos.	124
+Tesamorelin 10 mg	<b>TESAMORELIN 10mg</b> p├®ptido de la marca <b>VMS Molecular Science</b> que estimula la liberaci├│n sostenida de la hormona del crecimiento.	140
+Tirzepatide	<b data-path-to-node="4" data-index-in-node="0">Tirzepatide</b> es un innovador p├®ptido de doble acci├│n (agonista dual de GIP y GLP-1) para el control metab├│lico y la p├®rdida de peso, disponible en varias presentaciones.	220
+x
+--- largo de excerpt por marca ---
+name	minimo	maximo	promedio
+EMINENCE	0	182	70
+LANDERLAN	0	35	19
+VMS	124	443	241
+XTLABS	0	114	28

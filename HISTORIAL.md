@@ -805,3 +805,9 @@ Resultado: 87 productos (LANDERLAN 19, XTLABS 34, EMINENCE 20, VMS 14), 60 publi
 `INFORME-CAMBIOS-20261118.md` y su version `.docx` (generada con `site/scripts/md_to_docx.py`). Tres secciones: cambios realizados, productos en duda y pendientes de consulta.
 
 Los 14 peptidos VMS se verificaron contra la web actual (anabolicgroup.com): nombre, presentacion, precio y stock coinciden en los 14. Se quitaron del informe los pendientes de imagenes (no forman parte de la revision de datos).
+
+### 2026-11-18 - Tarjetas: extractos limpios (VMS mostraba HTML)
+
+Los 14 peptidos VMS y 5 productos de Eminence tenian el extracto con etiquetas HTML y textos de hasta 443 caracteres, que se mostraban como codigo en la tarjeta y desbordaban la ficha. Se reemplazaron por una linea de funcion (estilo "Funcion + beneficio") igual que el resto de las marcas.
+
+Ademas se agrego el filtro `tagline` en `app.py` (quita HTML, entidades y recorta a 80/160 caracteres) usado en la tarjeta y en la ficha, y `.card .tag` con line-clamp de 2 lineas como respaldo. Verificado: 14 tarjetas VMS en una sola linea, sin HTML.

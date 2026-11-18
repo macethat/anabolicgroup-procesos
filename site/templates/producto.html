@@ -12,7 +12,7 @@
     <div class="product-info">
       <span class="label">{{ p.brand }}</span>
       <h1>{{ p.name }}</h1>
-      {% if p.excerpt %}<p class="tagline">{{ p.excerpt }}</p>{% endif %}
+      {% if p.excerpt %}<p class="tagline">{{ p.excerpt|tagline(160) }}</p>{% endif %}
       <div class="price-big">
         {% if p.presentation == 'Presentaciones' %}Desde {% endif %}{% if p.price %}${{ '%.2f'|format(p.price) }} <span>USD</span>{% else %}Consultar{% endif %}
       </div>

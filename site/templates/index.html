@@ -79,7 +79,7 @@
         <span class="meta">
           <span class="brand">{{ p.brand }}</span>
           <span class="nm">{{ p.name }}</span>
-          {% if p.excerpt %}<span class="tag">{{ p.excerpt }}</span>{% endif %}
+          {% if p.excerpt %}<span class="tag">{{ p.excerpt|tagline }}</span>{% endif %}
           <span class="row">
             <span class="price">{% if p.presentation == 'Presentaciones' %}Desde {% endif %}{% if p.price %}${{ '%.2f'|format(p.price) }}{% else %}Consultar{% endif %}</span>
             <span class="open">Ver ficha</span>

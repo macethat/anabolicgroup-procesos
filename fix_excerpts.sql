@@ -1,0 +1,21 @@
+UPDATE products SET excerpt='Oxidación de grasa + Metabolismo' WHERE name='AOD9604 10 mg';
+UPDATE products SET excerpt='Reparación de tejidos + Recuperación' WHERE name='BPC-157 5 mg';
+UPDATE products SET excerpt='Liberación de GH' WHERE name='CJC1295 (Without DAC) 10 mg';
+UPDATE products SET excerpt='Piel + Regeneración celular' WHERE name='GHK-Cu 100 mg';
+UPDATE products SET excerpt='Piel + Recuperación' WHERE name='GLOW 70 mg';
+UPDATE products SET excerpt='Desarrollo muscular + Recuperación' WHERE name='IGF-1 LR3 1 mg' AND slug='igf-1-lr3-1mg';
+UPDATE products SET excerpt='Liberación de GH selectiva' WHERE name='Ipamorelin 10 mg';
+UPDATE products SET excerpt='Salud metabólica + Longevidad' WHERE name='MOTS-C 40 mg';
+UPDATE products SET excerpt='Energía celular + Vitalidad' WHERE name='NAD+ 500 mg';
+UPDATE products SET excerpt='Pérdida de grasa + Control metabólico' WHERE name='Retatrutide';
+UPDATE products SET excerpt='Control de peso + Saciedad' WHERE name='Semaglutide 5 mg';
+UPDATE products SET excerpt='Recuperación + Reparación de tejidos' WHERE name='TB500 10 mg';
+UPDATE products SET excerpt='GH + Grasa visceral' WHERE name='Tesamorelin 10 mg';
+UPDATE products SET excerpt='Control de peso + Metabolismo' WHERE name='Tirzepatide';
+UPDATE products SET excerpt='Recuperación hormonal + Fertilidad' WHERE name='Chorionic Gonadotrophin';
+UPDATE products SET excerpt='Volumen magro + Recuperación articular' WHERE name='Decaprime NPP 100 mg';
+UPDATE products SET excerpt='Quema de grasa + Definición' WHERE name='Klenprime 60 mcg';
+UPDATE products SET excerpt='Metabolismo + Tiroides' WHERE name='Lioprime 25 mcg';
+UPDATE products SET excerpt='Volumen + Fuerza' WHERE name='Metaprime 10 mg';
+SELECT b.name AS marca, p.name, p.excerpt FROM products p JOIN brands b ON b.id=p.brand_id
+WHERE p.excerpt LIKE '%<%' OR CHAR_LENGTH(p.excerpt) > 70 ORDER BY b.name, p.name;
