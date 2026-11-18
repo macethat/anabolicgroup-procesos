@@ -33,13 +33,38 @@
         <span class="label">Catálogo</span>
         <h2>{{ products|length }} productos<br>disponibles</h2>
       </div>
-      <p class="side">Filtra por marca. Toca cualquier producto para ver su ficha y consultar por WhatsApp.</p>
+      <p class="side">Filtra por marca o categoría, o busca por nombre. Toca un producto para ver su ficha y consultar por WhatsApp.</p>
     </div>
 
-    <div class="filters" id="marcas" role="group" aria-label="Filtrar por marca">
-      <a class="chip {% if not active_brand %}on{% endif %}" href="/#catalogo">Todas</a>
+    <form class="searchbar" method="get" action="/buscar">
+      <select name="cat" aria-label="Categoría">
+        <option value="">Todas las categorías</option>
+        {% for c in categories %}
+        <option value="{{ c.slug }}" {% if active_cat == c.slug %}selected{% endif %}>{{ c.name }}</option>
+        {% endfor %}
+      </select>
+      <select name="marca" aria-label="Marca">
+        <option value="">Todas las marcas</option>
+        {% for b in brands %}
+        <option value="{{ b.slug }}" {% if active_brand == b.slug %}selected{% endif %}>{{ b.name }}</option>
+        {% endfor %}
+      </select>
+      <input type="search" name="q" value="{{ q or '' }}" placeholder="Buscar producto por nombre…" aria-label="Buscar producto">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="filters">
+      <span class="filter-label">Marca</span>
+      <a class="chip {% if not active_brand and not active_cat %}on{% endif %}" href="/#catalogo">Todas</a>
       {% for b in brands %}
       <a class="chip {% if active_brand == b.slug %}on{% endif %}" href="/marca/{{ b.slug }}/">{{ b.name }} <span>{{ b.n }}</span></a>
+      {% endfor %}
+    </div>
+
+    <div class="filters">
+      <span class="filter-label">Categoría</span>
+      {% for c in categories %}
+      <a class="chip {% if active_cat == c.slug %}on{% endif %}" href="/categoria/{{ c.slug }}/">{{ c.name }} <span>{{ c.n }}</span></a>
       {% endfor %}
     </div>
 
@@ -56,11 +81,13 @@
           <span class="nm">{{ p.name }}</span>
           {% if p.excerpt %}<span class="tag">{{ p.excerpt }}</span>{% endif %}
           <span class="row">
-            <span class="price">{% if p.price %}${{ '%.2f'|format(p.price) }}{% else %}Consultar{% endif %}</span>
+            <span class="price">{% if p.presentation == 'Presentaciones' %}Desde {% endif %}{% if p.price %}${{ '%.2f'|format(p.price) }}{% else %}Consultar{% endif %}</span>
             <span class="open">Ver ficha</span>
           </span>
         </span>
       </a>
+      {% else %}
+      <p class="empty">No hay productos con esos filtros.</p>
       {% endfor %}
     </div>
   </div>

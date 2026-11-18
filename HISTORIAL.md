@@ -674,3 +674,22 @@
 
 - A pedido del cliente se restauro **Instrument Serif** (la del sitio modelo) para los titulos, con "grado" en rojo **italica**. Se retiraron Barlow Condensed y Kaushan Script.
 - **Verificado:** `font-family: "Instrument Serif"`, weight 400, hero 94px; captura revisada (look elegante, como el modelo).
+
+### 2026-11-18 - Migracion del catalogo a la nueva base + filtros y buscador
+
+**Fuente:** `cat-prod-actualizado.xlsx` (97 filas) + notas "SIN STOCK" + WooCommerce (categorias, stock, imagenes, descripciones).
+
+**Decisiones aplicadas:**
+- Excluidos: Metandrostenolona 10 mg, Oxitoland 50 mg, Trembolona Enantato 100 mg (repetido), Stanozolol 50 mg (oral e inyectable, pendiente de consulta).
+- Extras incluidos (8) de las notas "SIN STOCK XTLABS / EMINENCE".
+- Retatrutide (10/30/60) y Tirzepatide (10/15/30/60): 1 producto con presentaciones y precio por presentacion.
+- Disponibilidad = cantidad de stock WC > 0; publicado = archivo "Si" + disponible (los "No" y stock 0 se migran pero no se publican).
+- Categorias desde WooCommerce (Orales/Inyectables/Peptidos) + 14 inferidas; PROVIX corregido a Orales.
+
+**Resultado:** 96 productos (86 simples + 8 extras + 2 variables con 7 presentaciones), 60 publicados, 36 no publicados, 3 sin imagen (borradores HCG 5000, Trembolona Acetato 100, Clembutrex 0.40). Marcas: EMINENCE 20, LANDERLAN 23, XTLABS 39, VMS 14. Categorias: Inyectables 50, Orales 32, Peptidos 14.
+
+**Correcciones WooCommerce (18-nov):** Tremboplex 100 mg -> LANDERLAN y 84.99; se quito el termino padre MARCAS de los productos (marca primaria Rank Math -> marca hija); Testoplex-E 300 -> 74.99. Backup `db-before-fix-marcas-20261118.sql`.
+
+**UI:** ficha con descripcion (HTML de WC); presentaciones con precio; filtro por categoria + marca; buscador `/buscar` (q + cat + marca; si q vacio lista todos de la categoria/marca).
+
+**Verificado:** home 60 productos; /buscar?cat=peptidos=14; /buscar?marca=vms=14; /buscar?q=deca=2; /categoria/orales=21; Retatrutide muestra 10/30/60 con precios; HCG 5000 (no publicado) 404.

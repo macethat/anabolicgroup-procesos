@@ -14,8 +14,22 @@
       <h1>{{ p.name }}</h1>
       {% if p.excerpt %}<p class="tagline">{{ p.excerpt }}</p>{% endif %}
       <div class="price-big">
-        {% if p.price %}${{ '%.2f'|format(p.price) }} <span>USD</span>{% else %}Consultar{% endif %}
+        {% if p.presentation == 'Presentaciones' %}Desde {% endif %}{% if p.price %}${{ '%.2f'|format(p.price) }} <span>USD</span>{% else %}Consultar{% endif %}
       </div>
+      {% if presentations %}
+      <div class="presentations">
+        <span class="label">Presentaciones</span>
+        <ul class="pres-list">
+          {% for pr in presentations %}
+          <li class="{% if pr.stock_status != 'instock' %}off{% endif %}">
+            <span>{{ pr.label }}</span>
+            <b>${{ '%.2f'|format(pr.price) }}</b>
+            {% if pr.stock_status != 'instock' %}<em>Agotado</em>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
       <dl class="specs">
         <dt>Marca</dt><dd>{{ p.brand }}</dd>
         <dt>Categoría</dt><dd>{{ p.category or '—' }}</dd>
@@ -28,6 +42,14 @@
     </div>
   </div>
 </section>
+
+{% if p.description %}
+<section class="wrap product-desc-wrap">
+  <span class="label">Ficha</span>
+  <h2>Descripción</h2>
+  <div class="product-desc">{{ p.description|safe }}</div>
+</section>
+{% endif %}
 
 {% if related %}
 <section class="wrap related">

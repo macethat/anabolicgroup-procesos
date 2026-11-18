@@ -25,8 +25,9 @@ def wa_link(msg):
     return "https://wa.me/%s?text=%s" % (WA_NUMBER, quote(msg))
 
 PRODUCT_SQL = """
-SELECT p.id, p.name, p.slug, p.excerpt, p.price, p.currency, p.stock_status,
-       p.image, b.name AS brand, b.slug AS brand_slug,
+SELECT p.id, p.name, p.slug, p.excerpt, p.description, p.presentation,
+       p.price, p.currency, p.stock_status, p.image,
+       b.name AS brand, b.slug AS brand_slug,
        c.name AS category, c.slug AS category_slug
 FROM products p
 JOIN brands b ON b.id = p.brand_id
@@ -44,13 +45,8 @@ def create_app():
 
     @app.context_processor
     def inject_globals():
-        return dict(
-            site_name=SITE_NAME,
-            whatsapp=WA_NUMBER,
-            wa_link=wa_link,
-            year=2026,
-            asset_ver=ASSET_VER,
-        )
+        return dict(site_name=SITE_NAME, whatsapp=WA_NUMBER, wa_link=wa_link,
+                    year=2026, asset_ver=ASSET_VER)
 
     def query(sql, args=None):
         conn = get_db()
@@ -61,30 +57,69 @@ def create_app():
         finally:
             conn.close()
 
-    @app.get("/")
-    def index():
-        brands = query(
+    def get_brands():
+        return query(
             """SELECT b.id, b.name, b.slug, COUNT(p.id) AS n
                FROM brands b LEFT JOIN products p ON p.brand_id = b.id AND p.is_published = 1
                GROUP BY b.id, b.name, b.slug ORDER BY b.sort_order, b.name"""
         )
-        products = query(PRODUCT_SQL + " ORDER BY b.sort_order, b.name, p.sort_order, p.name")
-        return render_template("index.html", brands=brands, products=products,
-                               active_brand=None, hero=True)
+
+    def get_categories():
+        return query(
+            """SELECT c.id, c.name, c.slug, COUNT(p.id) AS n
+               FROM categories c LEFT JOIN products p ON p.category_id = c.id AND p.is_published = 1
+               GROUP BY c.id, c.name, c.slug ORDER BY c.name"""
+        )
+
+    @app.get("/")
+    def index():
+        return render_template("index.html", hero=True, brands=get_brands(),
+                               categories=get_categories(), products=query(
+                                   PRODUCT_SQL + " ORDER BY b.sort_order, b.name, p.sort_order, p.name"),
+                               active_brand=None, active_cat=None, q="")
 
     @app.get("/marca/<slug>/")
     def brand(slug):
-        brands = query(
-            """SELECT b.id, b.name, b.slug, COUNT(p.id) AS n
-               FROM brands b LEFT JOIN products p ON p.brand_id = b.id AND p.is_published = 1
-               GROUP BY b.id, b.name, b.slug ORDER BY b.sort_order, b.name"""
-        )
+        brands = get_brands()
+        cats = get_categories()
         current = next((b for b in brands if b["slug"] == slug), None)
         if not current:
             abort(404)
         products = query(PRODUCT_SQL + " AND b.slug = %s ORDER BY p.sort_order, p.name", (slug,))
-        return render_template("index.html", brands=brands, products=products,
-                               active_brand=slug, hero=False)
+        return render_template("index.html", hero=False, brands=brands, categories=cats,
+                               products=products, active_brand=slug, active_cat=None, q="")
+
+    @app.get("/categoria/<slug>/")
+    def categoria(slug):
+        brands = get_brands()
+        cats = get_categories()
+        current = next((c for c in cats if c["slug"] == slug), None)
+        if not current:
+            abort(404)
+        products = query(PRODUCT_SQL + " AND c.slug = %s ORDER BY b.sort_order, p.sort_order, p.name", (slug,))
+        return render_template("index.html", hero=False, brands=brands, categories=cats,
+                               products=products, active_brand=None, active_cat=slug, q="")
+
+    @app.get("/buscar")
+    def buscar():
+        q = (request.args.get("q") or "").strip()
+        marca = (request.args.get("marca") or "").strip()
+        cat = (request.args.get("cat") or "").strip()
+        sql = PRODUCT_SQL
+        args = []
+        if q:
+            sql += " AND p.name LIKE %s"
+            args.append("%" + q + "%")
+        if marca:
+            sql += " AND b.slug = %s"
+            args.append(marca)
+        if cat:
+            sql += " AND c.slug = %s"
+            args.append(cat)
+        sql += " ORDER BY b.sort_order, b.name, p.sort_order, p.name"
+        return render_template("index.html", hero=False, brands=get_brands(),
+                               categories=get_categories(), products=query(sql, args),
+                               active_brand=marca or None, active_cat=cat or None, q=q)
 
     @app.get("/producto/<slug>/")
     def product(slug):
@@ -92,6 +127,10 @@ def create_app():
         if not rows:
             abort(404)
         p = rows[0]
+        presentations = query(
+            "SELECT label, price, stock_status FROM presentations WHERE product_id = %s ORDER BY sort_order",
+            (p["id"],),
+        )
         related = query(
             PRODUCT_SQL + " AND p.slug <> %s AND b.slug = %s ORDER BY RAND() LIMIT 4",
             (slug, p["brand_slug"]),
@@ -113,7 +152,8 @@ def create_app():
                 "url": request.url,
             },
         }
-        return render_template("producto.html", p=p, related=related, jsonld=jsonld)
+        return render_template("producto.html", p=p, related=related,
+                               presentations=presentations, jsonld=jsonld)
 
     @app.get("/api/producto/<slug>")
     def api_product(slug):
@@ -128,29 +168,23 @@ def create_app():
 
     @app.get("/privacidad")
     def privacidad():
-        return render_template(
-            "legal.html", title="Política de privacidad",
-            body=("Los datos que compartas por WhatsApp se usan únicamente para responder tu consulta. "
-                  "No vendemos ni compartimos tu información con terceros."),
-        )
+        return render_template("legal.html", title="Política de privacidad",
+                               body=("Los datos que compartas por WhatsApp se usan únicamente para responder tu consulta. "
+                                     "No vendemos ni compartimos tu información con terceros."))
 
     @app.get("/terminos")
     def terminos():
-        return render_template(
-            "legal.html", title="Términos y condiciones",
-            body=("La información de este catálogo es referencial y no constituye consejo médico. "
-                  "Los productos son de uso referencial y requieren asesoría y supervisión de un profesional "
-                  "de la salud. No automedicarse. Uso bajo responsabilidad del comprador."),
-        )
+        return render_template("legal.html", title="Términos y condiciones",
+                               body=("La información de este catálogo es referencial y no constituye consejo médico. "
+                                     "Los productos son de uso referencial y requieren asesoría y supervisión de un "
+                                     "profesional de la salud. No automedicarse. Uso bajo responsabilidad del comprador."))
 
     @app.get("/descargo")
     def descargo():
-        return render_template(
-            "legal.html", title="Descargo de responsabilidad",
-            body=("Consulta a tu médico antes de consumir este tipo de productos. Anabolic Group no se hace "
-                  "responsable por el uso indebido de los productos. La información publicada tiene fines "
-                  "informativos y no sustituye una consulta médica."),
-        )
+        return render_template("legal.html", title="Descargo de responsabilidad",
+                               body=("Consulta a tu médico antes de consumir este tipo de productos. Anabolic Group "
+                                     "no se hace responsable por el uso indebido de los productos. La información "
+                                     "publicada tiene fines informativos y no sustituye una consulta médica."))
 
     @app.get("/robots.txt")
     def robots():
