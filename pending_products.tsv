@@ -1,0 +1,11 @@
+﻿code	name	marca	category_id	cat	price	is_published
+LAN-VOL-001	Androlic 25 mg - Oximetolona	LANDERLAN	1	Orales	54.99	1
+EMI-REC-012	Chorionic Gonadotrophin	EMINENCE	2	Inyectables	64.99	0
+EMI-VOL-018	Decaprime NPP 100 mg	EMINENCE	2	Inyectables	59.99	1
+LAN-REC-018	HCG 5000 UI	LANDERLAN	2	Inyectables	74.99	0
+LAN-VOL-007	Metenolona Acetato 25 mg	LANDERLAN	1	Orales	64.99	1
+XTL-DEF-021	Stanoplex 10 mg Estanozolol	XTLABS	1	Orales	59.99	1
+XTL-DEF-022	Stanoplex 10 ml	XTLABS	2	Inyectables	64.99	1
+EMI-VOL-011	Testomix 250 mg	EMINENCE	2	Inyectables	78.99	1
+LAN-VOL-021	Testosterona Propinato 100 mg	LANDERLAN	2	Inyectables	64.99	0
+LAN-VOL-014	Testosterona Propionato 100 mg	LANDERLAN	2	Inyectables	64.99	1

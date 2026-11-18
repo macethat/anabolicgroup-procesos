@@ -834,3 +834,7 @@ Confirmado por el usuario: la fila "Stanozolol 50mg x 50 comp" de Eminence corre
 El Stanoprime oral existia en WooCommerce como borrador (STANOPRIME 10 MG, $36.99, sin stock, 50 tabletas). No estaba en la lista de precios. Se agrego la fila a la lista (fila 19) y el producto al catalogo como EMI-DEF-022, marca EMINENCE, categoria Orales, oculto hasta que tenga stock, con foto y descripcion de WooCommerce.
 
 Catalogo: 89 productos, 60 publicados (EMINENCE 22). Regenerados CSV/Excel (88 miniaturas), CODIFICACION y el informe Word.
+
+### 2026-11-18 - Stanoplex 10 mg: confirmado 10 mg / 60 tabletas
+
+El usuario confirmo que el producto es de 10 mg con 60 unidades y que la imagen actual (caja de 5 mg, 100 tabletas) es incorrecta. Se quito la foto del producto para no mostrar una dosis equivocada; queda sin imagen hasta recibir la correcta. Datos, precio ($59.99) y publicacion sin cambios. Se quito la duda del informe y se regeneraron CSV/Excel (87 miniaturas).
