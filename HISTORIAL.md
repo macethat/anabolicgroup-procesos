@@ -658,8 +658,8 @@
 - **Verificado por DOM:** nav render **134x80**, footer **107x64**.
 
 
-### 2026-11-17 - Tipografia display: Oswald (sans condensada, plana)
+### 2026-11-17 - Tipografia display: Inter (sans plana, la mas usada en el nicho)
 
-- Se probaron serif de alto contraste (Italiana/Cormorant/Instrument) y Archivo; el cliente eligio **Oswald** (sans condensada, plana).
-- Peso 600 en titulos; hero 98px; nombres de tarjeta 500. El "grado" en rojo va **sin cursiva** (Oswald no tiene italica).
-- **Verificado por DOM:** `font-family: Oswald`, weight 600, fuente cargada.
+- **Investigacion de fuentes en webs de peptidos:** Inter (Direct Peptides; cuerpo de Paradigm), Montserrat/Oswald (Core Peptides), Poppins (Amino Asylum), Geist+Montserrat (Blue Sky), Red Hat Display/Paranoid (PureRawz), Cardo+Inter (Paradigm). Peptide Sciences bloqueado por Cloudflare.
+- Se eligio **Inter** (peso 700) para titulos; hero 88px, letter-spacing -0.035em; "grado" en rojo italica.
+- **Verificado por DOM:** `font-family: Inter`, weight 700, fuente cargada; captura revisada (look moderno y plano).
