@@ -17,3 +17,6 @@ desktop.ini
 
 # Exportaciones generadas
 exports/
+
+# Respaldos de la lista de precios
+upgrade-data/backups/

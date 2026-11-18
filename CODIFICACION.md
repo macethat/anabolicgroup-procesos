@@ -91,14 +91,14 @@ a mano.
 
 | Código | Producto | Función | Categoría | Web |
 |---|---|---|---|---|
-| `EMI-ANT-001` | Anstroprime 1 mg | ANT · Anti-estrógeno | Orales | Público |
+| `EMI-ANT-001` | Anastroprime 1 mg | ANT · Anti-estrógeno | Orales | Público |
 | `EMI-DEF-007` | Oxanprime 10 mg | DEF · Definición / dureza | Orales | Público |
-| `EMI-DEF-015` | Masterolona 25 mg (Proviron) 50 comp | DEF · Definición / dureza | Orales | Oculto |
+| `EMI-DEF-015` | Proviprime 25 mg | DEF · Definición / dureza | Orales | Oculto |
 | `EMI-DEF-019` | Drostoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `EMI-DEF-020` | Trenoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `EMI-MET-014` | Lioprime 25 mcg | MET · Metabólico | Orales | Oculto |
-| `EMI-QUI-006` | Klenprime 0.40 mg | QUI · Quema / pérdida de grasa | Orales | Público |
-| `EMI-QUI-013` | Klembuterol 0.60 mcg 50 comp | QUI · Quema / pérdida de grasa | Orales | Oculto |
+| `EMI-QUI-006` | Klenprime 40 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
+| `EMI-QUI-013` | Klenprime 60 mcg | QUI · Quema / pérdida de grasa | Orales | Oculto |
 | `EMI-REC-003` | Cloprime 50 mg | REC · Recuperación / PCT | Orales | Público |
 | `EMI-REC-010` | Tamoprime 20 mg | REC · Recuperación / PCT | Orales | Público |
 | `EMI-REC-012` | Chorionic Gonadotrophin | REC · Recuperación / PCT | Inyectables | Oculto |
@@ -108,7 +108,7 @@ a mano.
 | `EMI-VOL-008` | Oxymeprime 50 mg | VOL · Volumen / masa magra | Orales | Público |
 | `EMI-VOL-009` | Proprime 100 mg Propionato | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-011` | Testomix 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
-| `EMI-VOL-016` | Methandrostenolona 10 mg (Dianabol) 50 comp | VOL · Volumen / masa magra | Orales | Oculto |
+| `EMI-VOL-016` | Metaprime 10 mg | VOL · Volumen / masa magra | Orales | Oculto |
 | `EMI-VOL-017` | Decaprime 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `EMI-VOL-018` | Decaprime NPP 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
 
@@ -163,7 +163,7 @@ a mano.
 
 | Código | Producto | Función | Categoría | Web |
 |---|---|---|---|---|
-| `XTL-ANT-001` | Arimidex 1 mg Anastrozol | ANT · Anti-estrógeno | Orales | Público |
+| `XTL-ANT-001` | Arimidext 1 mg | ANT · Anti-estrógeno | Orales | Público |
 | `XTL-DEF-013` | Mastaplex 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `XTL-DEF-017` | Oxandroplex 10 mg Oxandrolona | DEF · Definición / dureza | Orales | Público |
 | `XTL-DEF-020` | Razor 200 mg | DEF · Definición / dureza | Inyectables | Público |
@@ -171,15 +171,15 @@ a mano.
 | `XTL-DEF-022` | Stanoplex 10 ml | DEF · Definición / dureza | Inyectables | Público |
 | `XTL-DEF-031` | Masteplex - P | DEF · Definición / dureza | Inyectables | Oculto |
 | `XTL-DEF-032` | Provix 25 mg - 50 tab | DEF · Definición / dureza | Orales | Oculto |
-| `XTL-DEF-033` | Tremboplex Acetato | DEF · Definición / dureza | Inyectables | Oculto |
+| `XTL-DEF-033` | Trenboplex Acetato 100 mg | DEF · Definición / dureza | Inyectables | Oculto |
 | `XTL-DEF-039` | Trembolona Acetato 100 mg | DEF · Definición / dureza | Inyectables | Oculto |
 | `XTL-GH-007` | Gentropin 210 UI | GH · Hormona de crecimiento | Inyectables | Público |
 | `XTL-GH-009` | Hutrope 100 IU | GH · Hormona de crecimiento | Inyectables | Público |
 | `XTL-GH-010` | Ibutamoren 15 mg | GH · Hormona de crecimiento | Orales | Público |
-| `XTL-GH-011` | IGF-1 LR3 1 ml | GH · Hormona de crecimiento | Inyectables | Oculto |
+| `XTL-GH-011` | IGF-1 LR3 1 mg | GH · Hormona de crecimiento | Inyectables | Oculto |
 | `XTL-QUI-003` | Cardarine 10 mg | QUI · Quema / pérdida de grasa | Orales | Oculto |
-| `XTL-QUI-004` | Clenbutrex HCL 0.40 mg | QUI · Quema / pérdida de grasa | Orales | Público |
-| `XTL-QUI-005` | Clenbutrex Ultra 0.60 mg | QUI · Quema / pérdida de grasa | Orales | Público |
+| `XTL-QUI-004` | Clembutrex 40 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
+| `XTL-QUI-005` | Clembutrex Ultra 60 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
 | `XTL-REC-008` | HCG 10.000 UI | REC · Recuperación / PCT | Inyectables | Público |
 | `XTL-REC-030` | Clomixt 50 mg - 30 tab | REC · Recuperación / PCT | Orales | Oculto |
 | `XTL-VOL-002` | Boldeplex 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
@@ -188,14 +188,14 @@ a mano.
 | `XTL-VOL-014` | Methandroplex 20 mg | VOL · Volumen / masa magra | Orales | Público |
 | `XTL-VOL-015` | Nandroplex 100 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-016` | Ostarine 10 mg | VOL · Volumen / masa magra | Orales | Público |
-| `XTL-VOL-018` | Oxiplex 50 mg | VOL · Volumen / masa magra | Orales | Público |
+| `XTL-VOL-018` | Oxyplex 50 mg | VOL · Volumen / masa magra | Orales | Público |
 | `XTL-VOL-019` | Primoplex 100 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-023` | Sustaplex 275 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `XTL-VOL-024` | Triple XXX 200 mg Tritrenbolona | VOL · Volumen / masa magra | Inyectables | Público |
 | `XTL-VOL-025` | TVR 350 mg Testo Enantato/Propionato | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-026` | TXT 400 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-027` | Boldaplex 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `XTL-VOL-034` | Tremboplex Enantato | VOL · Volumen / masa magra | Inyectables | Oculto |
+| `XTL-VOL-034` | Trenboplex Enantato 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-035` | Turinaplex 10 mg | VOL · Volumen / masa magra | Orales | Oculto |
 | `XTL-VOL-036` | Testoplex-C 300 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-037` | Testoplex-E 300 mg | VOL · Volumen / masa magra | Inyectables | Público |

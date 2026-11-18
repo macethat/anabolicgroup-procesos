@@ -776,3 +776,14 @@ Las cajas de WooCommerce indican 40/60 mcg y 0.04 mg, por lo que la lista tiene 
 Revision de los 94 productos contra eminencelabs.com, xt-labs.in y landerlan.com.br (VMS sin catalogo oficial). Resultado completo en `AUDITORIA-MARCAS.md`.
 
 Hallazgos: 4 dosis con error de factor 10 (Klenprime 40/60 mcg, Clenbutrex 40/60 mcg); 8 nombres comerciales distintos (Anastroprime, Proviprime, Metaprime, Arimidext, Oxyplex, Trenboplex, IGF-1 LR3 1 mg); Gentropin y Hutrope no son XT Labs (Genli/Hubio); Androlic 25 mg es mesterolona, no oximetolona; 3 duplicados en XTLABS y 5 en LANDERLAN. Sin cambios aplicados: la lista sigue siendo la base y las correcciones deben hacerse alli primero.
+
+### 2026-11-18 - Correcciones de dosis y nombres comerciales (lista + catalogo)
+
+Autorizado por el usuario: aplicar solo lo que sea el mismo producto. Actualizado en `cat-prod-actualizado.xlsx` (hoja Catalogo) y en la base:
+
+Dosis: Klenprime 40 mcg, Klenprime 60 mcg, Clembutrex 40 mcg, Clembutrex Ultra 60 mcg.
+Nombres: Anastroprime 1 mg, Proviprime 25 mg, Metaprime 10 mg, Arimidext 1 mg, Oxyplex 50 mg, Trenboplex Acetato 100 mg, Trenboplex Enantato 200 mg, IGF-1 LR3 1 mg (XTL).
+
+Slugs actualizados en consecuencia; los codigos internos no cambian. Respaldo de la lista en `upgrade-data/backups/cat-prod-actualizado-20261118-antes-nombres.xlsx`. Script: `site/scripts/update_list_names.py`.
+
+Pendiente por decision del usuario: Gentropin/Hutrope (marca), Androlic (compuesto), HCG Eminence, Decaprime NPP, Metenolona acetato 25 mg, Stanoplex oral y los duplicados de la lista (filas 20/36, 27/39, 33/40, 34/41, 35/43/44, 46/71, 57/75, 77 + extra).
