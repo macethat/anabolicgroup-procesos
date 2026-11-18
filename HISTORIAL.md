@@ -759,3 +759,14 @@ Revisadas las cajas en la biblioteca de WooCommerce:
 - `Klembuterol 0.60 mcg 50 comp` -> **Klenprime 60 mcg** (caja: KlenPrime 60, 60 mcg). Era la misma linea KlenPrime en otra dosis, no un duplicado; queda oculto.
 
 Catalogo: 94 productos, 60 publicados. Regenerados CSV, Excel (93 miniaturas) y anexo de CODIFICACION.md.
+
+### 2026-11-18 - Reversion de nombres a la lista de precios
+
+Se establecio que `cat-prod-actualizado.xlsx` es la base de la informacion. Se devolvieron los nombres y slugs a los valores de la lista:
+
+- `Klenprime 0.40 mg` (EMI-QUI-006)
+- `Klembuterol 0.60 mcg 50 comp` (EMI-QUI-013)
+- `Clenbutrex HCL 0.40 mg` (XTL-QUI-004)
+- `Clenbutrex Ultra 0.60 mg` (XTL-QUI-005)
+
+Las cajas de WooCommerce indican 40/60 mcg y 0.04 mg, por lo que la lista tiene un error de factor 10 en esas filas; queda pendiente corregirlo **en la lista** y reaplicar. Siguen eliminados los dos duplicados autorizados. Exportaciones regeneradas con los nombres de la lista.
