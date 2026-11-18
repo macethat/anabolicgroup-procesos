@@ -15,7 +15,7 @@
 | `EMI-QUI-013` | Klenprime 60 mcg | QUI · Quema / pérdida de grasa | Orales | Oculto |
 | `EMI-REC-003` | Cloprime 50 mg | REC · Recuperación / PCT | Orales | Público |
 | `EMI-REC-010` | Tamoprime 20 mg | REC · Recuperación / PCT | Orales | Público |
-| `EMI-REC-012` | Chorionic Gonadotrophin | REC · Recuperación / PCT | Inyectables | Oculto |
+| `EMI-REC-012` | Hormoprime 5000 UI | REC · Recuperación / PCT | Inyectables | Oculto |
 | `EMI-VOL-002` | Boldeprime 200 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-004` | Cypoprime 250 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `EMI-VOL-005` | Enaprime 250 mg | VOL · Volumen / masa magra | Inyectables | Público |

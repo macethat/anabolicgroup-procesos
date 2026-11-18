@@ -46,6 +46,7 @@
 | IGF-1 LR3 1 ml | **IGF-1 LR3 1 mg** | xt-labs.in |
 | Decaprime NPP 100 mg | **DecaPrime-P 100 mg** | caja del producto (Eminence Labs) |
 | Testomix 250 mg | **Testo-Mix 250 mg** | eminencelabs.com |
+| Chorionic Gonadotrophin | **Hormoprime 5000 UI** | caja del producto (Eminence Labs) |
 
 Los cambios se aplicaron **en la lista y en el catálogo**. Los códigos internos no cambiaron.
 
@@ -155,7 +156,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 |---|---|
 | **Androlic 25 mg** | La ficha de Landerlan lo describe como **mesterolona** 25 mg (20 comp), no oximetolona. Confirmar con la caja física antes de cambiar el compuesto. |
 | **HCG 5000 UI** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
-| **Chorionic Gonadotrophin** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 
 ---
 
