@@ -644,3 +644,10 @@
 - **Cache de Cloudflare:** servia el CSS viejo; se agrego **versionado automatico por mtime** (`?v=<mtime>`) a CSS/JS via `asset_ver` en el context processor.
 - **Verificado:** badges 64x64 con fondo `#25D366`, links `wa.me/50760990195`, CSS publico con las reglas nuevas, captura desktop revisada.
 
+### 2026-11-17 - Ajuste CTA WhatsApp (outline verde) y titulo de contacto
+
+- **Titulo banda de contacto:** "Si buscas algún producto en concreto, escribe aquí."
+- **CTA WhatsApp sin circulo verde:** se elimino el fondo circular; el globo y el telefono del logo se muestran en **verde (#25D366) como trazo/outline** (icono Remix `whatsapp-line`), 46px dentro de un badge transparente de 64px. Mismo tamano del CTA. Aplicado en hero, banda de contacto, ficha y drawer.
+- **Verificado por DOM:** `h2` correcto, `background-color: rgba(0,0,0,0)` en el badge, `fill: rgb(37,211,102)`, `svg` 46px.
+- **Movil:** se mantiene el boton verde de solo texto "Solicita informacion" (badge oculto).
+
