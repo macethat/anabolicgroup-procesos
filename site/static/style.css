@@ -26,14 +26,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(14px);
 nav.solid{border-color:var(--rule);background:rgba(10,11,13,.94)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 40px;max-width:var(--maxw);margin:0 auto}
 @media(max-width:640px){.nav-in{padding:10px 22px}}
-.wordmark img{height:58px;width:auto}
+.wordmark img{height:100px;width:auto}
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-size:14px;text-decoration:none;color:var(--muted);position:relative;padding-bottom:3px;transition:color .3s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav-wa{color:var(--accent)!important;font-weight:600}
-@media(max-width:820px){.wordmark img{height:42px}.nav-links a:not(.nav-wa){display:none}}
+@media(max-width:820px){.wordmark img{height:58px}.nav-links a:not(.nav-wa){display:none}}
 
 /* hero */
 .hero{position:relative;overflow:hidden;min-height:clamp(460px,64vh,620px);display:flex;align-items:flex-end;
@@ -122,7 +122,7 @@ section{padding:64px 0 110px}
 footer{padding:48px 0;border-top:1px solid var(--rule)}
 .foot-in{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:center;
   font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.foot-logo{height:44px;width:auto}
+.foot-logo{height:60px;width:auto}
 .foot-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 .foot-links a{text-decoration:none;transition:color .3s}
 .foot-links a:hover{color:var(--accent)}

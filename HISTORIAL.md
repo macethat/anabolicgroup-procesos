@@ -651,3 +651,9 @@
 - **Verificado por DOM:** `h2` correcto, `background-color: rgba(0,0,0,0)` en el badge, `fill: rgb(37,211,102)`, `svg` 46px.
 - **Movil:** se mantiene el boton verde de solo texto "Solicita informacion" (badge oculto).
 
+### 2026-11-17 - Logo del nav mas grande (alta resolucion)
+
+- Se reemplazo el logo por la version en **alta resolucion** (2481x1481, 23 KB) y se **versiono la URL** (`?v=<asset_ver>`) porque Cloudflare servia el logo viejo en cache.
+- **Altura del logo:** nav 58px -> **100px** (nav ~125px de alto); footer 44px -> 60px; movil 42px -> 58px. Objetivo: que se lea "ANABOLIC GROUP".
+- **Verificado por DOM:** natural 2481x1481, render 168x100, nav 125px.
+
