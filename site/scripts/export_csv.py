@@ -71,7 +71,7 @@ def write_csv(path, header, row_for):
 
 # --- CSV 1: nombre, categoria, enlace ---
 def rows_fichas(p):
-    url = BASE_URL + p["slug"] + "/" if p["is_published"] else ""
+    url = BASE_URL + p["slug"] + "/" if p["is_published"] else "No publicado"
     yield [p["name"], p["cat"] or "", url]
     for v in by_product.get(p["id"], []):
         yield [v["label"], "", url]

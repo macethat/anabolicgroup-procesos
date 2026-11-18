@@ -720,3 +720,11 @@ Productos con presentaciones: fila del producto principal (con codigo/enlace) y 
 ### 2026-11-18 - CSV por bloques de marca
 
 Los dos CSV se reestructuraron en bloques: fila `MARCA: <NOMBRE>` al inicio de cada bloque y fila vacia de separacion entre marcas. Orden de bloques igual al del sitio: EMINENCE, LANDERLAN, VMS, XTLABS. Columnas sin cambios; las presentaciones siguen bajo su producto principal.
+
+### 2026-11-18 - Normalizacion de nombres y enlaces en CSV
+
+`site/scripts/normalize_names.py`: pasa los nombres a formato titulo (primera letra de cada palabra en mayuscula) con unidades en minuscula (mg, mcg, ml, comp, tab) y siglas intactas (HCG, NPP, HCL, UI, IU, IGF-1, TB500, GHK-Cu, NAD+, MOTS-C, CJC1295, AOD9604, BPC-157, TVR, TXT, XXX, GLOW). Corrige tambien numeros pegados a la unidad (`10mg` -> `10 mg`).
+
+Aplicado: 40 productos y 7 etiquetas de presentacion. Restan 2 nombres 100% en mayusculas por ser solo siglas (`HCG 5000 UI`, `HCG 10.000 UI`). Los slugs no cambian, asi que los enlaces siguen validos.
+
+`export_csv.py`: los productos no publicados muestran `No publicado` en la columna de enlace en lugar de quedar vacio. `assign_codes.py`: excepciones `EXACT` actualizadas a los nombres normalizados (codigos sin cambios, 96 codificados).

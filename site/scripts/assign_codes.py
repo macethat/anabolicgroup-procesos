@@ -17,8 +17,8 @@ PREFIX = {"EMINENCE": "EMI", "LANDERLAN": "LAN", "XTLABS": "XTL", "VMS": "VMS"}
 
 # Excepciones por nombre exacto de la ficha. Mandan sobre cualquier regla.
 EXACT = {
-    "OXANPRIME 10 MG": "DEF",
-    "Methandrostenolona 10mg (Dianabol) 50 comp": "VOL",
+    "Oxanprime 10 mg": "DEF",
+    "Methandrostenolona 10 mg (Dianabol) 50 comp": "VOL",
     "Metenolona Acetato 25 mg": "VOL",
     "Metenolona Enantato 100 mg": "VOL",
 }
