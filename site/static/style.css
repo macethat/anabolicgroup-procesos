@@ -106,14 +106,17 @@ section{padding:64px 0 110px}
 .contact-side{display:flex;flex-direction:column;gap:18px}
 .contact-row{display:flex;justify-content:space-between;gap:20px;text-decoration:none;padding-bottom:12px;border-bottom:1px solid var(--rule);color:var(--muted);font-family:var(--f-mono);font-size:13px;transition:.3s}
 .contact-row b{color:var(--ink);font-weight:500}
-.contact-row:hover{color:var(--accent);border-color:var(--accent)}
+.contact-row:hover{color:#25D366;border-color:#25D366}
+.contact-row:hover b{color:#25D366;text-decoration:underline}
 
-/* whatsapp button */
-.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#04220f;
-  font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
-  padding:14px 22px;border:0;font-weight:600;transition:transform .3s,filter .3s;align-self:flex-start}
-.btn-wa:hover{filter:brightness(1.06);transform:translateY(-1px)}
-.btn-wa::before{content:"✆";font-size:16px}
+/* whatsapp CTA */
+.wa-cta{display:inline-flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink);transition:transform .3s var(--ease)}
+.wa-badge{width:64px;height:64px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.35);transition:transform .35s var(--ease),box-shadow .35s}
+.wa-badge svg{width:38px;height:38px;fill:#fff}
+.wa-label{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid transparent;padding-bottom:2px;transition:color .3s,border-color .3s}
+.wa-cta:hover .wa-badge{transform:scale(1.07);box-shadow:0 12px 40px rgba(37,211,102,.5)}
+.wa-cta:hover .wa-label{color:#25D366;border-bottom-color:#25D366}
+.wa-block{display:flex;width:100%;justify-content:center}
 
 /* footer */
 footer{padding:48px 0;border-top:1px solid var(--rule)}
@@ -164,7 +167,7 @@ footer{padding:48px 0;border-top:1px solid var(--rule)}
 .p-dl dd{margin:0;text-align:right}
 .p-desc{font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:20px}
 .p-price{font-family:var(--f-mono);font-size:26px;margin-bottom:22px}
-.p-body .btn-wa{width:100%;margin-bottom:16px}
+.p-body .wa-cta{margin:0 0 18px}
 .link-more{display:inline-block;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s}
 .link-more:hover{color:var(--accent)}
 
@@ -174,7 +177,10 @@ footer{padding:48px 0;border-top:1px solid var(--rule)}
   .card .nm{font-size:17px}
   .card .tag{display:none}
   .card .brand{font-size:10px}
-  .btn-wa{align-self:stretch;text-align:center}
+  .wa-cta{display:flex;width:100%;gap:0}
+  .wa-badge{display:none}
+  .wa-label{display:block;width:100%;text-align:center;background:#25D366;color:#fff;padding:14px 20px;border:0;font-weight:600}
+  .wa-cta:hover .wa-label{color:#fff;border-bottom-color:transparent}
   .foot-in{gap:18px}
 }
 @media(prefers-reduced-motion:reduce){

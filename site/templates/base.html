@@ -1,3 +1,4 @@
+{%- from "_wa.html" import wa_cta -%}
 <!doctype html>
 <html lang="es">
 <head>
@@ -12,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ asset_ver }}">
 </head>
 <body>
 <div id="prog"></div>
@@ -62,12 +63,12 @@
     </dl>
     <p class="p-desc" id="d-desc"></p>
     <div class="p-price" id="d-price"></div>
-    <a class="btn-wa" id="d-wa" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    {{ wa_cta('#', 'Solicita información', True, 'd-wa') }}
     <a class="link-more" id="d-page" href="#">Ver ficha completa →</a>
   </div>
 </aside>
 
 <script>window.WA_NUMBER = "{{ whatsapp }}";</script>
-<script src="{{ url_for('static', filename='app.js') }}"></script>
+<script src="{{ url_for('static', filename='app.js') }}?v={{ asset_ver }}"></script>
 </body>
 </html>

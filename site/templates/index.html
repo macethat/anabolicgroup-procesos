@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_wa.html" import wa_cta %}
 {% block title %}{{ site_name }} — Catálogo de compuestos y péptidos{% endblock %}
 {% block description %}Catálogo de Anabolic Group: compuestos y péptidos de grado profesional. Precios en USD y consulta directa por WhatsApp.{% endblock %}
 
@@ -18,7 +19,7 @@
       </div>
       <div class="hero-cta rise d5">
         <a href="#catalogo" class="cta">Ver catálogo</a>
-        <a href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener" class="cta quiet">Consultar por WhatsApp</a>
+        {{ wa_cta(wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.')) }}
       </div>
     </div>
   </div>
@@ -73,7 +74,7 @@
       <p class="muted">Escríbenos por WhatsApp y te confirmamos disponibilidad, presentaciones y precios.</p>
     </div>
     <div class="contact-side">
-      <a class="btn-wa" href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      {{ wa_cta(wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.')) }}
       <a class="contact-row" href="{{ wa_link('Hola, quiero información sobre el catálogo de Anabolic Group.') }}" target="_blank" rel="noopener"><span>WhatsApp</span><b>+{{ whatsapp }}</b></a>
     </div>
   </div>

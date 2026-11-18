@@ -37,6 +37,10 @@ WHERE p.is_published = 1
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-only")
+    try:
+        ASSET_VER = str(int(os.path.getmtime(os.path.join(app.root_path, "static", "style.css"))))
+    except Exception:
+        ASSET_VER = "1"
 
     @app.context_processor
     def inject_globals():
@@ -45,6 +49,7 @@ def create_app():
             whatsapp=WA_NUMBER,
             wa_link=wa_link,
             year=2026,
+            asset_ver=ASSET_VER,
         )
 
     def query(sql, args=None):

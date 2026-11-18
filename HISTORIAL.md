@@ -635,3 +635,12 @@
 
 **Pendiente:** lista definitiva de productos/categorias, ajustes de paleta y detalles, paginas legales (privacidad/terminos/descargo), sitemap/robots y panel o scripts de administracion.
 
+### 2026-11-17 - Rediseno CTA WhatsApp + numero real + versionado de assets
+
+- **CTA WhatsApp redisenado:** logo oficial grande en **badge verde (64px)** + texto **"Solicita informacion"** al lado, todo enlazable (macro `_wa.html`). Aplicado en hero, banda de contacto, ficha de producto y drawer.
+- **Segunda linea** (`WhatsApp + numero`) enlazada; hover verde y numero subrayado.
+- **Movil (<=720px):** se oculta el badge y el texto "Solicita informacion" se muestra como **boton verde full-width** (solo texto).
+- **Numero real corregido:** `.env` tenia `50700000000`; se cambio a **50760990195** (el de la web actual).
+- **Cache de Cloudflare:** servia el CSS viejo; se agrego **versionado automatico por mtime** (`?v=<mtime>`) a CSS/JS via `asset_ver` en el context processor.
+- **Verificado:** badges 64x64 con fondo `#25D366`, links `wa.me/50760990195`, CSS publico con las reglas nuevas, captura desktop revisada.
+

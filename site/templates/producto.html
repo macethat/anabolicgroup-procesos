@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_wa.html" import wa_cta %}
 {% block title %}{{ p.name }} — {{ p.brand }} | {{ site_name }}{% endblock %}
 {% block description %}{{ p.excerpt or (p.name ~ ' de ' ~ p.brand ~ ' en Anabolic Group. Consulta disponibilidad y precio por WhatsApp.') }}{% endblock %}
 
@@ -21,7 +22,7 @@
         <dt>Disponibilidad</dt><dd>{{ 'Disponible' if p.stock_status == 'instock' else 'Agotado' }}</dd>
       </dl>
       <p class="aviso"><b>Consulta a tu médico antes de consumir este tipo de productos.</b> La información es referencial; requiere asesoría y supervisión de un profesional de la salud.</p>
-      <a class="btn-wa" href="{{ wa_link('Hola, me interesa ' ~ p.name ~ ' (' ~ p.brand ~ '). ¿Está disponible?') }}" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      {{ wa_cta(wa_link('Hola, me interesa ' ~ p.name ~ ' (' ~ p.brand ~ '). ¿Está disponible?'), 'Solicita información') }}
       <p class="disclaimer">Producto de uso referencial. No automedicarse. Su uso está supeditado a la completa responsabilidad del comprador.</p>
       <a class="back" href="/#catalogo">← Volver al catálogo</a>
     </div>
