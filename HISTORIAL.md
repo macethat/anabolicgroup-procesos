@@ -820,3 +820,11 @@ Confirmado por el usuario: Gentropin 210 UI es de Genli Pharma y Hutrope 100 IU 
 - Codigos: Gentropin XTL-GH-007 -> GNL-GH-001; Hutrope XTL-GH-009 -> HUB-GH-001 (los anteriores quedan retirados).
 - `assign_codes.py` ahora solo asigna codigos a productos sin codigo: nunca reasigna ni rellena huecos. `next_code.py` reconoce las marcas nuevas.
 - Regenerados CSV/Excel (6 bloques de marca), `CODIFICACION.md`, el informe md/docx y el anexo.
+
+### 2026-11-18 - Stanozolol 50 mg: era el Stanoprime inyectable
+
+Confirmado por el usuario: la fila "Stanozolol 50mg x 50 comp" de Eminence corresponde al **Stanoprime 50 mg inyectable** (50 mg/ml, 10 ampollas de 1 ml), precio **$54.99**.
+
+- Lista: fila 18 -> `Stanoprime 50 mg`, descripcion "Definicion Dura + Vascular", Individual, No, 54.99.
+- Catalogo: producto nuevo EMI-DEF-021, marca EMINENCE, categoria Inyectables, $54.99, oculto (stock 0), con foto y descripcion de WooCommerce.
+- Catalogo: 88 productos, 60 publicados. CSV/Excel regenerados (87 miniaturas) y anexo de CODIFICACION actualizado.

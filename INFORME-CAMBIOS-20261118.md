@@ -3,7 +3,7 @@
 **Fecha:** 18 de noviembre de 2026
 **Base:** `cat-prod-actualizado.xlsx` (lista de precios) + WooCommerce (fotos, descripciones, stock)
 **Objeto:** verificar la correspondencia de datos —nombre, compuesto, dosis, presentación y precio— entre la lista, el catálogo y la web de cada marca.
-**Catálogo resultante:** 87 productos · 60 publicados · 27 no publicados
+**Catálogo resultante:** 88 productos · 60 publicados · 28 no publicados
 **Sitio:** https://test.anabolicgroup.com
 
 ---
@@ -118,7 +118,19 @@ Los 14 péptidos de la marca propia se contrastaron con la web actual (anabolicg
 
 Ambos siguen publicados y con su precio ($350.00 y $215.00). No pertenecen a XT Labs: son de Genli Pharma y Hubio Pharm respectivamente. Se crearon las dos marcas con su propio prefijo de código.
 
-### 1.11 Ajustes técnicos del sitio
+### 1.12 Stanozolol 50 mg incorporado
+
+`Stanozolol 50mg x 50 comp` de Eminence era en realidad el **Stanoprime 50 mg inyectable** (50 mg/ml, 10 ampollas de 1 ml). Se corrigió la lista y se agregó al catálogo:
+
+| Campo | Valor |
+|---|---|
+| Nombre | Stanoprime 50 mg |
+| Marca / categoría | EMINENCE · Inyectables |
+| Precio | $54.99 |
+| Código | `EMI-DEF-021` |
+| Publicación | Oculto (stock 0 en la web) |
+
+### 1.13 Ajustes técnicos del sitio
 
 - Presentaciones con precio y stock por variante.
 - Filtro por categoría y por marca, y buscador por nombre.
@@ -148,7 +160,6 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 | **HCG 5000 UI** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 | **Chorionic Gonadotrophin** (Eminence) | No figura en el catálogo oficial de Eminence. Confirmar origen. |
 | **Decaprime NPP 100 mg** | Eminence solo publica Decaprime 200 (decanoato); no hay NPP en su catálogo. |
-| **Stanozolol 50 mg** (oral e inyectable) | Excluido desde el inicio de la migración, a la espera de tu decisión. |
 
 ---
 
@@ -156,17 +167,17 @@ Casos donde la evidencia no alcanza para corregir sin confirmación. **No se toc
 
 | Marca | Productos |
 |---|---|
-| EMINENCE | 20 |
+| EMINENCE | 21 |
 | LANDERLAN | 19 |
 | XTLABS | 32 |
 | VMS | 14 |
 | GENLI PHARMA | 1 |
 | HUBIO PHARM | 1 |
-| **Total** | **87** |
+| **Total** | **88** |
 
 | Categoría | Productos |
 |---|---|
-| Inyectables | 43 |
+| Inyectables | 44 |
 | Orales | 30 |
 | Péptidos | 14 |
 

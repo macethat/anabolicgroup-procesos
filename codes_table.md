@@ -8,6 +8,7 @@
 | `EMI-DEF-015` | Proviprime 25 mg | DEF · Definición / dureza | Orales | Oculto |
 | `EMI-DEF-019` | Drostoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
 | `EMI-DEF-020` | Trenoprime 100 mg | DEF · Definición / dureza | Inyectables | Público |
+| `EMI-DEF-021` | Stanoprime 50 mg | DEF · Definición / dureza | Inyectables | Oculto |
 | `EMI-MET-014` | Lioprime 25 mcg | MET · Metabólico | Orales | Oculto |
 | `EMI-QUI-006` | Klenprime 40 mcg | QUI · Quema / pérdida de grasa | Orales | Público |
 | `EMI-QUI-013` | Klenprime 60 mcg | QUI · Quema / pérdida de grasa | Orales | Oculto |
