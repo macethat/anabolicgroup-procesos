@@ -658,7 +658,8 @@
 - **Verificado por DOM:** nav render **134x80**, footer **107x64**.
 
 
-### 2026-11-17 - Tipografia display: Cormorant Garamond
+### 2026-11-17 - Tipografia display: Italiana (final)
 
-- Se reemplazo **Bodoni Moda** por **Cormorant Garamond** (mas estrecha y elegante) en los titulos. Peso 600, hero 92px, letter-spacing -0.01em.
-- **Verificado:** font-family "Cormorant Garamond", weight 600, fuente cargada, h1 92px; captura revisada.
+- Se probaron Bodoni Moda, **Cormorant Garamond** (resultaba ancha) e **Instrument Serif** (es la del sitio modelo, se descarto).
+- Se eligio **Italiana**: serif display estrecha, alta en contraste y elegante, distinta a la del modelo. Peso 400, hero 96px, letter-spacing 0.
+- **Verificado:** `font-family: Italiana`, weight 400, fuente cargada; captura revisada (look fino y compacto).
