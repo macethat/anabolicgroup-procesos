@@ -11,3 +11,6 @@ accesos_*.txt
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# LibreOffice lock files
+.~lock.*#
