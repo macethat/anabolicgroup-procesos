@@ -27,8 +27,8 @@ public class LoWin {
 "@
 $procs = Get-Process soffice.bin -ErrorAction SilentlyContinue
 foreach ($p in $procs) {
-    [void][LoWin]::Close([uint32]$p.Id, "catalogo-fichas.csv")
-    [void][LoWin]::Close([uint32]$p.Id, "catalogo-inventario.csv")
+    [void][LoWin]::Close([uint32]$p.Id, "catalogo-fichas")
+    [void][LoWin]::Close([uint32]$p.Id, "catalogo-inventario")
 }
 Start-Sleep -Seconds 3
-Write-Output "ventanas CSV cerradas"
+Write-Output "ventanas de exportacion cerradas"

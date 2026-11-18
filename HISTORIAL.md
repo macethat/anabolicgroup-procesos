@@ -736,3 +736,7 @@ Un CSV no puede mostrar imagenes, asi que se agrego `site/scripts/export_xlsx.py
 Se agregaron las columnas `wc_id` y `wc_url` a `products` y se rellenaron para los 96 productos (`wc_links.csv`, `scripts/backfill_wc.py`). En el CSV de fichas hay una cuarta columna con el enlace de WooCommerce **solo para los no disponibles**: URL publica si el producto esta publicado en WC (18 casos) o enlace de edicion de wp-admin si esta en borrador (18 casos).
 
 Dependencias nuevas en el venv del servidor: pillow 13.0.0 y openpyxl 3.1.5. Herramienta local `tools/close_csv_windows.ps1` para liberar los CSV antes de regenerarlos.
+
+### 2026-11-18 - Imagenes faltantes
+
+Clembutrex 0.40 mg y Trembolona Acetato 100 mg tenian la foto en la biblioteca de WooCommerce pero sin asignar al producto. Se copiaron a `static/img/` y se actualizo `products.image`. Queda solo HCG 5000 UI sin imagen (no existe en WooCommerce). El Excel pasa a 95 miniaturas.
