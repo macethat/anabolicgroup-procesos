@@ -122,7 +122,7 @@ section{padding:64px 0 110px}
 footer{padding:48px 0;border-top:1px solid var(--rule)}
 .foot-in{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:center;
   font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.foot-logo{height:50px;width:auto}
+.foot-logo{height:64px;width:auto}
 .foot-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 .foot-links a{text-decoration:none;transition:color .3s}
 .foot-links a:hover{color:var(--accent)}
