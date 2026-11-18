@@ -663,3 +663,4 @@
 - **Investigacion de fuentes en webs de peptidos:** Inter (Direct Peptides; cuerpo de Paradigm), Montserrat/Oswald (Core Peptides), Poppins (Amino Asylum), Geist+Montserrat (Blue Sky), Red Hat Display/Paranoid (PureRawz), Cardo+Inter (Paradigm). Peptide Sciences bloqueado por Cloudflare.
 - Se eligio **Inter** (peso 700) para titulos; hero 88px, letter-spacing -0.035em; "grado" en rojo italica.
 - **Verificado por DOM:** `font-family: Inter`, weight 700, fuente cargada; captura revisada (look moderno y plano).
+- Se creo `fuentes.html` (https://test.anabolicgroup.com/fuentes.html) para comparar 6 tipografias estrechas: Oswald, Archivo 80%, Barlow Condensed, Roboto Condensed, Jost e Inter (actual).

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparar tipografías — Anabolic Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Archivo:wdth,wght@62..125,400..900&family=Barlow+Condensed:wght@500;600&family=Roboto+Condensed:wght@600;700&family=Jost:wght@500;600&family=Inter:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0B0D;--ink:#ECECEC;--muted:#8A9099;--accent:#E20613;--rule:#23262B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+h1.page{font-size:26px;margin:0 0 8px}
+p.lead{color:var(--muted);margin:0 0 30px;max-width:75ch;line-height:1.5}
+.row{border-top:1px solid var(--rule);padding:26px 0}
+.name{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.sample{font-size:clamp(42px,7vw,86px);line-height:1.02;margin:0;letter-spacing:-.02em}
+.sample em{font-style:normal;color:var(--accent)}
+.note{color:var(--muted);font-size:13px;margin-top:8px}
+.oswald{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0}
+.archivo{font-family:'Archivo',sans-serif;font-weight:700;font-stretch:80%;letter-spacing:-.03em}
+.barlow{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0}
+.roboto{font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spacing:-.01em}
+.jost{font-family:'Jost',sans-serif;font-weight:600;letter-spacing:-.01em}
+.inter{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-.035em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1 class="page">Comparar tipografías · versiones menos anchas</h1>
+<p class="lead">Mismo titular en cada opción. Dime cuál prefieres y la aplico al sitio. (Montserrat, Poppins y Red Hat Display no tienen corte condensado, por eso uso equivalentes más estrechos.)</p>
+
+<div class="row"><div class="name">Oswald 600 · condensada</div><p class="sample oswald">Compuestos de <em>grado</em> profesional</p><div class="note">Condensada, fuerte. Ya validada en el nicho (Core Peptides).</div></div>
+
+<div class="row"><div class="name">Archivo 700 · ancho 80%</div><p class="sample archivo">Compuestos de <em>grado</em> profesional</p><div class="note">Grotesca con eje de ancho variable (más angosta).</div></div>
+
+<div class="row"><div class="name">Barlow Condensed 600</div><p class="sample barlow">Compuestos de <em>grado</em> profesional</p><div class="note">Condensada neutra, estilo editorial.</div></div>
+
+<div class="row"><div class="name">Roboto Condensed 700</div><p class="sample roboto">Compuestos de <em>grado</em> profesional</p><div class="note">Condensada tipo editorial, muy legible.</div></div>
+
+<div class="row"><div class="name">Jost 600 · geométrica estrecha</div><p class="sample jost">Compuestos de <em>grado</em> profesional</p><div class="note">Aire geométrico (estilo Poppins) pero más estrecha.</div></div>
+
+<div class="row"><div class="name">Inter 700 · actual</div><p class="sample inter">Compuestos de <em>grado</em> profesional</p><div class="note">Referencia: la que está aplicada ahora.</div></div>
+</div>
+</body>
+</html>
