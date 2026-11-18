@@ -657,3 +657,8 @@
 - **Altura del logo:** nav **80px**, footer **64px**, movil 50px. Objetivo: que se lea "ANABOLIC GROUP".
 - **Verificado por DOM:** nav render **134x80**, footer **107x64**.
 
+
+### 2026-11-17 - Tipografia display: Cormorant Garamond
+
+- Se reemplazo **Bodoni Moda** por **Cormorant Garamond** (mas estrecha y elegante) en los titulos. Peso 600, hero 92px, letter-spacing -0.01em.
+- **Verificado:** font-family "Cormorant Garamond", weight 600, fuente cargada, h1 92px; captura revisada.
