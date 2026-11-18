@@ -47,7 +47,7 @@ nav.solid{border-color:var(--rule);background:rgba(10,11,13,.94)}
 .hero .wrap{position:relative;z-index:1;width:100%}
 .hero-inner{max-width:680px}
 .hero h1{font-size:clamp(46px,7.4vw,94px);letter-spacing:0;line-height:1.02;margin:14px 0 18px}
-.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1 em{font-family:'Kaushan Script',cursive;font-style:normal;color:var(--accent);font-weight:400;font-size:1.12em;letter-spacing:0;line-height:.9}
 .hero .lead{color:var(--muted);font-size:16px;max-width:46ch;margin-bottom:28px}
 .stats{display:flex;flex-wrap:wrap;gap:40px;margin:0 0 30px;padding-top:22px;border-top:1px solid var(--rule);max-width:520px}
 .stats div{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}

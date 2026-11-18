@@ -664,3 +664,8 @@
 - Se creo `fuentes.html` (https://test.anabolicgroup.com/fuentes.html) comparando 6 opciones estrechas: Oswald, Archivo 80%, **Barlow Condensed**, Roboto Condensed, Jost e Inter.
 - El cliente eligio **Barlow Condensed 600**: sans condensada y plana. Hero 94px, letter-spacing 0; "grado" en rojo sin cursiva.
 - **Verificado por DOM:** `font-family: "Barlow Condensed"`, weight 600, fuente cargada; captura revisada (look fuerte y compacto).
+
+### 2026-11-17 - "grado" en script (Kaushan Script)
+
+- El acento **"grado"** del hero se puso en **Kaushan Script** (brush, rojo), manteniendo **Barlow Condensed 600** para el resto del titular. Tamano 1.12em, sin cursiva sintetica.
+- **Verificado:** `font-family: "Kaushan Script"`, fuente cargada (82.88px); captura revisada: contraste bold-condensada + script roja.
