@@ -1,0 +1,11 @@
+﻿id	code	name	slug	price	stock_status	is_published	image	wc_id
+66	XTL-VOL-027	Boldaplex 200 mg	boldaplex-200-mg	75.99	outofstock	0	/static/img/boldaplex-200-mg.webp	14600
+41	XTL-VOL-002	Boldeplex 200 mg	boldeplex-200-mg	64.99	outofstock	0	/static/img/boldeplex-200-mg-40899.png	14234
+52	XTL-DEF-013	Mastaplex 100 mg	mastaplex-100-mg	64.99	instock	1	/static/img/mastaplex-100-mg-29310.webp	14614
+70	XTL-DEF-031	Masteplex - P	masteplex-p	64.99	instock	0	/static/img/masteplex-p.png	14244
+38	LAN-DEF-022	Trembolona Acetato 100 mg	trembolona-acetato-100mg	81.99	outofstock	0	/static/img/trembolona-acetato-100mg.webp	15193
+92	XTL-DEF-039	Trembolona Acetato 100 mg	trembolona-acetato-100-mg	74.99	outofstock	0	/static/img/trembolona-acetato-100-mg.webp	14364
+39	LAN-VOL-023	Trembolona Enantado Gold	trembolona-enantado-gold	74.99	instock	0	/static/img/trembolona-enantado-gold.png	14077
+31	LAN-VOL-015	Trembolona Enantato 200 mg	trembolona-enantato-200-mg	74.99	outofstock	0	/static/img/trembolona-enantato-200-mg.webp	14599
+72	XTL-DEF-033	Trenboplex Acetato 100 mg	trenboplex-acetato-100-mg	74.99	instock	0	/static/img/tremboplex-acetato.png	14247
+73	XTL-VOL-034	Trenboplex Enantato 200 mg	trenboplex-enantato-200-mg	79.99	instock	0	/static/img/tremboplex-enantato.png	14250

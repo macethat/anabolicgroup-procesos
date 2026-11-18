@@ -787,3 +787,15 @@ Nombres: Anastroprime 1 mg, Proviprime 25 mg, Metaprime 10 mg, Arimidext 1 mg, O
 Slugs actualizados en consecuencia; los codigos internos no cambian. Respaldo de la lista en `upgrade-data/backups/cat-prod-actualizado-20261118-antes-nombres.xlsx`. Script: `site/scripts/update_list_names.py`.
 
 Pendiente por decision del usuario: Gentropin/Hutrope (marca), Androlic (compuesto), HCG Eminence, Decaprime NPP, Metenolona acetato 25 mg, Stanoplex oral y los duplicados de la lista (filas 20/36, 27/39, 33/40, 34/41, 35/43/44, 46/71, 57/75, 77 + extra).
+
+### 2026-11-18 - Eliminacion de duplicados verificados (foto a foto)
+
+Antes de borrar se compararon las fotos de cada par. Solo se eliminaron los confirmados como el mismo producto/misma caja:
+
+- LANDERLAN: Boldenona Undecilenato (queda Boldenona 250 mg); Primoboland Enantato Gold (queda Metenolona Enantato 100 mg); Testoland Depot 200 MG (queda Testoland Depot - 200 mg - Cipionato); Trembolona Enantado Gold (queda Trembolona Enantato 200 mg); Trembolona Enantato 100mg marcada "repetido" en la lista.
+- XTLABS: Boldaplex 200 MG (queda Boldeplex 200 mg); Masteplex - P (queda Mastaplex 100 mg); Trembolona Acetato 100 mg del bloque de notas (queda Trenboplex Acetato 100 mg).
+- Se quitaron tambien de la lista las filas de CLEMBUTREX 0.40 MG y CLEMBUTEROL ULTRA 0.60MCG (productos ya eliminados antes) y la nota URL que reintroducia el duplicado.
+
+NO se elimino el par Testosterona Propionato 100 mg / "TESTOSTERONA PROPINATO 100mg": mismo compuesto y precio, pero el empaque difiere (linea Gold negra vs caja blanca clasica). Queda pendiente de confirmacion.
+
+Resultado: 87 productos (LANDERLAN 19, XTLABS 34, EMINENCE 20, VMS 14), 60 publicados. Respaldos: `upgrade-data/backups/cat-prod-actualizado-20261118-antes-duplicados.xlsx` y `backup_deleted_products_dups.sql`.

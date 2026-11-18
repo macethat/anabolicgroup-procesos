@@ -1,0 +1,20 @@
+﻿id	code	name	slug	price	stock_status	is_published	image	wc_id
+18	LAN-VOL-002	Boldenona 250 mg	boldenona-250-mg	64.99	instock	1	/static/img/boldenona-250-mg-51658.webp	14556
+32	LAN-VOL-016	Boldenona Undecilenato	boldenona-undecilenato	69.99	outofstock	0	/static/img/boldenona-undecilenato.png	14083
+21	LAN-DEF-005	Drostanolona Propionato 10 ml	drostanolona-propionato-10ml	78.99	instock	1	/static/img/drostanolona-propionato-10ml-41470.png	14095
+23	LAN-VOL-007	Metenolona Acetato 25 mg	metenolona-acetato-25-mg	64.99	instock	1	/static/img/metenolona-acetato-25-mg.webp	14071
+24	LAN-VOL-008	Metenolona Enantato 100 mg	metenolona-enantato-100-mg	99.99	instock	1	/static/img/metenolona-enantato-100-mg.webp	14773
+35	LAN-VOL-019	Primoboland Enantato Gold 10 ml	primoboland-enantato-gold-10ml	99.99	instock	0	/static/img/primoboland-enantato-gold-10ml.png	14005
+29	LAN-VOL-013	Testoland Depot - 200 mg - Cipionato	testoland-depot-200-mg-cipionato	74.99	instock	1	/static/img/testoland-depot-200-mg-cipionato.webp	13987
+36	LAN-VOL-020	Testoland Depot 200 mg	testoland-depot-200-mg	74.99	instock	0	/static/img/testoland-depot-200-mg.webp	14962
+37	LAN-VOL-021	Testosterona Propinato 100 mg	testosterona-propinato-100mg	64.99	instock	0	/static/img/testosterona-propinato-100mg.png	14068
+30	LAN-VOL-014	Testosterona Propionato 100 mg	testosterona-propionato-100-mg	64.99	instock	1	/static/img/testosterona-propionato-100-mg.webp	14580
+38	LAN-DEF-022	Trembolona Acetato 100 mg	trembolona-acetato-100mg	81.99	outofstock	0	/static/img/trembolona-acetato-100mg.webp	15193
+39	LAN-VOL-023	Trembolona Enantado Gold	trembolona-enantado-gold	74.99	instock	0	/static/img/trembolona-enantado-gold.png	14077
+31	LAN-VOL-015	Trembolona Enantato 200 mg	trembolona-enantato-200-mg	74.99	outofstock	0	/static/img/trembolona-enantato-200-mg.webp	14599
+x
+--- XTL ---
+id	code	name	slug	price	stock_status	is_published	image	wc_id
+41	XTL-VOL-002	Boldeplex 200 mg	boldeplex-200-mg	64.99	outofstock	0	/static/img/boldeplex-200-mg-40899.png	14234
+52	XTL-DEF-013	Mastaplex 100 mg	mastaplex-100-mg	64.99	instock	1	/static/img/mastaplex-100-mg-29310.webp	14614
+92	XTL-DEF-039	Trembolona Acetato 100 mg	trembolona-acetato-100-mg	74.99	outofstock	0	/static/img/trembolona-acetato-100-mg.webp	14364

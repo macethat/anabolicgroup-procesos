@@ -46,11 +46,7 @@
 | `LAN-VOL-013` | Testoland Depot - 200 mg - Cipionato | VOL · Volumen / masa magra | Inyectables | Público |
 | `LAN-VOL-014` | Testosterona Propionato 100 mg | VOL · Volumen / masa magra | Inyectables | Público |
 | `LAN-VOL-015` | Trembolona Enantato 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `LAN-VOL-016` | Boldenona Undecilenato | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `LAN-VOL-019` | Primoboland Enantato Gold 10 ml | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `LAN-VOL-020` | Testoland Depot 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `LAN-VOL-021` | Testosterona Propinato 100 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `LAN-VOL-023` | Trembolona Enantado Gold | VOL · Volumen / masa magra | Inyectables | Oculto |
 
 ### VMS
 
@@ -81,10 +77,8 @@
 | `XTL-DEF-020` | Razor 200 mg | DEF · Definición / dureza | Inyectables | Público |
 | `XTL-DEF-021` | Stanoplex 10 mg Estanozolol | DEF · Definición / dureza | Orales | Público |
 | `XTL-DEF-022` | Stanoplex 10 ml | DEF · Definición / dureza | Inyectables | Público |
-| `XTL-DEF-031` | Masteplex - P | DEF · Definición / dureza | Inyectables | Oculto |
 | `XTL-DEF-032` | Provix 25 mg - 50 tab | DEF · Definición / dureza | Orales | Oculto |
 | `XTL-DEF-033` | Trenboplex Acetato 100 mg | DEF · Definición / dureza | Inyectables | Oculto |
-| `XTL-DEF-039` | Trembolona Acetato 100 mg | DEF · Definición / dureza | Inyectables | Oculto |
 | `XTL-GH-007` | Gentropin 210 UI | GH · Hormona de crecimiento | Inyectables | Público |
 | `XTL-GH-009` | Hutrope 100 IU | GH · Hormona de crecimiento | Inyectables | Público |
 | `XTL-GH-010` | Ibutamoren 15 mg | GH · Hormona de crecimiento | Orales | Público |
@@ -106,7 +100,6 @@
 | `XTL-VOL-024` | Triple XXX 200 mg Tritrenbolona | VOL · Volumen / masa magra | Inyectables | Público |
 | `XTL-VOL-025` | TVR 350 mg Testo Enantato/Propionato | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-026` | TXT 400 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
-| `XTL-VOL-027` | Boldaplex 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-034` | Trenboplex Enantato 200 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
 | `XTL-VOL-035` | Turinaplex 10 mg | VOL · Volumen / masa magra | Orales | Oculto |
 | `XTL-VOL-036` | Testoplex-C 300 mg | VOL · Volumen / masa magra | Inyectables | Oculto |
