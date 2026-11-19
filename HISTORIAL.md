@@ -872,3 +872,7 @@ Recibida en `imagenes/hcg-5000-ui-landerlan.webp` (823x823). Se formateo al patr
 ### 2026-11-18 - HCG 5000 UI Landerlan publicado
 
 El usuario indico que el producto debe aparecer disponible. Lista (fila 38 LANDERLAN) pasa a Publicado = "Si" y en el catalogo LAN-REC-018 queda is_published=1 (stock instock, $74.99). Ficha activa en /producto/hcg-5000-ui/. Catalogo: 89 productos, 61 publicados. Regenerados CSV/Excel (88 miniaturas) e informe.
+
+### 2026-11-18 - Imagen del HCG Landerlan: empaque mas chico
+
+El empaque se redujo al ~68% del lienzo (740 de 1080 px), con margen amplio y proporcion intacta, para que se vea como el resto de las fichas. Regenerado el Excel (88 miniaturas).

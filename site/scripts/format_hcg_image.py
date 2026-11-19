@@ -9,7 +9,7 @@ SRC = r"C:\anabolicgroup\imagenes\hcg-5000-ui-landerlan.webp"
 OUT = r"C:\anabolicgroup\imagenes\hcg-5000-ui-landerlan-final.webp"
 
 CANVAS = (1060, 1080)      # mismo formato que el resto del catalogo
-FIT = (880, 880)           # caja dentro del lienzo (deja margen)
+FIT = (740, 740)           # empaque al ~70% del lienzo, con margen amplio
 BG = (255, 255, 255, 255)
 
 im = Image.open(SRC).convert("RGBA")
