@@ -54,6 +54,18 @@ def create_app():
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=0)
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-only")
     app.add_template_filter(tagline)
+
+    def img_ver(path):
+        """Version de cache por archivo de imagen (mtime)."""
+        try:
+            rel = str(path or "").lstrip("/")
+            if rel.startswith("static/"):
+                rel = rel[len("static/"):]
+            return int(os.path.getmtime(os.path.join(app.static_folder, rel)))
+        except Exception:
+            return ASSET_VER
+
+    app.add_template_filter(img_ver)
     try:
         ASSET_VER = str(int(os.path.getmtime(os.path.join(app.root_path, "static", "style.css"))))
     except Exception:

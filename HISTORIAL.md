@@ -882,3 +882,12 @@ El empaque se redujo al ~68% del lienzo (740 de 1080 px), con margen amplio y pr
 Recibida en `imagenes/stanoplex10mg60tab.webp` (1000x800, caja + frasco STANOPLEX 10 mg, 60 tabletas, XT Labs). Formateada al patron: recorte del fondo sobrante, empaque al 70% del lienzo (740 px), centrado sobre fondo del mismo tono del original y guardada como 1060x1080. Asignada a XTL-DEF-021.
 
 Con esto los 89 productos tienen imagen (Excel con 89 miniaturas).
+
+### 2026-11-18 - Problema de cache de imagenes (Cloudflare)
+
+Cloudflare servia las imagenes antiguas con Cache-Control de 10 anios (cf-cache-status HIT), aunque el archivo en disco ya era el nuevo. Se resolvio de dos formas:
+
+1. Nombres nuevos para las imagenes reemplazadas: `stanoplex-10-mg-60tab.webp` y `hcg-5000-ui-landerlan-gold.webp`.
+2. Filtro `img_ver` en app.py: las URLs de producto llevan `?v=<mtime del archivo>`, asi cualquier reemplazo futuro cambia la URL y evita la cache.
+
+Verificado: /static/img/stanoplex-10-mg-60tab.webp?v=1795050665 devuelve 40086 bytes (imagen nueva). Excel regenerado (89 miniaturas).
