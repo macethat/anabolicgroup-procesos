@@ -876,3 +876,9 @@ El usuario indico que el producto debe aparecer disponible. Lista (fila 38 LANDE
 ### 2026-11-18 - Imagen del HCG Landerlan: empaque mas chico
 
 El empaque se redujo al ~68% del lienzo (740 de 1080 px), con margen amplio y proporcion intacta, para que se vea como el resto de las fichas. Regenerado el Excel (88 miniaturas).
+
+### 2026-11-18 - Imagen del Stanoplex 10 mg
+
+Recibida en `imagenes/stanoplex10mg60tab.webp` (1000x800, caja + frasco STANOPLEX 10 mg, 60 tabletas, XT Labs). Formateada al patron: recorte del fondo sobrante, empaque al 70% del lienzo (740 px), centrado sobre fondo del mismo tono del original y guardada como 1060x1080. Asignada a XTL-DEF-021.
+
+Con esto los 89 productos tienen imagen (Excel con 89 miniaturas).
