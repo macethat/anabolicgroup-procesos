@@ -868,3 +868,7 @@ Aplicado en LAN-REC-018: descripcion completa y tagline "Recuperacion hormonal +
 ### 2026-11-18 - Imagen del HCG Landerlan formateada
 
 Recibida en `imagenes/hcg-5000-ui-landerlan.webp` (823x823). Se formateo al patron del catalogo: lienzo blanco de 1060x1080, empaque centrado con margen (sin deformar, proporcion original) y guardado como `hcg-5000-ui-landerlan.webp`. Asignada a LAN-REC-018. Excel regenerado con 88 miniaturas (solo queda sin foto el Stanoplex 10 mg).
+
+### 2026-11-18 - HCG 5000 UI Landerlan publicado
+
+El usuario indico que el producto debe aparecer disponible. Lista (fila 38 LANDERLAN) pasa a Publicado = "Si" y en el catalogo LAN-REC-018 queda is_published=1 (stock instock, $74.99). Ficha activa en /producto/hcg-5000-ui/. Catalogo: 89 productos, 61 publicados. Regenerados CSV/Excel (88 miniaturas) e informe.

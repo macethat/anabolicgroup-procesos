@@ -3,7 +3,7 @@
 **Fecha:** 18 de noviembre de 2026
 **Base:** `cat-prod-actualizado.xlsx` (lista de precios) + WooCommerce (fotos, descripciones, stock)
 **Objeto:** verificar la correspondencia de datos —nombre, compuesto, dosis, presentación y precio— entre la lista, el catálogo y la web de cada marca.
-**Catálogo resultante:** 89 productos · 60 publicados · 29 no publicados
+**Catálogo resultante:** 89 productos · 61 publicados · 28 no publicados
 **Sitio:** https://test.anabolicgroup.com
 
 ---
