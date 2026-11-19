@@ -864,3 +864,7 @@ La caja del producto dice "Metenolona Acetato 25 mg - 30 comprimidos - Via Oral 
 Consultada la ficha oficial (landerlan.com.br): "HCG humano 5.000ui Landerlan gold", gonadotropina corionica humana USP 5000 UI (vial liofilizado) + ampolla de 1 ml de cloruro de sodio 0.9%, via IM/SC.
 
 Aplicado en LAN-REC-018: descripcion completa y tagline "Recuperacion hormonal + Fertilidad"; precio 74.99 y oculto (la lista dice "No"). La imagen no se pudo descargar: el servidor de Landerlan corta la descarga a 32 KB y desde el hosting responde 522; queda pendiente de recibirla.
+
+### 2026-11-18 - Imagen del HCG Landerlan formateada
+
+Recibida en `imagenes/hcg-5000-ui-landerlan.webp` (823x823). Se formateo al patron del catalogo: lienzo blanco de 1060x1080, empaque centrado con margen (sin deformar, proporcion original) y guardado como `hcg-5000-ui-landerlan.webp`. Asignada a LAN-REC-018. Excel regenerado con 88 miniaturas (solo queda sin foto el Stanoplex 10 mg).
