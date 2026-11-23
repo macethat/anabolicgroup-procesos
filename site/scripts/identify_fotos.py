@@ -14,10 +14,32 @@ BASE = r"C:\anabolicgroup\fotos-productos"
 RES = os.path.join(BASE, "editadas")
 IDX = os.path.join(BASE, "indice.csv")
 
+# Productos cuyo texto en la caja no incluye el nombre comercial
+ALIASES = {
+    "EMI-REC-012": ["chorionic", "gonadotrophin", "hormoprime", "5000"],
+    "LAN-REC-018": ["gonadotropina", "corionica", "landerlan", "5000"],
+    "XTL-REC-008": ["hcg", "10000"],
+}
+
+STOP = {"de", "con", "and", "the", "for", "injection", "tablets", "tablet", "mg", "ml", "ui", "iu"}
+
 
 def norm(text):
     text = unicodedata.normalize("NFKD", str(text)).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
+def family(name):
+    """Palabra comercial: primera palabra significativa del nombre."""
+    for w in re.split(r"\s+", name.strip()):
+        n = norm(w)
+        if n and n not in STOP:
+            return n
+    return norm(name)
+
+
+def numbers(name):
+    return [n for n in re.findall(r"\d+", name) if len(n) >= 2]
 
 
 def features(path):
@@ -45,19 +67,47 @@ def img_score(f1, f2):
     return 0.40 * sa + 0.40 * sd + 0.20 * sh
 
 
-def text_score(ocr_norm, product_name, brand):
-    full = norm(product_name)
-    words = [w for w in re.split(r"\s+", product_name) if len(w) >= 4]
-    token = norm(words[0]) if words else full
-    ratio = SequenceMatcher(None, ocr_norm, full).ratio()
-    if token and token in ocr_norm:
-        return max(0.95, ratio), f"token:{token}"
-    if norm(brand) and norm(brand) in ocr_norm and ratio > 0.4:
-        return ratio + 0.1, f"marca+{ratio:.2f}"
-    return ratio, f"fuzzy:{ratio:.2f}"
+def kw_score(lines, keywords):
+    """Cuanto aparece la palabra comercial (o alias) en el texto OCR."""
+    best = 0.0
+    joined = norm(" ".join(lines))
+    for kw in keywords:
+        if not kw:
+            continue
+        if kw in joined:
+            return 1.0
+        for line in lines:
+            ln = norm(line)
+            if not ln:
+                continue
+            r = SequenceMatcher(None, ln, kw).ratio()
+            if len(kw) > 4 and (kw in ln or ln in kw):
+                r = max(r, 0.92)
+            best = max(best, r)
+    return best
 
 
-def ocr_text(path, engine):
+def full_score(lines, name):
+    full = norm(name)
+    best = 0.0
+    for line in lines:
+        ln = norm(line)
+        if ln:
+            best = max(best, SequenceMatcher(None, ln, full).ratio())
+    if full and full in norm(" ".join(lines)):
+        best = 1.0
+    return best
+
+
+def dose_score(lines, name):
+    nums = numbers(name)
+    if not nums:
+        return 1.0
+    ocr = norm(" ".join(lines))
+    return sum(1 for n in nums if n in ocr) / len(nums)
+
+
+def ocr_lines(path, engine):
     result, _ = engine(path)
     out = []
     if result:
@@ -83,37 +133,42 @@ def main():
             orig.append((r, features(p)))
 
     files = sorted(f for f in os.listdir(RES)
-                   if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
-                   and not f.lower().startswith("modelo"))
+                   if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp")))
 
     mapping = []
     for name in files:
         path = os.path.join(RES, name)
         f = features(path)
-        texts = ocr_text(path, engine)
-        ocr_norm = norm(" ".join(texts))
+        lines = ocr_lines(path, engine)
         scored = []
         for r, of in orig:
-            ts, why = text_score(ocr_norm, r["producto"], r["marca"])
-            isc = img_score(f, of)
-            total = 0.75 * ts + 0.25 * isc
-            scored.append((total, ts, isc, r, why))
+            kws = [family(r["producto"])] + ALIASES.get(r["codigo"], [])
+            kws = [norm(k) for k in kws]
+            kw = kw_score(lines, kws)
+            fu = full_score(lines, r["producto"])
+            do = dose_score(lines, r["producto"])
+            im = img_score(f, of)
+            total = 0.45 * kw + 0.20 * fu + 0.15 * do + 0.20 * im
+            scored.append((total, kw, fu, do, im, r))
         scored.sort(key=lambda x: -x[0])
         top, second = scored[0], scored[1]
         margen = top[0] - second[0]
-        conf = "Alta" if margen >= 0.06 and top[1] >= 0.8 else ("Media" if margen >= 0.03 else "Revisar")
+        conf = "Alta" if margen >= 0.05 else ("Media" if margen >= 0.02 else "Revisar")
+
         mapping.append({
             "archivo": name,
-            "codigo": top[3]["codigo"],
-            "marca": top[3]["marca"],
-            "producto": top[3]["producto"],
+            "codigo": top[5]["codigo"],
+            "marca": top[5]["marca"],
+            "producto": top[5]["producto"],
             "score": round(top[0], 3),
-            "texto": round(top[1], 3),
-            "imagen": round(top[2], 3),
+            "clave": round(top[1], 2),
+            "nombre": round(top[2], 2),
+            "dosis": round(top[3], 2),
+            "imagen": round(top[4], 2),
             "margen": round(margen, 3),
             "confianza": conf,
-            "segunda": f"{second[3]['producto']} ({second[0]:.3f})",
-            "ocr": " | ".join(texts)[:140],
+            "segunda": f"{second[5]['producto']} ({second[0]:.3f})",
+            "ocr": " | ".join(lines)[:160],
         })
 
     out = os.path.join(RES, "mapeo.csv")
@@ -122,10 +177,12 @@ def main():
         w.writeheader()
         w.writerows(mapping)
 
-    for m in mapping:
-        print(f"{m['confianza']:<8} {m['score']:.3f} (txt {m['texto']:.2f} / img {m['imagen']:.2f}, "
-              f"margen {m['margen']:.2f})  {m['archivo'][:34]:<34} -> {m['marca']} | {m['producto']}")
-        print(f"         OCR: {m['ocr'][:110]}")
+    for i, m in enumerate(mapping, 1):
+        print(f"{i:>2}. {m['confianza']:<8} {m['score']:.3f} (clave {m['clave']:.2f} dosis {m['dosis']:.2f} "
+              f"margen {m['margen']:.2f})  {m['archivo'][-14:]:<14} -> {m['codigo']:<12} {m['producto']}")
+        if m["confianza"] != "Alta":
+            print(f"      2da: {m['segunda']}")
+            print(f"      OCR: {m['ocr'][:120]}")
     print("\nmapeo:", out)
 
 
